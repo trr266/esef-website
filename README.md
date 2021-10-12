@@ -6,8 +6,30 @@ With the introdcution of the European Single Electronic Format (ESEF) for annual
 
 As part of TRR266, funding has been obtained to empower and enable research using these documents. By incubating this project as open source from the outset, we hope to attract contributions from academia and industry and avoid the privatization of this emerging open data resource.
 
-[ESEF is a standard based on XBRL][esef_home], but 
+[ESEF is a standard based on XBRL][esef_home], but it is not a document repository. ESEF has been adopted by the 27 nations of the European Union as well as Norway and Icleand and [each country is responsible for designating a national database][competent_authorities].
 
+This project will provide the following modules:
 
+1. A dashboard which tracks ESEF availability by country and filing quality by country and company
+2. An ESEF parser which reads, validates, and normalizes ESEF financial reports
+3. A repository of raw filings in the ESEF format
+4. Standardized ['data products'][data_product] extracted from ESEF filings
+
+This project has the following aims:
+
+1. Enable TRR researchers to do research on the basis of ESEF data
+2. Gather and focus open source ESEF software efforts
+3. Publicize and encourage high quality filings and easy data access by national competent authorities
+4. Establish canonical 'data product schemas' for analyzing financial reporting across the European Union
+5. Promote open science and open data in accounting and offer templates and tools for building on our work
+
+This project takes the following 'opinionated' technical approach:
+
+1. Github Actions CI/CD is used to ensure that code is tested and functional at every commit
+2. Pull Requests with maintainer reviews ensure code quality
+3. The project will be developed 'out in the open' to avoid the 'ripping the band-aid off' experience of having to decide when to open source
+4. The project will be developed under an OSS-compliant MIT license
 
 [esef_home]: https://www.esma.europa.eu/policy-activities/corporate-disclosure/european-single-electronic-format
+[competent_authorities]: https://www.esma.europa.eu/access-regulated-information
+[data_product]: https://martinfowler.com/articles/data-mesh-principles.html#DataAsAProduct
