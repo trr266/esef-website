@@ -1,5 +1,7 @@
 # ESEF Data Product
 
+[![GitHub Super-Linter](https://github.com/trr266/esef/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
 > Research Data Access for the European Single Electronic Format
 
 ## Resources
