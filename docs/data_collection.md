@@ -27,7 +27,7 @@ Various projects attempt to provide ESEF data for different purposes. A non-exha
 
 
 
-### [Country Availability](https://filings.xbrl.org/about.html)
+### [Country Availability of XBRL Filings Index](https://filings.xbrl.org/about.html)
 
 | Country | XBRL Repo | Mandate Starting Fiscal Year | API Access to Reports |
 | -- | -- | -- | -- |
