@@ -14,6 +14,7 @@ Various projects attempt to provide ESEF data for different purposes. A non-exha
 ## XBRL Filings
 
 ### Dataset Goals and Caveats
+
 - ["Make it easier to find and access filings prepared under the ESEF mandate;"][xbrl_esef_repo_about]
 - ["Promote discussion and feedback on the quality of ESEF reports."][xbrl_esef_repo_about]
 - Completeness not guaranteed
