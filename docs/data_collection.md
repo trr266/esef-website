@@ -33,7 +33,7 @@
 | Latvia | ✅ | |
 | Lithuania | ✅ | |
 | Netherlands | ✅ | |
-| Portugal	 | ✅ | |
+| Portugal | ✅ | |
 | Slovenia | ✅ | |
 | Spain | ✅ | |
 | UK | ✅ | [2021][uk_implementation_legal] |
