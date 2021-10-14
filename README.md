@@ -2,6 +2,8 @@
 
 [![GitHub Super-Linter](https://github.com/trr266/esef/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
+A project of the [Open Science Data Center][c02]
+
 > Research Data Access for the European Single Electronic Format
 
 ## Resources
@@ -43,6 +45,14 @@ of the European Union as well as Norway and Iceleand.
 3. The project will be developed 'out in the open' to avoid the 'ripping the band-aid off' experience of having to decide when to open source
 4. The project will be developed under an OSS-compliant MIT license
 
+## Project Funding
+
+This project is funded as part of [TRR 266: Accounting for Transparency][trr_266], a Collaborative Research Center backed by a [German Research Foundation (Deutsche Forschungsgemeinschaft)][dfg] grant.
+
+
 [esef_home]: https://www.esma.europa.eu/policy-activities/corporate-disclosure/european-single-electronic-format
 [competent_authorities]: https://www.esma.europa.eu/access-regulated-information
 [data_product]: https://martinfowler.com/articles/data-mesh-principles.html#DataAsAProduct
+[trr_266]: https://www.accounting-for-transparency.de
+[dfg]: https://www.dfg.de
+[c02]: https://www.accounting-for-transparency.de/project/open-science-data-center/
