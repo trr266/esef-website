@@ -35,7 +35,7 @@ for (d_key, d_value) in raw_data
     push!(df, new_row)
 end
 
-axis = (width = 500, height = 500, xlabel="Error Count", ylabel="Filing Count", title="ESEF Filings by Error Count")
+axis = (width = 500, height = 250, xlabel="Error Count", ylabel="Filing Count", title="ESEF Filings by Error Count")
 plt = data(df) * mapping(:error_count) * histogram(bins=range(0, 500, length=100))
 fg = draw(plt; axis)
 save("figs/esef_error_hist.png", fg, px_per_unit = 3)
