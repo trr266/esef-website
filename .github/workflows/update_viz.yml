@@ -23,7 +23,8 @@ jobs:
               run: julia --project=. src/esef_index_viz.jl
 
             - uses: EndBug/add-and-commit@v7
-              add: figs
-              author_name: Update Bot
-              author_email: updatebot@updatebot.updatebot
-              message: 'Autoupdate Visualizations'
+              with:
+                add: figs
+                author_name: Update Bot
+                author_email: updatebot@updatebot.updatebot
+                message: 'Autoupdate Visualizations'
