@@ -1,0 +1,22 @@
+name: Update Viz
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * *"
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Install Julia
+              uses: julia-actions/setup-julia@v1
+              with:
+                  version: 1.7.0-rc1
+
+            - name: Run Pluto notebooks
+              run: julia --project=. src/esef_index_viz.jl
