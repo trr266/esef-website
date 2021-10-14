@@ -5,8 +5,8 @@ on:
         branches:
             - main
     workflow_dispatch:
-  schedule:
-    - cron: "0 3 * * *"
+    schedule:
+      - cron: "0 3 * * *"
 jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
