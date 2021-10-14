@@ -32,35 +32,35 @@ Various projects attempt to provide ESEF data for different purposes. A non-exha
 | Country | XBRL Repo | Mandate Starting Fiscal Year | API Access to Reports |
 | -- | -- | -- | -- |
 | Austria | ✅ | 2021 | |
-| Belgium | ✅ | [2022][[esef_postponement_index]] | |
-| Bulgaria | ❌ | [2022][[esef_postponement_index]] | |
-| Croatia | ✅ | [2022][[esef_postponement_index]] | |
-| Cyprus | ❌ | [2022][[esef_postponement_index]] | |
+| Belgium | ✅ | [2022][esef_postponement_index] | |
+| Bulgaria | ❌ | [2022][esef_postponement_index] | |
+| Croatia | ✅ | [2022][esef_postponement_index] | |
+| Cyprus | ❌ | [2022][esef_postponement_index] | |
 | Czech Republic | ✅ | 2021 | |
-| Denmark | ✅ | [2022][[esef_postponement_index]] | | |
-| Estonia | ✅ | [2022][[esef_postponement_index]] | |
-| Finland | ✅ | [2022][[esef_postponement_index]] | |
-| France | ✅ | [2022][[esef_postponement_index]] | |
+| Denmark | ✅ | [2022][esef_postponement_index] | | |
+| Estonia | ✅ | [2022][esef_postponement_index] | |
+| Finland | ✅ | [2022][esef_postponement_index] | |
+| France | ✅ | [2022][esef_postponement_index] | |
 | Germany | ✅ | 2021 | |
-| Greece | ❌ | [2022][[esef_postponement_index]] | |
-| Hungary | ✅ | [2022][[esef_postponement_index]] | |
-| Iceland | ❌ | [2022][[parseport_index]] | |
-| Ireland | ❌ | [2022][[esef_postponement_index]] | |
-| Italy | ❌ | [2022][[esef_postponement_index]] | |
-| Latvia | ✅ | [2022][[esef_postponement_index]] j| |
-| Liechtenstein | ❌ | National XBRL Custom Format, [2021][[xbrl_liechtenstein]] | |
-| Lithuania | ✅ | [2022][[esef_postponement_index]] | |
-| Luxembourg | ❌ | [2022][[esef_postponement_index]] | |
-| Malta | ❌ | [2022][[esef_postponement_index]] | |
-| Netherlands | ✅ | [2022][[esef_postponement_index]] | |
-| Norway | ❌ | [2022][[parseport_index]] | |
-| Poland | ❌ | [2022][[esef_postponement_index]] | |
-| Portugal | ✅ | [2022][[esef_postponement_index]] | |
-| Romania | ❌ | [2022][[esef_postponement_index]] | |
-| Slovakia | ❌ | [2022][[esef_postponement_index]] | |
+| Greece | ❌ | [2022][esef_postponement_index] | |
+| Hungary | ✅ | [2022][esef_postponement_index] | |
+| Iceland | ❌ | [2022][parseport_index] | |
+| Ireland | ❌ | [2022][esef_postponement_index] | |
+| Italy | ❌ | [2022][esef_postponement_index] | |
+| Latvia | ✅ | [2022][esef_postponement_index] j| |
+| Liechtenstein | ❌ | National XBRL Custom Format, [2021][xbrl_liechtenstein] | |
+| Lithuania | ✅ | [2022][esef_postponement_index] | |
+| Luxembourg | ❌ | [2022][esef_postponement_index] | |
+| Malta | ❌ | [2022][esef_postponement_index] | |
+| Netherlands | ✅ | [2022][esef_postponement_index] | |
+| Norway | ❌ | [2022][parseport_index] | |
+| Poland | ❌ | [2022][esef_postponement_index] | |
+| Portugal | ✅ | [2022][esef_postponement_index] | |
+| Romania | ❌ | [2022][esef_postponement_index] | |
+| Slovakia | ❌ | [2022][esef_postponement_index] | |
 | Slovenia | ✅ | 2021 | |
-| Spain | ✅ | [2022][[esef_postponement_index]] | |
-| Sweden | ❌ | [2022][[esef_postponement_index]] | |
+| Spain | ✅ | [2022][esef_postponement_index] | |
+| Sweden | ❌ | [2022][esef_postponement_index] | |
 | UK | ✅ | [2021][uk_implementation_legal] | |
 
 [xbrl_esef_repo_index]: https://filings.xbrl.org/index.json
