@@ -19,6 +19,9 @@ jobs:
               with:
                   version: 1.7.0-rc1
 
+            - name: Instantiate environment
+              run: julia --project --color=yes -e 'using Pkg; Pkg.instantiate()'
+
             - name: Run ESEF Visualization
               run: julia --project=. src/esef_index_viz.jl
 
