@@ -1,3 +1,4 @@
+---
 name: Update Viz
 on:
     push:
