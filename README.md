@@ -6,6 +6,8 @@ A project of the [Open Science Data Center][c02]
 
 > Research Data Access for the European Single Electronic Format
 
+![ESEF Visualization](figs/esef_error_hist.png)
+
 ## Resources
 
 - [ESEF Data Collection](docs/data_collection.md)
