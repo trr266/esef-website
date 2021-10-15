@@ -127,6 +127,54 @@ fg2c = @vlplot(
     title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"},
 )
 
-fg2 = fg2a + fg2b + fg2c
+fg2 = (fg2a + fg2b + fg2c)
+save("figs/esef_country_availability.svg", fg2)
+
+fg2a = @vlplot(width=500, height=300, title={text="ESEF Mandate Year by Country", subtitle="(XBRL Repository)"})
+
+fg2b = @vlplot(
+    mark={:geoshape, stroke=:white, fill=:lightgray},
+    data={
+        url=world_geojson,
+        format={
+            type=:topojson,
+            feature=:countries
+        }
+    },
+    projection={
+        type=:mercator,
+        scale=350,
+        center=[20, 50],
+    },
+)
+
+fg2c = @vlplot(
+    mark={:geoshape, stroke=:white},
+    width=500, height=300,
+    data={
+        url=world_geojson,
+        format={
+            type=:topojson,
+            feature=:countries
+        }
+    },
+    transform=[{
+        lookup="properties.name",
+        from={
+            data=(@chain country_rollup @subset(:report_count > 0)),
+            key=:country,
+            fields=["report_count"]
+        }
+    }],
+    projection={
+        type=:mercator,
+        scale=350,
+        center=[20, 50],
+    },
+    fill={"report_count:q", axis={title="Report Count"}},
+    title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"},
+)
+
+fg2 = (fg2a + fg2b + fg2c)
 fg2 |> save("myfigure.vegalite")
 save("figs/esef_country_availability.svg", fg2)

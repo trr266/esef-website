@@ -47,7 +47,7 @@ Various projects attempt to provide ESEF data for different purposes. A non-exha
 | Iceland | ❌ | [2022][parseport_index] | |
 | Ireland | ❌ | [2022][esef_postponement_index] | |
 | Italy | ❌ | [2022][esef_postponement_index] | |
-| Latvia | ✅ | [2022][esef_postponement_index] j| |
+| Latvia | ✅ | [2022][esef_postponement_index] | |
 | Liechtenstein | ❌ | National XBRL Custom Format, [2021][xbrl_liechtenstein] | |
 | Lithuania | ✅ | [2022][esef_postponement_index] | |
 | Luxembourg | ❌ | [2022][esef_postponement_index] | |
