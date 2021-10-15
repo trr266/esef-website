@@ -6,11 +6,11 @@ A project of the [Open Science Data Center][c02]
 
 > Research Data Access for the European Single Electronic Format
 
-![ESEF Visualization](figs/esef_country_availability.svg)
+![ESEF Country Availability](figs/esef_country_availability.svg)
 
-![ESEF Visualization](figs/esef_error_hist.svg)
+![ESEF Visualization](figs/esef_mandate_overview.svg)
 
-![ESEF Visualization](figs/esef_error_hist.svg)
+![ESEF Error Histogram](figs/esef_error_hist.svg)
 
 ## Resources
 
