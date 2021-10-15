@@ -81,6 +81,8 @@ country_rollup = @chain df begin
     leftjoin(europe, _, on=:country)
     @transform(:report_count = coalesce(:report_count, 0))
 end
+    
+# jscpd:ignore-start
 
 fg2a = @vlplot(width=500, height=300, title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"})
 
@@ -184,3 +186,5 @@ fg3c = @vlplot(
 
 fg3 = (fg3a + fg3b + fg3c)
 save("figs/esef_mandate_overview.svg", fg3)
+
+# jscpd:ignore-end
