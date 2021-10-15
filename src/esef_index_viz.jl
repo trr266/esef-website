@@ -183,4 +183,4 @@ fg3c = @vlplot(
 )
 
 fg3 = (fg3a + fg3b + fg3c)
-save("figs/esef_country_availability.svg", fg3)
+save("figs/esef_mandate_overview.svg", fg3)
