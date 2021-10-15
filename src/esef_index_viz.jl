@@ -6,6 +6,10 @@ using AlgebraOfGraphics
 using CairoMakie
 using DataFrameMacros
 using Statistics
+using VegaLite
+using VegaDatasets
+using URIParser
+using CSV
 
 xbrl_esef_index_endpoint = "https://filings.xbrl.org/index.json"
 r = HTTP.get(xbrl_esef_index_endpoint)
@@ -19,7 +23,7 @@ raw_data = @chain r.body begin
 end
 
 df = DataFrame()
-row_names = (:key, :entity_name, :country, :date, :error_count, :error_codes)
+row_names = (:key, :entity_name, :country_alpha_2, :date, :error_count, :error_codes)
 
 # Parse XBRL ESEF Index Object
 for (d_key, d_value) in raw_data
@@ -37,6 +41,19 @@ for (d_key, d_value) in raw_data
     push!(df, new_row)
 end
 
+# Add in country names
+country_lookup_url = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
+country_lookup = @chain country_lookup_url HTTP.get(_).body CSV.read(DataFrame; normalizenames=true) @select(:country = :name, :country_alpha_2 = :alpha_2, :region)
+
+# Rename "United Kingdom of Great Britain and Northern Ireland" to "United Kingdom" for comprehensibility
+country_lookup[country_lookup[!, :country_alpha_2] .== "GB", :country] = ["United Kingdom"]
+
+europe = @chain country_lookup @subset(@m :region == "Europe"; skipmissing=true)
+
+df = @chain df begin
+    leftjoin(_, country_lookup, on=:country_alpha_2)
+end
+
 pct_error_free = @chain df begin
     @transform(:error_free_report = :error_count == 0)
     @combine(:error_free_report_pct = round(mean(:error_free_report) * 100, digits=0))
@@ -49,7 +66,45 @@ plt = @chain df begin
     data(_) * mapping(:error_count) * histogram(bins=range(1, 500, length=50))
 end
 
-fg = draw(plt; axis)
+fg1 = draw(plt; axis)
 
-save("figs/esef_error_hist.svg", fg, px_per_unit = 3)
+save("figs/esef_error_hist.svg", fg1, px_per_unit = 3)
 
+
+world110m = dataset("world-110m")
+
+world_geojson = @chain "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json" URI()
+
+country_rollup = @chain df begin
+    @groupby(:country)
+    @combine(:report_count = length(:country))
+    leftjoin(europe, _, on=:country)
+    @transform(:report_count = coalesce(:report_count, 0))
+end
+
+fg2 = @vlplot(
+    :geoshape,
+    width=500, height=300,
+    data={
+        url=world_geojson,
+        format={
+            type=:topojson,
+            feature=:countries
+        }
+    },
+    transform=[{
+        lookup="properties.name",
+        from={
+            data=country_rollup,
+            key=:country,
+            fields=["report_count"]
+        }
+    }],
+    projection={
+        type=:mercator
+    },
+    color={"report_count:q", axis={title="Report Count"}}
+    title="abcde"
+)
+fg2 |> save("myfigure.vegalite")
+save("figs/esef_country_availability.svg", fg2)
