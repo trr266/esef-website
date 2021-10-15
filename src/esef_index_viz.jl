@@ -124,15 +124,21 @@ fg2c = @vlplot(
         center=[20, 50],
     },
     fill={"report_count:q", axis={title="Report Count"}},
-    title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"},
 )
 
 fg2 = (fg2a + fg2b + fg2c)
 save("figs/esef_country_availability.svg", fg2)
 
-fg2a = @vlplot(width=500, height=300, title={text="ESEF Mandate Year by Country", subtitle="(XBRL Repository)"})
+# TODO: Uncomment and remove local file setup once repo is public
+# esef_year_url = "https://raw.githubusercontent.com/trr266/esef/main/data/esef_mandate_overview.csv"
+# esef_year_df = @chain esef_year_url HTTP.get(_).body CSV.read(DataFrame; normalizenames=true)
 
-fg2b = @vlplot(
+# TODO: Remove this!
+esef_year_df = CSV.read("data/esef_mandate_overview.csv", DataFrame; normalizenames=true)
+
+fg3a = @vlplot(width=500, height=300, title={text="ESEF Mandate Year by Country"})
+
+fg3b = @vlplot(
     mark={:geoshape, stroke=:white, fill=:lightgray},
     data={
         url=world_geojson,
@@ -148,7 +154,7 @@ fg2b = @vlplot(
     },
 )
 
-fg2c = @vlplot(
+fg3c = @vlplot(
     mark={:geoshape, stroke=:white},
     width=500, height=300,
     data={
@@ -161,20 +167,20 @@ fg2c = @vlplot(
     transform=[{
         lookup="properties.name",
         from={
-            data=(@chain country_rollup @subset(:report_count > 0)),
-            key=:country,
-            fields=["report_count"]
+            data=esef_year_df,
+            key=:Country,
+            fields=["Mandate_Starting_Fiscal_Year"]
         }
-    }],
+    },
+    {filter="isValid(datum.Mandate_Starting_Fiscal_Year)"}
+    ],
     projection={
         type=:mercator,
         scale=350,
         center=[20, 50],
     },
-    fill={"report_count:q", axis={title="Report Count"}},
-    title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"},
+    color={"Mandate_Starting_Fiscal_Year:O", axis={title="Mandate Starts Fiscal Year:"}, scale={scheme="dark2"}},
 )
 
-fg2 = (fg2a + fg2b + fg2c)
-fg2 |> save("myfigure.vegalite")
-save("figs/esef_country_availability.svg", fg2)
+fg3 = (fg3a + fg3b + fg3c)
+save("figs/esef_country_availability.svg", fg3)
