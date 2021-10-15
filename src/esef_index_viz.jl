@@ -82,8 +82,26 @@ country_rollup = @chain df begin
     @transform(:report_count = coalesce(:report_count, 0))
 end
 
-fg2 = @vlplot(
-    :geoshape,
+fg2a = @vlplot(width=500, height=300, title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"})
+
+fg2b = @vlplot(
+    mark={:geoshape, stroke=:white, fill=:lightgray},
+    data={
+        url=world_geojson,
+        format={
+            type=:topojson,
+            feature=:countries
+        }
+    },
+    projection={
+        type=:mercator,
+        scale=350,
+        center=[20, 50],
+    },
+)
+
+fg2c = @vlplot(
+    mark={:geoshape, stroke=:white},
     width=500, height=300,
     data={
         url=world_geojson,
@@ -95,16 +113,20 @@ fg2 = @vlplot(
     transform=[{
         lookup="properties.name",
         from={
-            data=country_rollup,
+            data=(@chain country_rollup @subset(:report_count > 0)),
             key=:country,
             fields=["report_count"]
         }
     }],
     projection={
-        type=:mercator
+        type=:mercator,
+        scale=350,
+        center=[20, 50],
     },
-    color={"report_count:q", axis={title="Report Count"}}
-    title="abcde"
+    fill={"report_count:q", axis={title="Report Count"}},
+    title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"},
 )
+
+fg2 = fg2a + fg2b + fg2c
 fg2 |> save("myfigure.vegalite")
 save("figs/esef_country_availability.svg", fg2)
