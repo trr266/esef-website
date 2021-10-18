@@ -1,3 +1,4 @@
+using Dates
 using Chain
 using JSON
 using HTTP
@@ -207,3 +208,10 @@ end
 fg_error_freq_bar = df_error_wide  |>
     @vlplot(:bar, y={"error_code:o", title="Error Code", sort="-x"}, x={"count()", title="Error Count"}, title={text="ESEF Error Frequency", subtitle="(XBRL Repository)"})
 save("figs/esef_error_freq_bar.svg", fg_error_freq_bar)
+
+
+df_error_country = @chain df_error_wide begin
+    @groupby(:error_code, :country)
+    @combine(:error_count = length(:error_code))
+end
+df_error_country |> @vlplot(:rect, x={"country:o", title=nothing}, y={"error_code:o", title="Error Code"}, color={:error_count, title="Error Count"}, title="Error Frequency by Country and Type")

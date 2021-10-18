@@ -8,11 +8,13 @@ A project of the [Open Science Data Center][c02]
 
 ![ESEF Country Availability (Map)](figs/esef_country_availability_map.svg)
 
-![ESEF Country Availability (Barchart)](figs/esef_country_availability_bar.svg)
+![ESEF Country Availability (Bar chart)](figs/esef_country_availability_bar.svg)
 
 ![ESEF Visualization](figs/esef_mandate_overview.svg)
 
 ![ESEF Error Histogram](figs/esef_error_hist.svg)
+
+![ESEF Error Type Bar Chart](figs/esef_error_freq_bar.svg)
 
 ## Resources
 
