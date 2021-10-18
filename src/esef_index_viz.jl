@@ -129,7 +129,11 @@ fg2c = @vlplot(
 )
 
 fg2 = (fg2a + fg2b + fg2c)
-save("figs/esef_country_availability.svg", fg2)
+save("figs/esef_country_availability_map.svg", fg2)
+
+(@chain country_rollup @subset(:report_count > 0))  |>
+    @vlplot(:bar, x={"country:o", title=nothing, sort="-y"}, y={:report_count, title="Report Count"}, title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"})
+save("figs/esef_country_availability_bar.svg", fg2_bar)
 
 # TODO: Uncomment and remove local file setup once repo is public
 # esef_year_url = "https://raw.githubusercontent.com/trr266/esef/main/data/esef_mandate_overview.csv"
