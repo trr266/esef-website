@@ -94,7 +94,7 @@ end
 
 fg2a = @vlplot(width=500, height=300, title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"})
 
-fg2b = @vlplot(
+fg2b = @vlplot(width=500, height=300,
     mark={:geoshape, stroke=:white, fill=:lightgray},
     data={
         url=world_geojson,
@@ -110,7 +110,7 @@ fg2b = @vlplot(
     },
 )
 
-fg2c = @vlplot(
+fg2c = @vlplot(width=500, height=300,
     mark={:geoshape, stroke=:white},
     width=500, height=300,
     data={
@@ -140,7 +140,7 @@ fg2 = (fg2a + fg2b + fg2c)
 save("figs/esef_country_availability_map.svg", fg2)
 
 fg2_bar = (@chain country_rollup @subset(:report_count > 0))  |>
-    @vlplot(:bar, x={"country:o", title=nothing, sort="-y"}, y={:report_count, title="Report Count"}, title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"})
+    @vlplot(:bar, width=500, height=300, x={"country:o", title=nothing, sort="-y"}, y={:report_count, title="Report Count"}, title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"})
 save("figs/esef_country_availability_bar.svg", fg2_bar)
 
 # TODO: Uncomment and remove local file once repo is public
@@ -212,7 +212,7 @@ df_error_count = @chain df_error_wide begin
 end
 
 fg_error_freq_bar = df_error_count  |>
-    @vlplot(:bar, y={"error_code:o", title="Error Code", sort="-x"}, x={"error_count", title="Error Count"}, title={text="ESEF Error Frequency", subtitle="(XBRL Repository)"})
+    @vlplot(:bar, width=500, height=500, y={"error_code:o", title="Error Code", sort="-x"}, x={"error_count", title="Error Count"}, title={text="ESEF Error Frequency", subtitle="(XBRL Repository)"})
 save("figs/esef_error_type_freq_bar.svg", fg_error_freq_bar)
 
 
@@ -222,7 +222,7 @@ df_error_country = @chain df_error_wide begin
 end
 
 fg_error_country_heatmap = df_error_country |>
-    @vlplot(:rect, x={"country:o", title=nothing}, y={"error_code:o", title="Error Code"}, color={:error_count, title="Error Count"}, title="Error Frequency by Country and Type")
+    @vlplot(:rect, width=500, height=500, x={"country:o", title=nothing}, y={"error_code:o", title="Error Code"}, color={:error_count, title="Error Count"}, title="Error Frequency by Country and Type")
 save("figs/esef_error_country_heatmap.svg", fg_error_country_heatmap)
 
 df_country_date = @chain df begin
@@ -230,9 +230,9 @@ df_country_date = @chain df begin
     @combine(:report_count = length(:country))
 end
 
-fg_country_date = df_country_date |> @vlplot(:rect, y={"country:o", title=nothing}, x={"date:o", title="Date"}, color={"report_count:q", title="Report Count"}, title="Report Publication by Country and Date")
+fg_country_date = df_country_date |> @vlplot(:rect, width=500, height=500, y={"country:o", title=nothing}, x={"date:o", title="Date"}, color={"report_count:q", title="Report Count"}, title="Report Publication by Country and Date")
 
-fg_date_bar = df_country_date |> @vlplot(:bar, y={"sum(report_count)", title="Report Count"}, x={"date:o", title="Date"}, title="Report Publication by Date")
+fg_date_bar = df_country_date |> @vlplot(:bar, width=500, height=100, y={"sum(report_count)", title="Report Count"}, x={"date:o", title="Date"}, title="Report Publication by Date")
 
 fg_date_composite = [fg_date_bar; fg_country_date]
 save("figs/esef_publication_date_composite.svg", fg_date_composite)
