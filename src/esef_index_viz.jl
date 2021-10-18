@@ -25,6 +25,8 @@ end
 df = DataFrame()
 row_names = (:key, :entity_name, :country_alpha_2, :date, :error_count, :error_codes)
 
+df_error = DataFrame()
+
 # Parse XBRL ESEF Index Object
 for (d_key, d_value) in raw_data
     entity_name = d_value["entity"]["name"]
@@ -39,7 +41,12 @@ for (d_key, d_value) in raw_data
 
     new_row = NamedTuple{row_names}([d_key, entity_name, country, date, error_count, error_codes])
     push!(df, new_row)
+
+    for error_code in error_codes
+        push!(df_error, NamedTuple{(:key, :error_code)}([d_key, error_code]))
+    end
 end
+
 
 # Add in country names
 country_lookup_url = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
@@ -192,3 +199,11 @@ fg3 = (fg3a + fg3b + fg3c)
 save("figs/esef_mandate_overview.svg", fg3)
 
 # jscpd:ignore-end
+
+df_error_wide = @chain df_error begin
+    leftjoin(df, on=:key)
+end
+
+fg_error_freq_bar = df_error_wide  |>
+    @vlplot(:bar, y={"error_code:o", title="Error Code", sort="-x"}, x={"count()", title="Error Count"}, title={text="ESEF Error Frequency", subtitle="(XBRL Repository)"})
+save("figs/esef_error_freq_bar.svg", fg_error_freq_bar)
