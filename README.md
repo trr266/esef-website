@@ -62,8 +62,7 @@ of the European Union as well as Norway and Iceleand.
 
 ## Project Funding
 
-This project is funded as part of [TRR 266: Accounting for Transparency][trr_266], a Collaborative Research Center backed by a [German Research Foundation (Deutsche Forschungsgemeinschaft)][dfg] grant.
-
+Funded by the [Deutsche Forschungsgemeinschaft (DFG, German Research Foundation)][dfg]: [Project-ID 403041268 – TRR 266 Accounting for Transparency][trr_266].
 
 [esef_home]: https://www.esma.europa.eu/policy-activities/corporate-disclosure/european-single-electronic-format
 [competent_authorities]: https://www.esma.europa.eu/access-regulated-information
