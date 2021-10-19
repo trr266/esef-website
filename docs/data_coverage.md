@@ -22,7 +22,7 @@ who are subject to the ESEF mandate.
 - **Issuer**: "means a natural person, or a legal entity governed by private or public law, including a State,
   whose securities are admitted to trading on a regulated market" [^1]
 
-[^1]: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#M4-2
+[^1]: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#tocId5
 [^2]: https://www.esma.europa.eu/policy-activities/corporate-disclosure/european-single-electronic-format
 [^3]: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#M2-1
 [^4]: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#M4-2
