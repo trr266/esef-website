@@ -4,6 +4,7 @@
 
 Various projects attempt to provide ESEF data for different purposes. A non-exhaustive list follows:
 
+- [European Single Access Point (ESAP)](esap) is current initiative by EU to provide a single source for regulatory reporting documents
 - [European electronic access point (EEAP) is mandated by 2013 EU Transparency directive, but "has not become operational"][eu_comission_reporting_transparency_directive]
 - [European financial transparency gateway (ETFG) blockchain prototype for EEAP][eeap_prototype]
 - XBRL repository (18? countries), completeness not guaranteed
@@ -72,3 +73,4 @@ Various projects attempt to provide ESEF data for different purposes. A non-exha
 [esef_postponement_index]: https://ec.europa.eu/info/publications/201211-esef-postponement_en
 [parseport_index]: https://parseport.com/esef-postponement-information/
 [xbrl_liechtenstein]: https://www.fma-li.li/de/aufsicht/bereich-versicherungen-und-vorsorgeeinrichtungen/versicherungsunternehmen/meldewesen-xbrl/nationale-xbrl-taxonomie.html
+[esap]: https://ec.europa.eu/info/consultations/finance-2021-european-single-access-point_en
