@@ -23,7 +23,7 @@ Various projects attempt to provide ESEF data for different purposes. A non-exha
 ### Key Links
 
 - [Index (json file)][xbrl_esef_repo_index]
-- [Intro blogpost][xbrl_esef_repo_blog]
+- [XBRL ESEF Project Description][xbrl_esef_repo_blog]
 
 
 
