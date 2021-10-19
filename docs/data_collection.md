@@ -4,8 +4,8 @@
 
 Various projects attempt to provide ESEF data for different purposes. A non-exhaustive list follows:
 
-- [European Single Access Point (ESAP)](esap) is current initiative by EU to provide a single source for regulatory reporting documents
-- [European electronic access point (EEAP) is mandated by 2013 EU Transparency directive, but "has not become operational"][eu_comission_reporting_transparency_directive]
+- [European Single Access Point (ESAP)][esap] is current initiative by EU to provide a single source for regulatory reporting documents
+- [European electronic access point (EEAP)][eu_comission_reporting_transparency_directive] is mandated by 2013 EU Transparency directive, but ["has not become operational"][eu_comission_reporting_transparency_directive]
 - [European financial transparency gateway (ETFG) blockchain prototype for EEAP][eeap_prototype]
 - XBRL repository (18? countries), completeness not guaranteed
 - Individual country repos
