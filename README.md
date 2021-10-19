@@ -23,6 +23,7 @@ A project of the [Open Science Data Center][c02]
 ## Resources
 
 - [ESEF Data Collection](docs/data_collection.md)
+- [ESEF Data Coverage](docs/data_coverage.md)
 - [CRediT Contributor Statement](docs/contributors.yaml)
 
 With the introduction of the European Single Electronic Format (ESEF) for annual financial reports, corporate financial data
