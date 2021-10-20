@@ -42,9 +42,10 @@ of the European Union as well as Norway and Iceleand.
 ## Project Modules
 
 1. A dashboard which tracks ESEF availability by country and filing quality by country and company
-2. An ESEF parser which reads, validates, and normalizes ESEF financial reports
-3. A repository of raw filings in the ESEF format
-4. Standardized ['data products'][data_product] extracted from ESEF filings
+2. A dataset which identifies all firms ('issuer') subject to ESEF regulation
+3. An ESEF parser which reads, validates, and normalizes ESEF financial reports
+4. A repository of raw filings in the ESEF format
+5. Standardized ['data products'][data_product] extracted from ESEF filings
 
 ## Project Goals
 
