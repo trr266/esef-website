@@ -108,8 +108,8 @@ fg2b = @vlplot(width=500, height=300,
     },
     projection={
         type=:mercator,
-        scale=300,
-        center=[20, 55],
+        scale=290,
+        center=[15, 55],
     },
 )
 
@@ -133,8 +133,8 @@ fg2c = @vlplot(width=500, height=300,
     }],
     projection={
         type=:mercator,
-        scale=300,
-        center=[20, 55],
+        scale=290,
+        center=[15, 55],
     },
     fill={"report_count:q", axis={title="Report Count"}, scale={range=["#ffffff", trr_266_colors[4]]}},
 )
@@ -169,8 +169,8 @@ fg3b = @vlplot(
     },
     projection={
         type=:mercator,
-        scale=300,
-        center=[20, 55],
+        scale=290,
+        center=[15, 55],
     },
 )
 
@@ -196,8 +196,8 @@ fg3c = @vlplot(
     ],
     projection={
         type=:mercator,
-        scale=300,
-        center=[20, 55],
+        scale=290,
+        center=[15, 55],
     },
     color={"Mandate_Starting_Fiscal_Year:O", axis={title="Mandate Starts Fiscal Year:"}, scale={range=trr_266_colors}},
 )
