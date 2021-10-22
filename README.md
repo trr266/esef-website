@@ -4,7 +4,7 @@
 
 A project of the [Open Science Data Center][c02]
 
-> Research Data Access for the European Single Electronic Format
+> Research Data Access for the European Single Electronic Format (ESEF)
 
 ![ESEF Country Availability (Map)](figs/esef_country_availability_map.svg)
 
