@@ -84,7 +84,7 @@ Funded by the [Deutsche Forschungsgemeinschaft (DFG, German Research Foundation)
 
 ## Licensing
 
-- For code, see [LICENSE][LICENSE]
+- For code, see [LICENSE](LICENSE)
 - Graphics are licensed [CC BY-SA 4.0][cc_by_sa]
 
 [xbrl_filings]: https://filings.xbrl.org/about.html
