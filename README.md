@@ -72,3 +72,23 @@ Funded by the [Deutsche Forschungsgemeinschaft (DFG, German Research Foundation)
 [trr_266]: https://www.accounting-for-transparency.de
 [dfg]: https://www.dfg.de
 [c02]: https://www.accounting-for-transparency.de/project/open-science-data-center/
+
+
+## Datasets Used
+
+| Dataset | License |
+| -- | -- |
+| [filings.xbrl.org][xbrl_filings] | None |
+| [lukes/ISO-3166-Countries-with-Regional-Codes][iso_3166] | [CC BY-SA 4.0][cc_by_sa] |
+| [World Atlas TopoJSON][world_atlas] | [ISC][isc] |
+
+## Licensing
+
+- For code, see [LICENSE][LICENSE]
+- Graphics are licensed [CC BY-SA 4.0][cc_by_sa]
+
+[xbrl_filings]: https://filings.xbrl.org/about.html
+[iso_3166]: https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes
+[world_atlas]: https://www.npmjs.com/package/world-atlas
+[isc]: https://www.isc.org/licenses/
+[cc_by_sa]: https://creativecommons.org/licenses/by-sa/4.0/
