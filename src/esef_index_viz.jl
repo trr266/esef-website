@@ -156,7 +156,7 @@ save("figs/esef_country_availability_bar.svg", fg2_bar)
 esef_year_url = "https://raw.githubusercontent.com/trr266/esef/main/data/esef_mandate_overview.csv"
 esef_year_df = @chain esef_year_url HTTP.get(_).body CSV.read(DataFrame; normalizenames=true)
 
-fg3a = @vlplot(width=500, height=300, title={text="ESEF Mandate Year by Country"})
+fg3a = @vlplot(width=500, height=300, title={text="ESEF Mandate by Country", subtitle="(Based on Issuer's Fiscal Year Start Date)"})
 
 fg3b = @vlplot(
     mark={:geoshape, stroke=:white, fill=:lightgray},
@@ -189,17 +189,17 @@ fg3c = @vlplot(
         from={
             data=esef_year_df,
             key=:Country,
-            fields=["Mandate_Starting_Fiscal_Year"]
+            fields=["Mandate_Affects_Fiscal_Year_Beginning"]
         }
     },
-    {filter="isValid(datum.Mandate_Starting_Fiscal_Year)"}
+    {filter="isValid(datum.Mandate_Affects_Fiscal_Year_Beginning)"}
     ],
     projection={
         type=:mercator,
         scale=290,
         center=[15, 55],
     },
-    color={"Mandate_Starting_Fiscal_Year:O", axis={title="Mandate Starts Fiscal Year:"}, scale={range=trr_266_colors}},
+    color={"Mandate_Affects_Fiscal_Year_Beginning:O", axis={title="Mandate Starts"}, scale={range=trr_266_colors}},
 )
 
 fg3 = (fg3a + fg3b + fg3c)
