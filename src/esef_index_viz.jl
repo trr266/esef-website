@@ -1,16 +1,17 @@
-using Dates
-using Chain
-using JSON
-using HTTP
-using DataFrames
 using AlgebraOfGraphics
 using CairoMakie
-using DataFrameMacros
-using Statistics
-using VegaLite
-using VegaDatasets
-using URIParser
+using Chain
+using Colors
 using CSV
+using DataFrameMacros
+using DataFrames
+using Dates
+using HTTP
+using JSON
+using Statistics
+using URIParser
+using VegaDatasets
+using VegaLite
 
 trr_266_colors = ["#1b8a8f", "#ffb43b", "#6ecae2", "#944664"] # petrol, yellow, blue, red
 
@@ -73,9 +74,9 @@ end
 axis = (width=500, height=250, xticks=[1, 50:50:500...], xlabel="Error Count", ylabel="Filing Count", title="Errored ESEF Filings by Error Count ($(pct_error_free)% error free)")
 plt = @chain df begin 
     @subset(:error_count != 0)
-    data(_) * mapping(:error_count) * histogram(bins=range(1, 500, length=50))
+    data(_) * mapping(:error_count) * histogram(bins=range(1, 500, length=50)) * visual(color=trr_266_colors[1])
 end
-
+# , linecolor=parse.(Colorant, trr_266_colors)[1])
 fg1 = draw(plt; axis)
 
 save("figs/esef_error_hist.svg", fg1, px_per_unit = 3)
