@@ -143,13 +143,8 @@ fg2_bar = (@chain country_rollup @subset(:report_count > 0))  |>
     @vlplot(:bar, width=500, height=300, x={"country:o", title=nothing, sort="-y"}, y={:report_count, title="Report Count"}, title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"})
 save("figs/esef_country_availability_bar.svg", fg2_bar)
 
-# TODO: Uncomment and remove local file once repo is public
-# TODO: delete data/esef_mandate_overview.csv
-# esef_year_url = "https://raw.githubusercontent.com/trr266/esef/main/data/esef_mandate_overview.csv"
-# esef_year_df = @chain esef_year_url HTTP.get(_).body CSV.read(DataFrame; normalizenames=true)
-
-# TODO: Remove this!
-esef_year_df = CSV.read("data/esef_mandate_overview.csv", DataFrame; normalizenames=true)
+esef_year_url = "https://raw.githubusercontent.com/trr266/esef/main/data/esef_mandate_overview.csv"
+esef_year_df = @chain esef_year_url HTTP.get(_).body CSV.read(DataFrame; normalizenames=true)
 
 fg3a = @vlplot(width=500, height=300, title={text="ESEF Mandate Year by Country"})
 
