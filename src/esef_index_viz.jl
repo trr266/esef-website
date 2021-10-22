@@ -107,9 +107,9 @@ fg2b = @vlplot(width=500, height=300,
         }
     },
     projection={
-        type=:mercator,
-        scale=290,
-        center=[15, 55],
+        type=:azimuthalEqualArea,
+        scale=525,
+        center=[15, 53],
     },
 )
 
@@ -132,9 +132,9 @@ fg2c = @vlplot(width=500, height=300,
         }
     }],
     projection={
-        type=:mercator,
-        scale=290,
-        center=[15, 55],
+        type=:azimuthalEqualArea,
+        scale=525,
+        centerr=[15, 53],
     },
     fill={"report_count:q", axis={title="Report Count"}, scale={range=["#ffffff", trr_266_colors[4]]}},
 )
@@ -168,9 +168,9 @@ fg3b = @vlplot(
         }
     },
     projection={
-        type=:mercator,
-        scale=290,
-        center=[15, 55],
+        type=:azimuthalEqualArea,
+        scale=525,
+        centerr=[15, 53],
     },
 )
 
@@ -195,9 +195,9 @@ fg3c = @vlplot(
     {filter="isValid(datum.Mandate_Affects_Fiscal_Year_Beginning)"}
     ],
     projection={
-        type=:mercator,
-        scale=290,
-        center=[15, 55],
+        type=:azimuthalEqualArea,
+        scale=525,
+        centerr=[15, 53],
     },
     color={"Mandate_Affects_Fiscal_Year_Beginning:O", axis={title="Mandate Starts"}, scale={range=trr_266_colors}},
 )
