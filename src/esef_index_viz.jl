@@ -217,7 +217,7 @@ df_error_count = @chain df_error_wide begin
 end
 
 fg_error_freq_bar = df_error_count  |>
-    @vlplot({:bar, color=trr_266_colors[1]}, width=500, height=500,
+    @vlplot({:bar, color=trr_266_colors[1]}, width=500, height=500, background=nothing,
         y={"error_code:o", title="Error Code", sort="-x"},
         x={"error_count", title="Error Count"},
         title={text="ESEF Error Frequency", subtitle="(XBRL Repository)"}
