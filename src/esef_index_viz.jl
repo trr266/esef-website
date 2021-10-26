@@ -13,6 +13,7 @@ using URIParser
 using VegaDatasets
 using VegaLite
 
+
 trr_266_colors = ["#1b8a8f", "#ffb43b", "#6ecae2", "#944664"] # petrol, yellow, blue, red
 
 xbrl_esef_index_endpoint = "https://filings.xbrl.org/index.json"
@@ -142,8 +143,14 @@ fg2c = @vlplot(width=500, height=300,
 fg2 = (fg2a + fg2b + fg2c)
 save("figs/esef_country_availability_map.svg", fg2)
 
+# Make tweaks for poster
+fg2.params["background"] = nothing
+fg2.params["layer"][2]["encoding"]["fill"]["legend"] = nothing
+
+save("figs/esef_country_availability_map_poster.svg", fg2)
+
 fg2_bar = (@chain country_rollup @subset(:report_count > 0))  |>
-    @vlplot({:bar, color=trr_266_colors[1]}, width=500, height=300, background=nothing,
+    @vlplot({:bar, color=trr_266_colors[1]}, width=500, height=300,
         x={"country:o", title=nothing, sort="-y"},
         y={:report_count, title="Report Count"},
         title={
