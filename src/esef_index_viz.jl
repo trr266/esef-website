@@ -137,7 +137,7 @@ fg2c = @vlplot(width=500, height=300,
         scale=525,
         center=[15, 53],
     },
-    fill={"report_count:q", axis={title="Report Count"}, scale={range=["#ffffff", trr_266_colors[4]]}},
+    fill={"report_count:q", axis={title="Report Count"}, scale={range=["#ffffff", trr_266_colors[2]]}},
 )
 
 fg2 = (fg2a + fg2b + fg2c)
@@ -241,7 +241,7 @@ fg_error_country_heatmap = df_error_country |>
     @vlplot(:rect, width=500, height=500,
         x={"country:o", title=nothing},
         y={"error_code:o", title="Error Code"},
-        color={:error_count, title="Error Count", scale={range=["#ffffff", trr_266_colors[4]]}},
+        color={:error_count, title="Error Count", scale={range=["#ffffff", trr_266_colors[2]]}},
         title="Error Frequency by Country and Type"
     )
 save("figs/esef_error_country_heatmap.svg", fg_error_country_heatmap)
@@ -255,12 +255,12 @@ fg_country_date = df_country_date |>
     @vlplot(:rect, width=500, height=500,
         y={"country:o", title=nothing},
         x={"date:o", title="Date"},
-        color={"report_count:q", title="Report Count", scale={range=["#ffffff", trr_266_colors[4]]}},
+        color={"report_count:q", title="Report Count", scale={range=["#ffffff", trr_266_colors[2]]}},
         title="Report Publication by Country and Date"
     )
 
 fg_date_bar = df_country_date |>
-    @vlplot({:bar, color=trr_266_colors[4]}, width=500, height=100,
+    @vlplot({:bar, color=trr_266_colors[2]}, width=500, height=100,
         y={"sum(report_count)", title="Report Count"},
         x={"date:o", title="Date"},
         title="Report Publication by Date"
