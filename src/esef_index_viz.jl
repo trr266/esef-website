@@ -96,60 +96,73 @@ end
     
 # jscpd:ignore-start
 
-fg2a = @vlplot(width=500, height=300, title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"})
+# First is for web, second for poster
+map_heights = [("web", 300), ("poster", 270)]
 
-fg2b = @vlplot(width=500, height=300,
-    mark={:geoshape, stroke=:white, fill=:lightgray},
-    data={
-        url=world_geojson,
-        format={
-            type=:topojson,
-            feature=:countries
-        }
-    },
-    projection={
-        type=:azimuthalEqualArea,
-        scale=525,
-        center=[15, 53],
-    },
-)
+for map_height in map_heights
 
-fg2c = @vlplot(width=500, height=300,
-    mark={:geoshape, stroke=:white},
-    width=500, height=300,
-    data={
-        url=world_geojson,
-        format={
-            type=:topojson,
-            feature=:countries
-        }
-    },
-    transform=[{
-        lookup="properties.name",
-        from={
-            data=(@chain country_rollup @subset(:report_count > 0)),
-            key=:country,
-            fields=["report_count"]
-        }
-    }],
-    projection={
-        type=:azimuthalEqualArea,
-        scale=525,
-        center=[15, 53],
-    },
-    fill={"report_count:q", axis={title="Report Count"}, scale={range=["#ffffff", trr_266_colors[2]]}},
-)
+    map_output = map_height[1]
+    map_height = map_height[2]
+    fg2a = @vlplot(width=500, height=map_height, title={text="ESEF Report Availability by Country", subtitle="(XBRL Repository)"})
 
-fg2 = (fg2a + fg2b + fg2c)
-save("figs/esef_country_availability_map.svg", fg2)
+    fg2b = @vlplot(width=500, height=map_height,
+        mark={:geoshape, stroke=:white, fill=:lightgray},
+        data={
+            url=world_geojson,
+            format={
+                type=:topojson,
+                feature=:countries
+            }
+        },
+        projection={
+            type=:azimuthalEqualArea,
+            scale=525,
+            center=[15, 53],
+        },
+    )
 
-# Make tweaks for poster
-fg2.params["background"] = nothing # transparent background
-fg2.params["config"] = ("view" => ("stroke" => "transparent")) # remove grey border
-fg2.params["layer"][2]["encoding"]["fill"]["legend"] = nothing # drop legend
-fg2.params["title"] = nothing
+    fg2c = @vlplot(width=500, height=map_height,
+        mark={:geoshape, stroke=:white},
+        data={
+            url=world_geojson,
+            format={
+                type=:topojson,
+                feature=:countries
+            }
+        },
+        transform=[{
+            lookup="properties.name",
+            from={
+                data=(@chain country_rollup @subset(:report_count > 0)),
+                key=:country,
+                fields=["report_count"]
+            }
+        }],
+        projection={
+            type=:azimuthalEqualArea,
+            scale=525,
+            center=[15, 53],
+        },
+        fill={"report_count:q", axis={title="Report Count"}, scale={range=["#ffffff", trr_266_colors[2]]}},
+    )
 
-save("figs/esef_country_availability_map_poster.svg", fg2)
+    fg2 = (fg2a + fg2b + fg2c)
+
+    if map_output == "web"
+        save("figs/esef_country_availability_map.svg", fg2)
+    end
+
+    # Make tweaks for poster
+    if map_output == "poster"
+        # Make tweaks for poster
+        fg2.params["background"] = nothing # transparent background
+        fg2.params["config"] = ("view" => ("stroke" => "transparent")) # remove grey border
+        fg2.params["layer"][2]["encoding"]["fill"]["legend"] = nothing # drop legend
+        fg2.params["title"] = nothing
+        
+        save("figs/esef_country_availability_map_poster.svg", fg2)
+    end
+end
 
 fg2_bar = (@chain country_rollup @subset(:report_count > 0))  |>
     @vlplot({:bar, color=trr_266_colors[1]}, width=500, height=300,
