@@ -77,7 +77,7 @@ plt = @chain df begin
     @subset(:error_count != 0)
     data(_) * mapping(:error_count) * histogram(bins=range(1, 500, length=50)) * visual(color=trr_266_colors[1])
 end
-# , linecolor=parse.(Colorant, trr_266_colors)[1])
+
 fg1 = draw(plt; axis)
 
 save("figs/esef_error_hist.svg", fg1, px_per_unit = 3)
@@ -145,6 +145,7 @@ save("figs/esef_country_availability_map.svg", fg2)
 
 # Make tweaks for poster
 fg2.params["background"] = nothing
+fg2.params["config"]["view"]["stroke"] = "transparent"
 fg2.params["layer"][2]["encoding"]["fill"]["legend"] = nothing
 
 save("figs/esef_country_availability_map_poster.svg", fg2)
