@@ -144,9 +144,10 @@ fg2 = (fg2a + fg2b + fg2c)
 save("figs/esef_country_availability_map.svg", fg2)
 
 # Make tweaks for poster
-fg2.params["background"] = nothing
-fg2.params["config"]["view"]["stroke"] = "transparent"
-fg2.params["layer"][2]["encoding"]["fill"]["legend"] = nothing
+fg2.params["background"] = nothing # transparent background
+fg2.params["config"] = ("view" => ("stroke" => "transparent")) # remove grey border
+fg2.params["layer"][2]["encoding"]["fill"]["legend"] = nothing # drop legend
+fg2.params["title"] = nothing
 
 save("figs/esef_country_availability_map_poster.svg", fg2)
 
