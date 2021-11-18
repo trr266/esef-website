@@ -26,7 +26,11 @@ for d in raw_data["response"]["docs"]
 end
 
 # Strip out excess columns
-df = @chain df @select(:id, :ae_entityName, :ae_competentAuthority) @transform(:url = "TODO", :time_estimate = "TODO", :scraping_type = "TODO")
+df = @chain df begin
+    @select(:id, :ae_entityName, :ae_competentAuthority)
+    @transform(:url = "TODO", :time_estimate = "TODO", :scraping_type = "TODO")
+    @sort(:ae_entityName)
+end
 
 # Write to YAML
 @chain [OrderedDict(names(d) .=> values(d)) for d in eachrow(df)] YAML.write_file("regulated_markets.yml", _)
