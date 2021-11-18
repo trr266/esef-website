@@ -17,6 +17,15 @@ who are subject to the ESEF mandate.
 - For non-EU issuers, country "chosen by the issuer from amongst the Member States where its securities are admitted to trading on a regulated market" [^4]
 - Otherwise, based on issue choice amongst registered offices and/or countries where securities trading takes place [^5]
 
+
+TODO: Figure out EU reg, what it covers:
+TODO: Figure out licensing terms...
+TODO: Check this out: https://www.esma.europa.eu/sites/default/files/library/esma70-872942901-35_qas_transparency_issues.pdf
+
+"The LuxSE daily official list fully complies with the provisions of the Grand-Ducal Regulation of 13 July 2007, transposing the EU Directive 2001/34/CE that establishes the existence of official lists." https://www.bourse.lu/official-list
+
+See here: https://www.esma.europa.eu/databases-library/interactive-single-rulebook/clone-mifir/article-3
+
 ## Definitions
 
 - **Issuer**: "means a natural person, or a legal entity governed by private or public law, including a State,
