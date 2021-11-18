@@ -34,3 +34,10 @@ end
 
 # Write to YAML
 @chain [OrderedDict(names(d) .=> values(d)) for d in eachrow(df)] YAML.write_file("regulated_markets.yml", _)
+
+
+d1 = YAML.load_file("data/regulated_markets.yml")
+
+d2 = [OrderedDict(d..., "license_terms" => "TODO", "license_url" => "TODO") for d in d1]
+
+YAML.write_file("regulated_markets.yml", d2)
