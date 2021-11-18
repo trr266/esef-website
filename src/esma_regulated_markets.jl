@@ -28,7 +28,7 @@ end
 # Strip out excess columns
 df = @chain df begin
     @select(:id, :ae_entityName, :ae_competentAuthority)
-    @transform(:url = "TODO", :time_estimate = "TODO", :scraping_type = "TODO")
+    @transform(:url = "TODO", :time_estimate = "TODO", :scraping_type = "TODO", :secondary = false)
     @sort(:ae_entityName)
 end
 
