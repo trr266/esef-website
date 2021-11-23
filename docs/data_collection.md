@@ -30,7 +30,7 @@ Various projects attempt to provide ESEF data for different purposes. A non-exha
 
 ### [Country Availability of XBRL Filings Index](https://filings.xbrl.org/about.html)
 
-| Country | XBRL Repo | Mandate Starting Fiscal Year Beginning | API Access to Reports |
+| Country | XBRL Repository | Mandate Starting Fiscal Year Beginning | API Access to Reports |
 | -- | -- | -- | -- |
 | Austria | ✅ | 2020 | |
 | Belgium | ✅ | [2021][esef_postponement_index] | |
