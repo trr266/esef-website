@@ -57,7 +57,7 @@ of the European Union as well as Norway and Iceleand.
 
 ## Technical Approach
 
-1. Github Actions CI/CD is used to ensure that code is tested and functional at every commit
+1. GitHub Actions CI/CD is used to ensure that code is tested and functional at every commit
 2. Pull Requests with maintainer reviews ensure code quality
 3. The project will be developed 'out in the open' to avoid the 'ripping the band-aid off' experience of having to decide when to open source
 4. The project will be developed under an OSS-compliant MIT license
