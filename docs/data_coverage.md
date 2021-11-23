@@ -20,11 +20,11 @@ who are subject to the ESEF mandate.
 
 TODO: Figure out EU reg, what it covers:
 TODO: Figure out licensing terms...
-TODO: Check this out: https://www.esma.europa.eu/sites/default/files/library/esma70-872942901-35_qas_transparency_issues.pdf
+TODO: Check this out: <https://www.esma.europa.eu/sites/default/files/library/esma70-872942901-35_qas_transparency_issues.pdf>
 
-"The LuxSE daily official list fully complies with the provisions of the Grand-Ducal Regulation of 13 July 2007, transposing the EU Directive 2001/34/CE that establishes the existence of official lists." https://www.bourse.lu/official-list
+"The LuxSE daily official list fully complies with the provisions of the Grand-Ducal Regulation of 13 July 2007, transposing the EU Directive 2001/34/CE that establishes the existence of official lists." <https://www.bourse.lu/official-list>
 
-See here: https://www.esma.europa.eu/databases-library/interactive-single-rulebook/clone-mifir/article-3
+See here: <https://www.esma.europa.eu/databases-library/interactive-single-rulebook/clone-mifir/article-3>
 
 ## Definitions
 
