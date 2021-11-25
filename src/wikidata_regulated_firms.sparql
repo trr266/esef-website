@@ -1,0 +1,15 @@
+SELECT DISTINCT ?company ?dax_end_time WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE]". }
+  {
+    SELECT ?company ?dax_end_time WHERE {
+      ?company p:P1278 ?lei_. # Company has an LEI
+      ?company p:P946 ?isin_. # Company has ISIN attribute
+      ?company p:P17 ?location. # Company location
+      ?location ps:P17 wd:Q183. # Location is in Germany
+      ?company p:P361 wd:Q155718. # Company is a member of DAX
+      ?company p:P361 ?dax. # Company is a member of DAX      
+      ?dax psv:P582 ?dax_end_time # DAX end time
+    }
+    LIMIT 5000
+  }
+}
