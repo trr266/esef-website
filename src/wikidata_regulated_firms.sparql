@@ -1,3 +1,4 @@
+# Query all DE,FR,IT firms listed as publicly traded or with ISIN number attached, add LEI identifier if available
 SELECT DISTINCT ?company ?companyLabel ?isin_value ?lei_value WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de,fr,it". }
   OPTIONAL {
