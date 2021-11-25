@@ -1,16 +1,26 @@
-SELECT DISTINCT ?company ?location ?lei ?isin_id ?companyLabel ?dax_end_time WHERE {
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE]". }
+SELECT DISTINCT ?item ?itemLabel ?isin_value ?lei_value WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de,fr,it". }
   {
-    SELECT ?company ?location ?lei ?isin_id WHERE {
-      ?company p:P1278 ?lei_. # Company has an LEI
-      ?company p:P946 ?isin_id. # Company has ISIN attribute
-      ?company p:P17 ?location. # Company location
-      ?location (ps:P17/(wdt:P279*)) wd:Q183. # Location is in Germany
-    #   ?company p:P361 wd:Q155718. # Company is a member of DAX
-    #   ?company p:P361 ?dax. # Company is a member of DAX
-    #   ?dax psv:P582 ?dax_end_time # DAX end time
+    SELECT DISTINCT ?item ?isin_value ?lei_value WHERE {
+      VALUES ?countries_de_fr_it {wd:Q183 wd:Q142 wd:Q38}
+      {
+        ?item p:P31 ?statement0.
+        ?statement0 (ps:P31) wd:Q891723.
+      }
+      UNION
+      {
+        ?item p:P946 ?statement1.
+        ?statement1 (ps:P946) ?isin_value.
+      }
+      {
+        ?item p:P17 ?statement2.
+        ?statement2 (ps:P17) ?countries_de_fr_it.
+      }
+      OPTIONAL {
+        ?item p:P1278 ?legal_identifier_id.
+        ?legal_identifier_id (ps:P1278) ?lei_value.
+      }
     }
-    LIMIT 500
+    LIMIT 5000
   }
 }
-
