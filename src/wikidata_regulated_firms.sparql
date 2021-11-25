@@ -1,23 +1,23 @@
-SELECT DISTINCT ?item ?itemLabel ?isin_value ?lei_value WHERE {
+SELECT DISTINCT ?company ?companyLabel ?isin_value ?lei_value WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de,fr,it". }
   {
-    SELECT DISTINCT ?item ?isin_value ?lei_value WHERE {
+    SELECT DISTINCT ?company ?isin_value ?lei_value WHERE {
       VALUES ?countries_de_fr_it {wd:Q183 wd:Q142 wd:Q38}
       {
-        ?item p:P31 ?statement0.
+        ?company p:P31 ?statement0.
         ?statement0 (ps:P31) wd:Q891723.
       }
       UNION
       {
-        ?item p:P946 ?statement1.
+        ?company p:P946 ?statement1.
         ?statement1 (ps:P946) ?isin_value.
       }
       {
-        ?item p:P17 ?statement2.
+        ?company p:P17 ?statement2.
         ?statement2 (ps:P17) ?countries_de_fr_it.
       }
       OPTIONAL {
-        ?item p:P1278 ?legal_identifier_id.
+        ?company p:P1278 ?legal_identifier_id.
         ?legal_identifier_id (ps:P1278) ?lei_value.
       }
     }
