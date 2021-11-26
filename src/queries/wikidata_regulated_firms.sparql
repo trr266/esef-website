@@ -14,13 +14,13 @@ SELECT DISTINCT ?company ?companyLabel ?isin_value ?lei_value WHERE {
     SELECT DISTINCT ?company WHERE {
       VALUES ?countries_de_fr_it {wd:Q183 wd:Q142 wd:Q38}
       {
-        ?company p:P31 ?statement0.
-        ?statement0 (ps:P31) wd:Q891723.
+        ?company p:P31 ?superset.
+        ?superset (ps:P31) wd:Q891723. # public company
       }
       UNION
       {
-        ?company p:P946 ?statement1.
-        ?statement1 (ps:P946) ?isin_value.
+        ?company p:P946 ?isin_prop.
+        ?isin_prop (ps:P946) ?isin_value. # isin id
       }
       {
         ?company p:P17 ?statement2.
@@ -31,3 +31,4 @@ SELECT DISTINCT ?company ?companyLabel ?isin_value ?lei_value WHERE {
   }
 }
 ORDER BY ?company
+
