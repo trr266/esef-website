@@ -18,6 +18,11 @@ who are subject to the ESEF mandate.
 - Otherwise, based on issue choice amongst registered offices and/or countries where securities trading takes place [^5]
 
 
+### CBOE Data
+
+- Provide ['Symbol Reference Data'][cboe_symbol_data] with ISIN for traded shares
+- 3.7k shares listed (given companies may have multiple share classes, duplication...)
+
 TODO: Figure out EU reg, what it covers:
 TODO: Figure out licensing terms...
 TODO: Check this out: <https://www.esma.europa.eu/sites/default/files/library/esma70-872942901-35_qas_transparency_issues.pdf>
@@ -36,3 +41,4 @@ See here: <https://www.esma.europa.eu/databases-library/interactive-single-ruleb
 [^3]: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#M2-1
 [^4]: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#M4-2
 [^5]: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#M4-3
+[cboe_symbol_data]: https://www.cboe.com/europe/equities/reference_data/
