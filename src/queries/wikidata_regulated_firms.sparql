@@ -1,5 +1,5 @@
 # Query all DE,FR,IT firms listed as publicly traded or with ISIN number attached, add LEI identifier if available
-SELECT ?company ?companyLabel ?isin_value ?lei_value WHERE {
+SELECT ?company ?companyLabel ?isin_value ?lei_value ?country ?countryLabel WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de,fr,it". }
   {
     {
@@ -9,6 +9,10 @@ SELECT ?company ?companyLabel ?isin_value ?lei_value WHERE {
     OPTIONAL {
       ?company p:P1278 ?legal_identifier_id.
       ?legal_identifier_id (ps:P1278) ?lei_value.
+    }
+    OPTIONAL {
+        ?company p:P17 ?statement2.
+        ?statement2 ps:P17 ?country.
     }
   }
 }

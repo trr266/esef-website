@@ -22,6 +22,7 @@ who are subject to the ESEF mandate.
 
 - Provide ['Symbol Reference Data'][cboe_symbol_data] with ISIN for traded shares
 - 3.7k shares listed (given companies may have multiple share classes, duplication...)
+- Approximately 1k shares are also covered in Wikidata
 
 TODO: Figure out EU reg, what it covers:
 TODO: Figure out licensing terms...

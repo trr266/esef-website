@@ -25,13 +25,18 @@ function query_wikidata(sparql_query_file)
     return df
 end
 
-df = query_wikidata("queries/wikidata_regulated_firms.sparql")
+function get_public_companies_wikidata()
+    df = query_wikidata("queries/wikidata_regulated_firms.sparql")
 
-df = @chain df begin
-    @transform(:wikidata_uri = :company["value"],
-               :company_label = :companyLabel["value"])
-    @transform(:isin_id = @m :isin_value["value"])
-    @transform(:lei_id = :lei_value["value"])
-    @select(:wikidata_uri, :company_label, :isin_id, :lei_id)
+    df = @chain df begin
+        @transform(:wikidata_uri = :company["value"],
+                :company_label = :companyLabel["value"])
+        @transform(:isin_id = :isin_value["value"])
+        @transform(:lei_id = @m :lei_value["value"])
+        @transform(:country_label = @m :countryLabel["value"])
+        @transform(:country = @m :country["value"])
+        @select(:wikidata_uri, :company_label, :country, :country_label, :isin_id, :lei_id)
+    end
+
+    return df
 end
-

@@ -13,6 +13,7 @@ using URIParser
 using VegaDatasets
 using VegaLite
 
+include("wikidata_public_companies.jl")
 
 trr_266_colors = ["#1b8a8f", "#ffb43b", "#6ecae2", "#944664"] # petrol, yellow, blue, red
 
