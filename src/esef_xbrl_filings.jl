@@ -4,15 +4,7 @@ using DataFrames
 using DataFrameMacros
 using CSV
 
-function get_country_codes()
-    country_lookup_url = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
-    country_lookup = @chain country_lookup_url HTTP.get(_).body CSV.read(DataFrame; normalizenames=true) @select(:country = :name, :country_alpha_2 = :alpha_2, :region)
-
-    # Rename "United Kingdom of Great Britain and Northern Ireland" to "United Kingdom" for comprehensibility
-    country_lookup[country_lookup.country_alpha_2 .== "GB", :country] .= "United Kingdom"
-
-    europe = @chain country_lookup @subset(@m :region == "Europe"; skipmissing=true)
-end
+include("iso_country_codes.jl")
 
 function get_esef_xbrl_filings()
     xbrl_esef_index_endpoint = "https://filings.xbrl.org/index.json"
@@ -53,7 +45,8 @@ function get_esef_xbrl_filings()
 
     # Add in country names
     country_lookup = get_country_codes()
-    
+    country_lookup = @chain country_lookup @subset(@m :region == "Europe"; skipmissing=true)
+
     df = @chain df begin
         leftjoin(_, country_lookup, on=:country_alpha_2)
     end

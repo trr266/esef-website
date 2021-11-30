@@ -20,9 +20,22 @@ include("esef_xbrl_filings.jl")
 trr_266_colors = ["#1b8a8f", "#ffb43b", "#6ecae2", "#944664"] # petrol, yellow, blue, red
 
 df_wikidata = get_public_companies_wikidata()
+
+# Check only minimal number of firms where country is missing (e.g. EU, CS (old ISO), ersatz XC/XY/XS, or incorrect 00, 23)
+# TODO: Clean this up further
+@assert((@chain df_wikidata @subset(ismissing(:esef_regulated)) nrow()) < 30) # @select(:isin_alpha_2)
+
+# Drop firms where country is missing
+@chain df_wikidata @subset(:esef_regulated; skipmissing=true) 
+
+df_wikidata
 df = get_esef_xbrl_filings()
 
-df
+df = @chain df begin
+    leftjoin(df_wikidata, on=(:key => :lei_id), matchmissing=:notequal, makeunique=true)
+end
+
+@chain df @subset(ismissing(:isin_id)) #@select(:key, :isin_id)
 
 pct_error_free = @chain df begin
     @transform(:error_free_report = :error_count == 0)

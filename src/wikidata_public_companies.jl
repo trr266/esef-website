@@ -4,6 +4,8 @@ using DataFrames
 using DataFrameMacros
 using Chain
 
+include("iso_country_codes.jl")
+
 function query_wikidata(sparql_query_file)
 
     headers = ["Accept" => "application/sparql-results+json", "Content-Type"=>"application/x-www-form-urlencoded"]
@@ -33,10 +35,33 @@ function get_public_companies_wikidata()
                 :company_label = :companyLabel["value"])
         @transform(:isin_id = :isin_value["value"])
         @transform(:lei_id = @m :lei_value["value"])
-        @transform(:country_label = @m :countryLabel["value"])
-        @transform(:country = @m :country["value"])
-        @select(:wikidata_uri, :company_label, :country, :country_label, :isin_id, :lei_id)
+        @transform(:country_uri = @m :country["value"])
+        @transform(:country = @m :countryLabel["value"])
+        @transform(:isin_alpha_2 = first(:isin_id, 2))
+        @select(:wikidata_uri, :company_label, :country, :country_uri, :isin_id, :isin_alpha_2, :lei_id)
     end
 
+    # Add in country names
+    country_lookup = get_country_codes()
+    
+    df = @chain df begin
+        leftjoin(_, country_lookup, on=:country, matchmissing=:notequal)
+        leftjoin(_, (@chain country_lookup @select(:isin_alpha_2 = :country_alpha_2, :isin_country = :country, :isin_region = :region)), on=:isin_alpha_2, matchmissing=:notequal)
+    end
+    
+    df = @chain df @transform(:esef_regulated = esef_regulated(:isin_region, :region))
+    
     return df
+end
+
+function esef_regulated(isin_region, country_region)
+    if ismissing(isin_region) && ismissing(country_region)
+        return missing
+    elseif ismissing(isin_region)
+        return country_region == "Europe"
+    elseif ismissing(country_region)
+        return isin_region == "Europe"
+    else
+        return (country_region == "Europe") || (isin_region == "Europe")
+    end
 end

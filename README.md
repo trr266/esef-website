@@ -82,7 +82,7 @@ Funded by the [Deutsche Forschungsgemeinschaft (DFG, German Research Foundation)
 | [lukes/ISO-3166-Countries-with-Regional-Codes][iso_3166] | [CC BY-SA 4.0][cc_by_sa] |
 | [World Atlas TopoJSON][world_atlas] | [ISC][isc] |
 | [ESMA Public Data (Regulated Markets)][esma_api] | [ESMA T&C][esma_tc] |
-
+| [Wikidata][wikidata] | [CC0][cc_0] |
 ## Licensing
 
 - For code, see [LICENSE](LICENSE)
@@ -95,3 +95,5 @@ Funded by the [Deutsche Forschungsgemeinschaft (DFG, German Research Foundation)
 [cc_by_sa]: https://creativecommons.org/licenses/by-sa/4.0/
 [esma_api]: https://registers.esma.europa.eu/publication/helpApp
 [esma_tc]: https://registers.esma.europa.eu/publication/legalNoticePage
+[wikidata]: https://www.wikidata.org/wiki/Wikidata:Main_Page
+[cc_0]: https://creativecommons.org/publicdomain/zero/1.0/
