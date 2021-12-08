@@ -21,11 +21,8 @@ jobs:
               with:
                   version: 1.7.0-rc2
 
-            - name: Instantiate Julia environment
-              run: julia --project -e 'using Pkg; Pkg.instantiate()'
-
             - name: Run ESEF Visualization
-              run: julia --project=. src/esef_index_viz.jl
+              run: make build-viz
 
             - uses: EndBug/add-and-commit@v7
               with:
