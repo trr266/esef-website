@@ -3,15 +3,17 @@ using JSON
 using DataFrames
 using DataFrameMacros
 using Chain
+using Mustache
 
 include("iso_country_codes.jl")
 
-function query_wikidata(sparql_query_file)
+function query_wikidata(sparql_query_file; params=Dict())
 
     headers = ["Accept" => "application/sparql-results+json", "Content-Type"=>"application/x-www-form-urlencoded"]
     url = "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
 
-    query_string = @chain sparql_query_file readlines() join("\n") HTTP.escapeuri()
+    query_string = @chain sparql_query_file readlines() join("\n") render(params) # HTTP.escapeuri()
+
     body = "query=$query_string"
     r = HTTP.post(url, headers, body)
 
@@ -27,8 +29,9 @@ function query_wikidata(sparql_query_file)
     return df
 end
 
+
 function get_public_companies_wikidata()
-    df = query_wikidata("queries/wikidata_regulated_firms.sparql")
+    df = query_wikidata("src/queries/wikidata_regulated_firms.sparql")
 
     df = @chain df begin
         @transform(:wikidata_uri = :company["value"],
@@ -63,5 +66,27 @@ function esef_regulated(isin_region, country_region)
         return isin_region == "Europe"
     else
         return (country_region == "Europe") || (isin_region == "Europe")
+    end
+end
+
+function lookup_company_by_name(company_name)
+    try
+        df = query_wikidata("src/queries/wikidata_company_search.sparql", params=Dict("company_name" => company_name))
+        if nrow(df) == 0
+            return DataFrame()
+        end
+    
+        df = @chain df begin
+            @transform(:wikidata_uri = :company["value"],
+            :company_label = :companyLabel["value"],
+            :company_description = :companyDescrip["value"])
+            @groupby(:wikidata_uri)
+            @combine(:company_label = :company_label[1], :company_description = :company_description[1])
+            @select(:wikidata_uri, :company_label, :company_description)
+        end
+    
+        return df        
+    catch e
+        return DataFrame()
     end
 end

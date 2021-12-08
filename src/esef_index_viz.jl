@@ -29,13 +29,25 @@ df_wikidata = get_public_companies_wikidata()
 @chain df_wikidata @subset(:esef_regulated; skipmissing=true) 
 
 df_wikidata
+
 df = get_esef_xbrl_filings()
 
 df = @chain df begin
     leftjoin(df_wikidata, on=(:key => :lei_id), matchmissing=:notequal, makeunique=true)
 end
 
-@chain df @subset(ismissing(:isin_id)) #@select(:key, :isin_id)
+
+
+
+df_1 = @chain df begin 
+    @subset(ismissing(:company_label))
+    @select(:key, :entity_name, :company_label)
+end
+
+df_1 = @chain df_1 @transform(:company_search_results = (lookup_company_by_name(:entity_name),))
+
+# lookup_company_by_name(company_name)
+
 
 pct_error_free = @chain df begin
     @transform(:error_free_report = :error_count == 0)

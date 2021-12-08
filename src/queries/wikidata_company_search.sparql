@@ -1,0 +1,14 @@
+SELECT DISTINCT ?company ?companyLabel  (LANG(?companyLabel) as ?companyLabel_lang) ?companyDescrip
+WHERE {
+    {?company wdt:P31 wd:Q891723.}
+    UNION
+    {?company p:P946 ?isin_prop.}
+    ?company rdfs:label ?companyLabel.
+    FILTER(contains(lcase(?companyLabel), lcase('{{company_name}}'))) .
+    
+    OPTIONAL {
+        ?company schema:description ?companyDescrip.
+        FILTER(LANG(?companyDescrip) = "en")
+    }    
+}
+ORDER BY ?companyLabel_lang
