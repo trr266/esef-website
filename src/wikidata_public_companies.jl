@@ -34,13 +34,13 @@ function get_public_companies_wikidata()
     df = query_wikidata("src/queries/wikidata_regulated_firms.sparql")
 
     df = @chain df begin
-        @transform(:wikidata_uri = :company["value"],
-                :company_label = :companyLabel["value"])
-        @transform(:isin_id = :isin_value["value"])
+        @transform(:wikidata_uri = :company["value"])
+        @transform(:company_label = @m :companyLabel["value"])
+        @transform(:isin_id = @m :isin_value["value"])
         @transform(:lei_id = @m :lei_value["value"])
         @transform(:country_uri = @m :country["value"])
         @transform(:country = @m :countryLabel["value"])
-        @transform(:isin_alpha_2 = first(:isin_id, 2))
+        @transform(:isin_alpha_2 = @m first(:isin_id, 2))
         @select(:wikidata_uri, :company_label, :country, :country_uri, :isin_id, :isin_alpha_2, :lei_id)
     end
 
@@ -52,7 +52,7 @@ function get_public_companies_wikidata()
         leftjoin(_, (@chain country_lookup @select(:isin_alpha_2 = :country_alpha_2, :isin_country = :country, :isin_region = :region)), on=:isin_alpha_2, matchmissing=:notequal)
     end
     
-    df = @chain df @transform(:esef_regulated = esef_regulated(:isin_region, :region))
+    df = @chain df @transform(:esef_regulated = @m esef_regulated(:isin_region, :region))
     
     return df
 end
@@ -90,3 +90,6 @@ function lookup_company_by_name(company_name)
         return DataFrame()
     end
 end
+
+
+
