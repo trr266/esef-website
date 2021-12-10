@@ -65,6 +65,10 @@ world110m = dataset("world-110m")
 
 world_geojson = @chain "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json" URI()
 
+country_lookup = get_country_codes()
+
+europe = @chain country_lookup @subset(@m :region == "Europe"; skipmissing=true)
+
 country_rollup = @chain df begin
     @groupby(:country)
     @combine(:report_count = length(:country))

@@ -23,6 +23,8 @@ jobs:
 
             - name: Run ESEF Visualization
               run: make build-viz
+              env:
+                TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
 
             - uses: EndBug/add-and-commit@v7
               with:
