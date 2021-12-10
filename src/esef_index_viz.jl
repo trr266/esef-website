@@ -22,7 +22,7 @@ trr_266_colors = ["#1b8a8f", "#ffb43b", "#6ecae2", "#944664"] # petrol, yellow, 
 df_wikidata_lei = get_lei_companies_wikidata()
 df_wikidata_lei = enrich_wikidata_with_twitter_data(df_wikidata_lei)
 
-df = get_esef_xbrl_filings()
+df, df_error = get_esef_xbrl_filings()
 
 df = @chain df begin
     leftjoin(df_wikidata_lei, on=(:key => :lei_id), matchmissing=:notequal, makeunique=true)
@@ -65,14 +65,9 @@ world110m = dataset("world-110m")
 
 world_geojson = @chain "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json" URI()
 
-country_lookup = get_country_codes()
-
-europe = @chain country_lookup @subset(@m :region == "Europe"; skipmissing=true)
-
 country_rollup = @chain df begin
     @groupby(:country)
     @combine(:report_count = length(:country))
-    leftjoin(europe, _, on=:country)
     @transform(:report_count = coalesce(:report_count, 0))
 end
     

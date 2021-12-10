@@ -55,5 +55,5 @@ function get_esef_xbrl_filings()
         leftjoin(_, country_lookup, on=:country_alpha_2)
     end
 
-    return df
+    return df, df_error
 end
