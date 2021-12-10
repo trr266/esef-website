@@ -17,7 +17,9 @@ using VegaLite
 include("wikidata_public_companies.jl")
 include("esef_xbrl_filings.jl")
 
-df_wikidata_lei = get_lei_companies_wikidata()
+df = query_wikidata("src/queries/wikidata_non_lei_isin_firms.sparql")
+
+# df_wikidata_lei = get_lei_companies_wikidata()
 
 df_wikidata_isin = get_non_lei_isin_companies_wikidata()
 

@@ -4,7 +4,7 @@ SELECT DISTINCT ?entity ?entityLabel ?isin_value ?country ?countryLabel ?country
   {
     ?entity p:P946 ?isin_prop . # Entities with ISIN
     ?isin_prop (ps:P946) ?isin_value . # ISIN  
-    ?entity rdf:type wdno:P1278 .   #with at least one truthy P40 (child) statement defined to be "no value"    
+    minus {?entity p:P1278 ?legal_entity_prop .}
   }
   OPTIONAL {
       ?entity p:P17 ?statement2 .
