@@ -40,19 +40,16 @@ function get_public_companies_wikidata()
         @transform(:lei_id = @m :lei_value["value"])
         @transform(:country_uri = @m :country["value"])
         @transform(:country = @m :countryLabel["value"])
+        @transform(:country_alpha_2 = @m :iso_two_letter_value["value"])
         @transform(:isin_alpha_2 = @m first(:isin_id, 2))
-        @select(:wikidata_uri, :company_label, :country, :country_uri, :isin_id, :isin_alpha_2, :lei_id)
+        @select(:wikidata_uri, :company_label, :country, :country_uri, :country_alpha_2, :isin_id, :isin_alpha_2, :lei_id)
     end
 
     # Add in country names
     country_lookup = get_country_codes()
-    push!(country_lookup, ["Czech Republic", "11", "Europe"])
-    push!(country_lookup, ["Czechoslovakia", "11", "Europe"])
-    push!(country_lookup, ["Kingdom of the Netherlands", "11", "Europe"])
-    push!(country_lookup, ["Kingdom of the Netherlands", "11", "Europe"])
     
     df = @chain df begin
-        leftjoin(_, country_lookup, on=:country, matchmissing=:notequal)
+        leftjoin(_, country_lookup, on=:country_alpha_2, matchmissing=:notequal)
         leftjoin(_, (@chain country_lookup @select(:isin_alpha_2 = :country_alpha_2, :isin_country = :country, :isin_region = :region)), on=:isin_alpha_2, matchmissing=:notequal)
     end
     

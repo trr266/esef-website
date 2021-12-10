@@ -21,6 +21,9 @@ trr_266_colors = ["#1b8a8f", "#ffb43b", "#6ecae2", "#944664"] # petrol, yellow, 
 
 df_wikidata_lei = get_public_companies_wikidata()
 
+
+df = query_wikidata("src/queries/wikidata_lei_entities.sparql")
+@chain df @transform(:country_iso = @m :iso_two_letter_value["value"]) @select(:country_iso)
 # Check only minimal number of firms where country is missing (e.g. EU, CS (old ISO), ersatz XC/XY/XS, or incorrect 00, 23)
 # TODO: Clean this up further
 @assert((@chain df_wikidata_lei @subset(ismissing(:esef_regulated)) nrow()) < 30) # @select(:isin_alpha_2)
