@@ -40,7 +40,7 @@ function get_public_companies_wikidata()
         @transform(:lei_id = @m :lei_value["value"])
         @transform(:country_uri = @m :country["value"])
         @transform(:country = @m :countryLabel["value"])
-        @transform(:country_alpha_2 = @m :iso_two_letter_value["value"])
+        @transform(:country_alpha_2 = @m :country_alpha_2["value"])
         @transform(:isin_alpha_2 = @m first(:isin_id, 2))
         @select(:wikidata_uri, :company_label, :country, :country_uri, :country_alpha_2, :isin_id, :isin_alpha_2, :lei_id)
     end

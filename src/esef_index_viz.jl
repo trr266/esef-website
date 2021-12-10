@@ -21,17 +21,15 @@ trr_266_colors = ["#1b8a8f", "#ffb43b", "#6ecae2", "#944664"] # petrol, yellow, 
 
 df_wikidata_lei = get_public_companies_wikidata()
 
-# Check only minimal number of firms where country is missing (e.g. EU, CS (old ISO), ersatz XC/XY/XS, or incorrect 00, 23)
-# TODO: Clean this up further
-@assert((@chain df_wikidata_lei @subset(ismissing(:esef_regulated)) nrow()) < 30) # @select(:isin_alpha_2)
+# Check only minimal number of firms where country is missing (e.g. EU, ersatz XC/XY/XS, or incorrect 00, 23)
+@assert((@chain df_wikidata_lei @subset(ismissing(:esef_regulated)) nrow()) < 1e3)
 
-@chain df_wikidata_lei @subset(ismissing(:esef_regulated) & !ismissing(:country)) @transform(:esef_reg_1 = esef_regulated(:isin_region, :region)) @select(:esef_reg_1, :country, :country_alpha_2, :isin_country, :isin_region, :region)
 # Drop firms where country is missing
 # @chain df_wikidata @subset(:esef_regulated; skipmissing=true) 
 
 
 # TODO: Look at this group of companies who are subject to regulation, but not available via XBRL
-@chain df_wikidata @subset(:country == "Germany"; skipmissing=true) @subset(ismissing(:lei_id))
+@chain df_wikidata_lei @subset(:country == "Germany"; skipmissing=true) @subset(ismissing(:lei_id))
 df_wikidata
 
 df = get_esef_xbrl_filings()

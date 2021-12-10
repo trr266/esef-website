@@ -64,6 +64,10 @@ Various projects attempt to provide ESEF data for different purposes. A non-exha
 | Sweden | ❌ | [2021][esef_postponement_index] | |
 | UK | ✅ | [2020][uk_implementation_legal] | |
 
+## Wikidata
+
+- [Link to full dump][wikidata_complete_json]
+
 [xbrl_esef_repo_index]: https://filings.xbrl.org/index.json
 [xbrl_esef_repo_blog]: https://www.xbrl.org/news/xbrl-international-launches-filings-xbrl-org-for-esef-filings/
 [xbrl_esef_repo_about]: https://filings.xbrl.org/about.html
@@ -74,3 +78,4 @@ Various projects attempt to provide ESEF data for different purposes. A non-exha
 [parseport_index]: https://parseport.com/esef-postponement-information/
 [xbrl_liechtenstein]: https://www.fma-li.li/de/aufsicht/bereich-versicherungen-und-vorsorgeeinrichtungen/versicherungsunternehmen/meldewesen-xbrl/nationale-xbrl-taxonomie.html
 [esap]: https://ec.europa.eu/info/consultations/finance-2021-european-single-access-point_en
+[wikidata_complete_json]: https://dumps.wikimedia.org/wikidatawiki/entities/
