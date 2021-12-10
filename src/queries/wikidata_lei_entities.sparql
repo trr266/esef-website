@@ -1,4 +1,4 @@
-SELECT DISTINCT ?entity ?entityLabel ?isin_value ?lei_value ?country ?countryLabel WHERE {
+SELECT DISTINCT ?entity ?entityLabel ?isin_value ?lei_value ?country ?countryLabel ?twitter_value WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de,fr,it". }
   {
     SELECT DISTINCT ?entity ?lei_value WHERE {
@@ -11,7 +11,7 @@ SELECT DISTINCT ?entity ?entityLabel ?isin_value ?lei_value ?country ?countryLab
         {
         # Entities with legal entity identifier (LEI)
         ?entity p:P1278 ?legal_entity_prop . 
-        ?legal_entity_prop (p:P1278) ?lei_value .
+        ?legal_entity_prop (ps:P1278) ?lei_value .
         }
       }
     }
@@ -21,7 +21,11 @@ SELECT DISTINCT ?entity ?entityLabel ?isin_value ?lei_value ?country ?countryLab
       ?statement2 ps:P17 ?country . # Country
   }
   OPTIONAL {
-      ?entity (ps:P946) ?isin_prop .
+      ?entity (p:P946) ?isin_prop .
       ?isin_prop (ps:P946) ?isin_value . # isin id
+  }
+  OPTIONAL {
+      ?entity (p:P2002) ?twitter_prop .
+      ?twitter_prop (ps:P2002) ?twitter_value . # twitter username
   }
 }
