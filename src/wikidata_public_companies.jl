@@ -41,7 +41,13 @@ function query_wikidata(sparql_query_file; params=Dict())
     query_string = @chain sparql_query_file read(String) render(params) HTTP.escapeuri()
 
     body = "query=$query_string"
-    r = HTTP.post(url, headers, body)
+
+    for i in 1:3
+        r = HTTP.post(url, headers, body)
+        if r.status == 200
+            break
+        end
+    end
 
     d = JSON.parse(String(r.body))
 
