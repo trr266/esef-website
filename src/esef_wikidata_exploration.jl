@@ -17,7 +17,7 @@ using VegaLite
 include("wikidata_public_companies.jl")
 include("esef_xbrl_filings.jl")
 
-# df_wikidata_lei = get_lei_companies_wikidata()
+df_wikidata_lei = get_lei_companies_wikidata()
 
 df_wikidata_isin = get_non_lei_isin_companies_wikidata()
 
@@ -38,29 +38,9 @@ df = @chain df begin
     leftjoin(df_wikidata_lei, on=(:key => :lei_id), matchmissing=:notequal, makeunique=true)
 end
 
-df_1 = @chain df begin 
-    @subset(ismissing(:company_label))
+df_1 = @chain df begin
+    @subset(ismissing(:wikidata_uri))
     @select(:key, :entity_name, :company_label)
 end
 
-
-using JLD2
-
-df_2 = load("company_results.jld2")
-df_2 = df_2["company_results"]
-df_2 = @chain df_2 @subset(nrow(:company_search_results[1]) == 0) # no results
-
-key_list = df_2[!, :key]
-
-df_1 = @chain df_1 @subset((:key in key_list))
-df_1 = @chain df_1 @transform(:company_search_results = (lookup_company_by_name(split(:entity_name, " ")[1])),)
-
-# df_2 = df_2["company_results"]
-# df_2 = @chain df_2 @subset(nrow(:company_search_results[1]) > 1)
-# df_2[!, :wikidata_uri] = [r[:company_search_results][1][1, :wikidata_uri] for r in    eachrow(df_2)]
-# df_2[!, :company_label] = [r[:company_search_results][1][1, :company_label] for r in    eachrow(df_2)]
-# df_2[!, :company_description] = [r[:company_search_results][1][1, :company_description] for r in    eachrow(df_2)]
-
-# df_3 = @chain df_2 @select(:wikidata_uri, :key, :entity_name, :company_label, :company_description)
-# show(df_3, truncate = 150, allrows=true)
-# lookup_company_by_name(company_name)
+@chain df @select(:error_count, :twi)

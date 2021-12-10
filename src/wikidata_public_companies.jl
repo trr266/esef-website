@@ -29,10 +29,7 @@ function query_wikidata(sparql_query_file; params=Dict())
     return df
 end
 
-
-function get_non_lei_isin_companies_wikidata()
-    df = query_wikidata("src/queries/wikidata_non_lei_isin_firms.sparql")
-
+function basic_wikidata_preprocessing(df)
     df = @chain df begin
         @transform(:wikidata_uri = :entity["value"])
         @transform(:company_label = @m :entityLabel["value"])
@@ -41,7 +38,11 @@ function get_non_lei_isin_companies_wikidata()
         @transform(:country = @m :countryLabel["value"])
         @transform(:country_alpha_2 = @m :country_alpha_2["value"])
         @transform(:isin_alpha_2 = @m first(:isin_id, 2))
-        @select(:wikidata_uri, :company_label, :country, :country_uri, :country_alpha_2, :isin_id, :isin_alpha_2)
+        @transform(:twitter_handle = @m :twitter_value["value"])
+        @transform(:lei_id = @m :lei_value["value"])
+        @groupby(:wikidata_uri, :company_label, :country, :country_uri, :country_alpha_2, :isin_id, :isin_alpha_2, :lei_id)
+        @combine(:twitter_handles = join(:twitter_handle, ","))
+        @select(:wikidata_uri, :company_label, :country, :country_uri, :country_alpha_2, :isin_id, :isin_alpha_2, :lei_id, :twitter_handles)
     end
 
     # Add in country names
@@ -53,34 +54,22 @@ function get_non_lei_isin_companies_wikidata()
     end
     
     df = @chain df @transform(:esef_regulated = esef_regulated(:isin_region, :region))
-    
+
+
+end
+
+
+function get_non_lei_isin_companies_wikidata()
+    df = query_wikidata("src/queries/wikidata_non_lei_isin_firms.sparql")
+    df = @chain df @transform(:lei_id = nothing)
+    df = basic_wikidata_preprocessing(df) 
+
     return df
 end
 
 function get_lei_companies_wikidata()
     df = query_wikidata("src/queries/wikidata_lei_entities.sparql")
-
-    df = @chain df begin
-        @transform(:wikidata_uri = :entity["value"])
-        @transform(:company_label = @m :entityLabel["value"])
-        @transform(:isin_id = @m :isin_value["value"])
-        @transform(:lei_id = @m :lei_value["value"])
-        @transform(:country_uri = @m :country["value"])
-        @transform(:country = @m :countryLabel["value"])
-        @transform(:country_alpha_2 = @m :country_alpha_2["value"])
-        @transform(:isin_alpha_2 = @m first(:isin_id, 2))
-        @select(:wikidata_uri, :company_label, :country, :country_uri, :country_alpha_2, :isin_id, :isin_alpha_2, :lei_id)
-    end
-
-    # Add in country names
-    country_lookup = get_country_codes()
-    
-    df = @chain df begin
-        leftjoin(_, (@chain country_lookup @select(:region, :country_alpha_2)), on=:country_alpha_2, matchmissing=:notequal)
-        leftjoin(_, (@chain country_lookup @select(:isin_alpha_2 = :country_alpha_2, :isin_country = :country, :isin_region = :region)), on=:isin_alpha_2, matchmissing=:notequal)
-    end
-    
-    df = @chain df @transform(:esef_regulated = esef_regulated(:isin_region, :region))
+    df = basic_wikidata_preprocessing(df)
     
     return df
 end
