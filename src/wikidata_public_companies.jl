@@ -12,7 +12,7 @@ function query_wikidata(sparql_query_file; params=Dict())
     headers = ["Accept" => "application/sparql-results+json", "Content-Type"=>"application/x-www-form-urlencoded"]
     url = "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
 
-    query_string = @chain sparql_query_file readlines() join("\n") render(params) # HTTP.escapeuri()
+    query_string = @chain sparql_query_file read(String) render(params) HTTP.escapeuri()
 
     body = "query=$query_string"
     r = HTTP.post(url, headers, body)
@@ -31,11 +31,11 @@ end
 
 
 function get_public_companies_wikidata()
-    df = query_wikidata("src/queries/wikidata_regulated_firms.sparql")
+    df = query_wikidata("src/queries/wikidata_lei_entities.sparql")
 
     df = @chain df begin
-        @transform(:wikidata_uri = :company["value"])
-        @transform(:company_label = @m :companyLabel["value"])
+        @transform(:wikidata_uri = :entity["value"])
+        @transform(:company_label = @m :entityLabel["value"])
         @transform(:isin_id = @m :isin_value["value"])
         @transform(:lei_id = @m :lei_value["value"])
         @transform(:country_uri = @m :country["value"])
