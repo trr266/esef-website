@@ -19,7 +19,9 @@ include("esef_xbrl_filings.jl")
 
 trr_266_colors = ["#1b8a8f", "#ffb43b", "#6ecae2", "#944664"] # petrol, yellow, blue, red
 
-df_wikidata_lei = get_public_companies_wikidata()
+df_wikidata_lei = get_lei_companies_wikidata()
+
+df_wikidata_isin = get_non_lei_isin_companies_wikidata()
 
 # Check only minimal number of firms where country is missing (e.g. EU, ersatz XC/XY/XS, or incorrect 00, 23)
 @assert((@chain df_wikidata_lei @subset(ismissing(:esef_regulated)) nrow()) < 1e3)
