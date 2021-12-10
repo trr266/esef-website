@@ -1,7 +1,7 @@
 SELECT DISTINCT ?entity ?entityLabel ?isin_value ?lei_value ?country ?countryLabel WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de,fr,it". }
   {
-    SELECT ?entity  WHERE {
+    SELECT ?entity WHERE {
       {
         ?entity p:P1278 ?legal_entity_statement . # Entities with legal entity identifier (LEI)
         ?entity p:P31 ?statement0 . # Entities which are instances of businesses or its subclasses
