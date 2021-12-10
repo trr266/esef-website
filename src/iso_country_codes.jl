@@ -11,6 +11,6 @@ function get_country_codes()
 
     # Rename "United Kingdom of Great Britain and Northern Ireland" to "United Kingdom" for comprehensibility
     country_lookup[country_lookup.country_alpha_2 .== "GB", :country] .= "United Kingdom"
-
+    push!(country_lookup, ["Czechoslovakia", "CS", "Europe"])
     return country_lookup
 end
