@@ -49,7 +49,7 @@ function get_public_companies_wikidata()
     country_lookup = get_country_codes()
     
     df = @chain df begin
-        leftjoin(_, country_lookup, on=:country_alpha_2, matchmissing=:notequal)
+        leftjoin(_, (@chain country_lookup @select(:region, :country_alpha_2)), on=:country_alpha_2, matchmissing=:notequal)
         leftjoin(_, (@chain country_lookup @select(:isin_alpha_2 = :country_alpha_2, :isin_country = :country, :isin_region = :region)), on=:isin_alpha_2, matchmissing=:notequal)
     end
     
