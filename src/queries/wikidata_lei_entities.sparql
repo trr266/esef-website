@@ -5,7 +5,7 @@ SELECT DISTINCT ?entity ?entityLabel ?isin_value ?lei_value ?country ?countryLab
       {
         ?entity p:P1278 ?legal_entity_statement . # Entities with legal entity identifier (LEI)
         ?entity p:P31 ?statement0 . # Entities which are instances of businesses or its subclasses
-        ?statement0 (ps:P31/(wdt:P279*)) wd:Q4830453 .  
+        ?statement0 (ps:P31/(wdt:P279*)) wd:Q4830453 .
       }
     }
   }
