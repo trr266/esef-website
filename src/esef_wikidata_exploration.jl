@@ -21,6 +21,7 @@ include("twitter_user_query.jl")
 df_wikidata_lei = get_lei_companies_wikidata()
 df_wikidata_lei = enrich_wikidata_with_twitter_data(df_wikidata_lei)
 
+# Add further data checks
 # Check only minimal number of firms where country is missing (e.g. EU, ersatz XC/XY/XS, or incorrect 00, 23)
 @assert((@chain df_wikidata_lei @subset(ismissing(:esef_regulated)) nrow()) < 1e3)
 @assert((@chain df_wikidata_isin @subset(ismissing(:esef_regulated)) nrow()) < 10)
@@ -37,24 +38,6 @@ df, df_error = get_esef_xbrl_filings()
 df = @chain df begin
     leftjoin(df_wikidata_lei, on=(:key => :lei_id), matchmissing=:notequal, makeunique=true)
 end
-
-
-axis = (width=500,
-    height=500,
-    xticks=[1, 50:50:500...],
-    ylabel="Log1p Error Count", 
-    xlabel="Log1p Twitter Follower Count (Cumulative)",
-    title="ESEF Filing Errors by Twitter Follower Count")
-
-plt = @chain df begin
-    @subset(!ismissing(:agg_followers_count))
-    @transform(:error_count_log = log1p(:error_count), :agg_followers_count_log = log1p(:agg_followers_count))
-    data(_) * mapping(:agg_followers_count_log, :error_count_log) * (linear() + visual(Scatter, color=trr_266_colors[1]))
-end
-
-fg1 = draw(plt; axis)
-
-save("figs/esef_errors_followers.svg", fg1, px_per_unit = 3)
 
 
 df_1 = @chain df begin
