@@ -45,4 +45,6 @@ df_1 = @chain df begin
     @select(:key, :entity_name, :company_label)
 end
 
+@assert(nrow(df_1) == 0, "All XBRL filings should have corresponding wikidata entry")
+
 @chain df @select(:error_count, :twi)
