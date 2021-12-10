@@ -42,6 +42,8 @@ function query_wikidata(sparql_query_file; params=Dict())
 
     body = "query=$query_string"
 
+    r = nothing
+
     for i in 1:3
         r = HTTP.post(url, headers, body)
         if r.status == 200
