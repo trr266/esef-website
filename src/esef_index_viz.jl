@@ -19,9 +19,11 @@ include("wikidata_public_companies.jl")
 
 trr_266_colors = ["#1b8a8f", "#ffb43b", "#6ecae2", "#944664"] # petrol, yellow, blue, red
 
+# TODO: figure out why entries are not unique...
 df_wikidata_lei = get_lei_companies_wikidata()
 df_wikidata_lei = enrich_wikidata_with_twitter_data(df_wikidata_lei)
 
+# TODO: backfill twitter profiles for xbrl entries?
 df, df_error = get_esef_xbrl_filings()
 
 df = @chain df begin
