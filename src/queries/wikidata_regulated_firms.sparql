@@ -1,24 +1,15 @@
-# Query all DE,FR,IT firms listed as publicly traded or with ISIN number attached, add LEI identifier if available
+# Query all entities with legal entity identifiers (LEI)
 SELECT DISTINCT ?company ?companyLabel ?isin_value ?lei_value ?country ?countryLabel WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de,fr,it". }
   {
-    SELECT ?
-    {
-      ?company p:P1278 ?legal_identifier_id.
-    }
-    UNION
-    {
-      ?company p:P946 ?isin_prop. # has an ISIN
-    }
-    OPTIONAL {
-        ?company p:P17 ?statement2.
-        ?statement2 ps:P17 ?country.
-    }
-    OPTIONAL {
-        ?isin_prop (ps:P946) ?isin_value. # isin id
-    }
-    OPTIONAL {
-        ?legal_identifier_id (ps:P1278) ?lei_value. # lei id
-    }
+    ?entity p:P1278 ?legal_entity_id . # Entities with legal entity identifier (LEI)
+    ?legal_entity_id p:P1278 ?lei_value .
+  }
+  OPTIONAL {
+      ?company p:P17 ?statement2 .
+      ?statement2 ps:P17 ?country . # Country
+  }
+  OPTIONAL {
+      ?isin_prop (ps:P946) ?isin_value . # isin id
   }
 }
