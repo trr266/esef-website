@@ -6,6 +6,32 @@ using Chain
 using Mustache
 
 include("iso_country_codes.jl")
+include("twitter_user_query.jl")
+
+function enrich_wikidata_with_twitter_data(df_wikidata)
+    tw_lookup = DataFrame(:qid => [], :twitter_user => [])
+
+    for r in eachrow((@chain df_wikidata @subset(!ismissing(:twitter_handles) & (:twitter_handles != "missing"))))
+        for t_user in split(r[:twitter_handles], ",")
+            push!(tw_lookup, [r[:wikidata_uri], t_user])
+        end
+    end
+
+
+    df_twitter = query_twitter_user_profiles(unique(tw_lookup[!, :twitter_user]))
+
+    tw_lookup = @chain tw_lookup begin
+        leftjoin((@chain df_twitter @select(:username, :followers_count)), on=[:twitter_user => :username])
+        @groupby(:qid)
+        @combine(:agg_followers_count = sum(:followers_count))
+    end
+
+    df_wikidata = @chain df_wikidata begin
+        leftjoin(tw_lookup, on=[:wikidata_uri => :qid])
+    end
+
+    return df_wikidata
+end
 
 function query_wikidata(sparql_query_file; params=Dict())
 

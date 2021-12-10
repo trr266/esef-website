@@ -20,6 +20,7 @@ A project of the [Open Science Data Center][c02]
 
 ![ESEF Error Type Bar Chart](figs/esef_error_type_freq_bar.svg)
 
+![ESEF Error Count by Twitter Followers](figs/esef_errors_followers.svg)
 ## Resources
 
 - [ESEF Data Collection](docs/data_collection.md)
