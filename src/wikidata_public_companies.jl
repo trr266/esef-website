@@ -46,8 +46,11 @@ function get_public_companies_wikidata()
 
     # Add in country names
     country_lookup = get_country_codes()
-    push!(country_lookup, ["Czech Republic", "11", "Europe"]) # Match on Czech Republic
-
+    push!(country_lookup, ["Czech Republic", "11", "Europe"])
+    push!(country_lookup, ["Czechoslovakia", "11", "Europe"])
+    push!(country_lookup, ["Kingdom of the Netherlands", "11", "Europe"])
+    push!(country_lookup, ["Kingdom of the Netherlands", "11", "Europe"])
+    
     df = @chain df begin
         leftjoin(_, country_lookup, on=:country, matchmissing=:notequal)
         leftjoin(_, (@chain country_lookup @select(:isin_alpha_2 = :country_alpha_2, :isin_country = :country, :isin_region = :region)), on=:isin_alpha_2, matchmissing=:notequal)

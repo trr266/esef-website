@@ -1,4 +1,4 @@
-SELECT DISTINCT ?entity ?entityLabel ?isin_value ?lei_value ?country ?countryLabel ?twitter_value WHERE {
+SELECT DISTINCT ?entity ?entityLabel ?isin_value ?lei_value ?country ?countryLabel ?iso_two_letter_value ?twitter_value WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,de,fr,it". }
   {
     SELECT DISTINCT ?entity ?lei_value WHERE {
@@ -19,6 +19,8 @@ SELECT DISTINCT ?entity ?entityLabel ?isin_value ?lei_value ?country ?countryLab
   OPTIONAL {
       ?entity p:P17 ?statement2 .
       ?statement2 ps:P17 ?country . # Country
+      ?country p:P297 ?iso_two_letter .
+      ?iso_two_letter ps:P297 ?iso_two_letter_value .
   }
   OPTIONAL {
       ?entity (p:P946) ?isin_prop .
