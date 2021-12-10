@@ -17,27 +17,25 @@ using VegaLite
 include("wikidata_public_companies.jl")
 include("esef_xbrl_filings.jl")
 
-df = query_wikidata("src/queries/wikidata_non_lei_isin_firms.sparql")
-
 # df_wikidata_lei = get_lei_companies_wikidata()
 
 df_wikidata_isin = get_non_lei_isin_companies_wikidata()
 
 # Check only minimal number of firms where country is missing (e.g. EU, ersatz XC/XY/XS, or incorrect 00, 23)
 @assert((@chain df_wikidata_lei @subset(ismissing(:esef_regulated)) nrow()) < 1e3)
+@assert((@chain df_wikidata_isin @subset(ismissing(:esef_regulated)) nrow()) < 10)
 
 # Drop firms where country is missing
-# @chain df_wikidata @subset(:esef_regulated; skipmissing=true) 
+df_wikidata_isin = @chain df_wikidata_isin @subset(:esef_regulated; skipmissing=true) 
 
 
 # TODO: Look at this group of companies who are subject to regulation, but not available via XBRL
-@chain df_wikidata_lei @subset(:country == "Germany"; skipmissing=true) @subset(ismissing(:lei_id))
-df_wikidata
+@chain df_wikidata_isin @subset(:country == "Germany"; skipmissing=true)
 
 df = get_esef_xbrl_filings()
 
 df = @chain df begin
-    leftjoin(df_wikidata, on=(:key => :lei_id), matchmissing=:notequal, makeunique=true)
+    leftjoin(df_wikidata_lei, on=(:key => :lei_id), matchmissing=:notequal, makeunique=true)
 end
 
 df_1 = @chain df begin 

@@ -18,6 +18,8 @@ include("esef_xbrl_filings.jl")
 
 trr_266_colors = ["#1b8a8f", "#ffb43b", "#6ecae2", "#944664"] # petrol, yellow, blue, red
 
+df = get_esef_xbrl_filings()
+
 pct_error_free = @chain df begin
     @transform(:error_free_report = :error_count == 0)
     @combine(:error_free_report_pct = round(mean(:error_free_report) * 100, digits=0))
