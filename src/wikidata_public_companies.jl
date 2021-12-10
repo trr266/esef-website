@@ -52,7 +52,7 @@ function get_public_companies_wikidata()
         leftjoin(_, (@chain country_lookup @select(:isin_alpha_2 = :country_alpha_2, :isin_country = :country, :isin_region = :region)), on=:isin_alpha_2, matchmissing=:notequal)
     end
     
-    df = @chain df @transform(:esef_regulated = @m esef_regulated(:isin_region, :region))
+    df = @chain df @transform(:esef_regulated = esef_regulated(:isin_region, :region))
     
     return df
 end

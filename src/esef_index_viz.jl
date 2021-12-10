@@ -23,8 +23,9 @@ df_wikidata_lei = get_public_companies_wikidata()
 
 # Check only minimal number of firms where country is missing (e.g. EU, CS (old ISO), ersatz XC/XY/XS, or incorrect 00, 23)
 # TODO: Clean this up further
-# @assert((@chain df_wikidata @subset(ismissing(:esef_regulated)) nrow()) < 30) # @select(:isin_alpha_2)
+@assert((@chain df_wikidata_lei @subset(ismissing(:esef_regulated)) nrow()) < 30) # @select(:isin_alpha_2)
 
+@chain df_wikidata_lei @subset(ismissing(:esef_regulated) & !ismissing(:country)) @transform(:esef_reg_1 = esef_regulated(:isin))
 # Drop firms where country is missing
 # @chain df_wikidata @subset(:esef_regulated; skipmissing=true) 
 
