@@ -25,7 +25,7 @@ df_wikidata_lei = get_public_companies_wikidata()
 # TODO: Clean this up further
 @assert((@chain df_wikidata_lei @subset(ismissing(:esef_regulated)) nrow()) < 30) # @select(:isin_alpha_2)
 
-@chain df_wikidata_lei @subset(ismissing(:esef_regulated) & !ismissing(:country)) @transform(:esef_reg_1 = esef_regulated(:isin))
+@chain df_wikidata_lei @subset(ismissing(:esef_regulated) & !ismissing(:country)) @transform(:esef_reg_1 = esef_regulated(:isin_region, :region)) @select(:esef_reg_1, :country, :isin_country, :isin_region, :region)
 # Drop firms where country is missing
 # @chain df_wikidata @subset(:esef_regulated; skipmissing=true) 
 
