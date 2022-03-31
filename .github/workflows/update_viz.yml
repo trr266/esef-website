@@ -6,6 +6,7 @@ on:
             - main
         paths:
           - 'src/**'
+          - '.github/workflows/update_viz.yml'
     workflow_dispatch:
     schedule:
       - cron: "0 3 * * *"

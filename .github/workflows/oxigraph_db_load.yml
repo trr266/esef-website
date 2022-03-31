@@ -6,6 +6,7 @@ on:
             - main
         paths:
           - 'src/oxigraph_server.jl'
+          - '.github/workflows/oxigraph_db_load.yml'
     workflow_dispatch:
 jobs:
     build-and-deploy:
