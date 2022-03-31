@@ -19,3 +19,5 @@ docs/site/
 
 *.csv
 !esef_mandate_overview.csv
+
+esef_oxigraph_data/
