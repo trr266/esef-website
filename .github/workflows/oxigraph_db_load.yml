@@ -21,4 +21,4 @@ jobs:
                   version: ~1.8.0-0
 
             - name: Run Oxigraph DB Load & Query
-              run: make oxigraph-db-load
+              run: make oxigraph-db-load PATH=$PATH
