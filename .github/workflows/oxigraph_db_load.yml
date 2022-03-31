@@ -17,7 +17,7 @@ jobs:
             - name: Install Julia
               uses: julia-actions/setup-julia@v1
               with:
-                  version: ~1.8.0-0
+                  version: ~1.7.0-0
 
             - name: Run Oxigraph DB Load & Query
               run: make oxigraph-db-load
