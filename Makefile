@@ -11,3 +11,6 @@ instantiate:
 
 build-viz: instantiate
 	julia --project=. src/esef_index_viz.jl
+
+oxigraph-db-load: instantiate
+	julia --project=. src/oxigraph_server.jl
