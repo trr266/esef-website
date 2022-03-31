@@ -1,8 +1,5 @@
 SHELL := /bin/bash 
 
-# Add local path for julia...
-PATH=$PATH:/Applications/Julia-1.7 2.app/Contents/Resources/julia/bin/:/opt/hostedtoolcache/julia/1.7.0-rc2/x64/bin/
-
 dev: 
 	julia --project=src/
 
