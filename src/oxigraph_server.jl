@@ -10,10 +10,10 @@ run(`git clone https://github.com/ad-freiburg/qlever`)
 run(`xz -d qlever/examples/olympics.nt.xz`)
 
 # 2. Load data into database
-run(`/Users/jpslewis/.cargo/bin/oxigraph_server --location esef_oxigraph_data load --file qlever/examples/olympics.nt`)
+run(`oxigraph_server --location esef_oxigraph_data load --file qlever/examples/olympics.nt`)
 
 # 3. Spin up database
-oxigraph_process = run(`/Users/jpslewis/.cargo/bin/oxigraph_server --location esef_oxigraph_data serve`; wait = false)
+oxigraph_process = run(`oxigraph_server --location esef_oxigraph_data serve`; wait = false)
 
 # 4. Query database
 headers = ["Content-Type" => "application/sparql-query", "Accept" => "application/sparql-results+json"]
