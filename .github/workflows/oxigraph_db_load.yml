@@ -21,7 +21,10 @@ jobs:
               with:
                   version: ~1.8.0-0
             - 
-              uses: julia-actions/cache@v1 # Cache Julia Objects
+              uses: julia-actions/cache@v1 # Cache Julia packages
+            -
+              uses: Swatinem/rust-cache@v1 # Cache Rust crates
+
             - 
               name: Run Oxigraph DB Load & Query
               run: make oxigraph-db-load
