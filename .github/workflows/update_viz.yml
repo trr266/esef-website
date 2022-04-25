@@ -14,20 +14,23 @@ jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout
+            - 
+              name: Checkout
               uses: actions/checkout@v2
-
-            - name: Install Julia
+            -
+              name: Install Julia
               uses: julia-actions/setup-julia@v1
               with:
                   version: "~1.8.0-0"
-
-            - name: Run ESEF Visualization
+            - 
+              uses: julia-actions/cache@v1 # Cache Julia Objects
+            - 
+              name: Run ESEF Visualization
               run: make build-viz
               env:
                 TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-
-            - uses: EndBug/add-and-commit@v7
+            - 
+              uses: EndBug/add-and-commit@v7
               with:
                 add: figs
                 author_name: Update Bot
