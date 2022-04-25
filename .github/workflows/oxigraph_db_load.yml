@@ -12,13 +12,16 @@ jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout
+            - 
+              name: Checkout
               uses: actions/checkout@v2
-
-            - name: Install Julia
+            - 
+              name: Install Julia
               uses: julia-actions/setup-julia@v1
               with:
                   version: ~1.8.0-0
-            - uses: julia-actions/cache@v1 # Cache Julia Objects
-            - name: Run Oxigraph DB Load & Query
+            - 
+              uses: julia-actions/cache@v1 # Cache Julia Objects
+            - 
+              name: Run Oxigraph DB Load & Query
               run: make oxigraph-db-load
