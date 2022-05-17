@@ -21,3 +21,10 @@ docs/site/
 !esef_mandate_overview.csv
 
 esef_oxigraph_data/
+
+site_libs/
+index_files/
+data-collection_files/
+data-coverage_files/
+*.html
+*.json
