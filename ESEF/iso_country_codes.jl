@@ -10,7 +10,7 @@ function get_country_codes()
     country_lookup = @chain country_lookup_url HTTP.get(_).body CSV.read(DataFrame; normalizenames=true) @select(:country = :name, :country_alpha_2 = :alpha_2, :region)
 
     # Rename "United Kingdom of Great Britain and Northern Ireland" to "United Kingdom" for comprehensibility
-    country_lookup[country_lookup.country_alpha_2 .== "GB", :country] .= "United Kingdom"
+    country_lookup[country_lookup.country_alpha_2.=="GB", :country] .= "United Kingdom"
     push!(country_lookup, ["Czechoslovakia", "CS", "Europe"])
     return country_lookup
 end

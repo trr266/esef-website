@@ -27,7 +27,7 @@ function query_twitter_user_profiles(twitter_handles_vector)
     df_twitter = DataFrame()
 
     for i in 1:ceil(length(twitter_handles_vector) / 100)
-        base_index = 100*(i-1)
+        base_index = 100 * (i - 1)
         twitter_handles_temp = @chain twitter_handles_vector _[Int(base_index + 1):min(length(twitter_handles_vector), Int(base_index + 100))]
         df_twitter_temp = @chain twitter_handles_temp query_twitter_user_profiles_api_call()
         append!(df_twitter, df_twitter_temp)
