@@ -7,7 +7,7 @@ format:
 engine: jupyter
 ---
 
-## Data Availability
+## Data Availability {#sec-data-availability}
 
 Various projects attempt to provide ESEF data for different purposes. A non-exhaustive list follows:
 

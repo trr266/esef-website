@@ -19,25 +19,68 @@ A project of the [Open Science Data Center][c02]
 
 ## ESEF Country Availability (Map)
 
-![ESEF Country Availability (Map)](figs/esef_country_availability_map.svg)
+```{julia}
+using ESEF
 
-![ESEF Country Availability (Bar chart)](figs/esef_country_availability_bar.svg)
+plots = ESEF.generate_esef_homepage_viz(; map_output="web")
+```
 
-![ESEF Visualization](figs/esef_mandate_overview.svg)
 
-![ESEF Publication Date Composite](figs/esef_publication_date_composite.svg)
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "ESEF Country Availability (Map)"
 
-![ESEF Error Histogram](figs/esef_error_hist.svg)
+plots["esef_country_availability_map"]
+```
 
-![ESEF Error Country Heatmap](figs/esef_error_country_heatmap.svg)
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "ESEF Country Availability (Map)"
+plots["esef_country_availability_bar"]
+```
 
-![ESEF Error Type Bar Chart](figs/esef_error_type_freq_bar.svg)
 
-![ESEF Error Count by Twitter Followers](figs/esef_errors_followers.svg)
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "ESEF Mandate Overview"
+plots["esef_mandate_overview"]
+```
+
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "ESEF Publication Date Composite"
+plots["esef_publication_date_composite"]
+```
+
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "ESEF Error Histogram"
+plots["esef_error_hist"]
+```
+
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "ESEF Error Country Heatmap"
+plots["esef_error_country_heatmap"]
+```
+
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "ESEF Error Type Bar Chart"
+plots["esef_error_type_freq_bar"]
+```
+
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "ESEF Error Count by Twitter Followers"
+plots["esef_errors_followers"]
+```
+
+
 ## Resources
 
-- [ESEF Data Collection](docs/data_collection.md)
-- [ESEF Data Coverage](docs/data_coverage.md)
+- @sec-data-availability
+- @sec-data-coverage
 - [CRediT Contributor Statement](docs/contributors.yaml)
 
 With the introduction of the European Single Electronic Format (ESEF) for annual financial reports, corporate financial data

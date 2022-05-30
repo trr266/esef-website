@@ -12,7 +12,7 @@ is establishing the 'denominator' on which all counting is based: the set of fir
 who are subject to the ESEF mandate.
 
 
-## ESEF Mandate Conditions
+## ESEF Mandate Conditions {#sec-data-coverage}
 
 ### Who is required to implement ESEF?
 
