@@ -1,35 +1,35 @@
 ---
 name: Load Oxigraph DB and Query
 on:
-    push:
-        branches:
-            - main
-        paths:
-          - 'src/oxigraph_server.jl'
-          - '.github/workflows/oxigraph_db_load.yml'
-    workflow_dispatch:
+		push:
+				branches:
+						- main
+				paths:
+					- 'src/oxigraph_server.jl'
+					- '.github/workflows/oxigraph_db_load.yml'
+		workflow_dispatch:
 jobs:
-    build-and-deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - 
-              name: Checkout
-              uses: actions/checkout@v2
-            - 
-              name: Install Julia
-              uses: julia-actions/setup-julia@v1
-              with:
-                  version: ~1.8.0-0
-            - 
-              uses: julia-actions/cache@v1 # Cache Julia packages
-            - 
-              uses: actions-rs/toolchain@v1
-              with:
-                profile: minimal
-                toolchain: stable              
-            -
-              uses: Swatinem/rust-cache@v1 # Cache Rust crates
+		build-and-deploy:
+				runs-on: ubuntu-latest
+				steps:
+						- 
+							name: Checkout
+							uses: actions/checkout@v2
+						- 
+							name: Install Julia
+							uses: julia-actions/setup-julia@v1
+							with:
+									version: ~1.8.0-0
+						- 
+							uses: julia-actions/cache@v1 # Cache Julia packages
+						- 
+							uses: actions-rs/toolchain@v1
+							with:
+								profile: minimal
+								toolchain: stable              
+						-
+							uses: Swatinem/rust-cache@v1 # Cache Rust crates
 
-            - 
-              name: Run Oxigraph DB Load & Query
-              run: make oxigraph-db-load
+						- 
+							name: Run Oxigraph DB Load & Query
+							run: make oxigraph-db-load
