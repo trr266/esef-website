@@ -1,20 +1,20 @@
 ---
 project:
-  type: book
-  output-dir: _book
+    type: book
+    output-dir: _book
 
 book:
-  title: "TRR 266: C02 ESEF Project"
-  output-file: "esef-project"
-  author: "Jeremiah Lewis & Collaborators"
-  date: "2022-05-09"
-  chapters:
-    - index.qmd
-    - data-collection.qmd
-    - data-coverage.qmd
+    title: "TRR 266: C02 ESEF Project"
+    output-file: "esef-project"
+    author: "Jeremiah Lewis & Collaborators"
+    date: "2022-05-09"
+    chapters:
+        - index.qmd
+        - data-collection.qmd
+        - data-coverage.qmd
 
 # bibliography: references.bib
 
 format:
-  html:
-    theme: cosmo
+    html:
+        theme: cosmo
