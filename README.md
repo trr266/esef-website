@@ -6,21 +6,6 @@ A project of the [Open Science Data Center][c02]
 
 > Research Data Access for the European Single Electronic Format (ESEF)
 
-![ESEF Country Availability (Map)](figs/esef_country_availability_map.svg)
-
-![ESEF Country Availability (Bar chart)](figs/esef_country_availability_bar.svg)
-
-![ESEF Visualization](figs/esef_mandate_overview.svg)
-
-![ESEF Publication Date Composite](figs/esef_publication_date_composite.svg)
-
-![ESEF Error Histogram](figs/esef_error_hist.svg)
-
-![ESEF Error Country Heatmap](figs/esef_error_country_heatmap.svg)
-
-![ESEF Error Type Bar Chart](figs/esef_error_type_freq_bar.svg)
-
-![ESEF Error Count by Twitter Followers](figs/esef_errors_followers.svg)
 ## Resources
 
 - [ESEF Data Collection](docs/data_collection.md)
