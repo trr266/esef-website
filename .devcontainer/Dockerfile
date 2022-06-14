@@ -1,9 +1,9 @@
-FROM jupyter/datascience-notebook:notebook-6.4.10
+FROM jupyter/datascience-notebook:notebook-6.4.12
 
 USER root
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && wget -O -q quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v0.9.358/quarto-0.9.358-linux-amd64.deb \
+    && wget --no-verbose -O quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v0.9.583/quarto-0.9.583-linux-amd64.deb \
     && dpkg -i quarto.deb \
     && rm quarto.deb \
     && apt-get install --no-install-recommends -y lmodern rsync
