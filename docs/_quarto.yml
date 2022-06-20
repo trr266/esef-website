@@ -1,4 +1,3 @@
----
 project:
     type: book
     output-dir: _book
@@ -12,8 +11,6 @@ book:
         - index.qmd
         - data-collection.qmd
         - data-coverage.qmd
-
-# bibliography: references.bib
 
 format:
     html:
