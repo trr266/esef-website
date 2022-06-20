@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.598">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jeremiah Lewis">
+
+<title>TRR 266: C02 ESEF Project - 2&nbsp; Data Collection</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./data-coverage.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Collection</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">TRR 266: C02 ESEF Project</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">ESEF Intro</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-collection.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Collection</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-coverage.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Coverage</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-data-availability" id="toc-sec-data-availability" class="nav-link active" data-scroll-target="#sec-data-availability"> <span class="header-section-number">2.1</span> Data Availability</a></li>
+  <li><a href="#xbrl-filings" id="toc-xbrl-filings" class="nav-link" data-scroll-target="#xbrl-filings"> <span class="header-section-number">2.2</span> XBRL Filings</a>
+  <ul class="collapse">
+  <li><a href="#dataset-goals-and-caveats" id="toc-dataset-goals-and-caveats" class="nav-link" data-scroll-target="#dataset-goals-and-caveats"> <span class="header-section-number">2.2.1</span> Dataset Goals and Caveats</a></li>
+  <li><a href="#key-links" id="toc-key-links" class="nav-link" data-scroll-target="#key-links"> <span class="header-section-number">2.2.2</span> Key Links</a></li>
+  <li><a href="#country-availability-of-xbrl-filings-index" id="toc-country-availability-of-xbrl-filings-index" class="nav-link" data-scroll-target="#country-availability-of-xbrl-filings-index"> <span class="header-section-number">2.2.3</span> <span>Country Availability of XBRL Filings Index</span></a></li>
+  </ul></li>
+  <li><a href="#wikidata" id="toc-wikidata" class="nav-link" data-scroll-target="#wikidata"> <span class="header-section-number">2.3</span> Wikidata</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Collection</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jeremiah Lewis </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-data-availability" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-data-availability"><span class="header-section-number">2.1</span> Data Availability</h2>
+<p>Various projects attempt to provide ESEF data for different purposes. A non-exhaustive list follows:</p>
+<ul>
+<li><a href="https://ec.europa.eu/info/consultations/finance-2021-european-single-access-point_en">European Single Access Point (ESAP)</a> is current initiative by EU to provide a single source for regulatory reporting documents</li>
+<li><a href="https://ec.europa.eu/info/business-economy-euro/company-reporting-and-auditing/company-reporting/transparency-requirements-listed-companies_en">European electronic access point (EEAP)</a> is mandated by 2013 EU Transparency directive, but <a href="https://ec.europa.eu/info/business-economy-euro/company-reporting-and-auditing/company-reporting/transparency-requirements-listed-companies_en">“has not become operational”</a></li>
+<li><a href="https://eftg.eu/">European financial transparency gateway (ETFG) blockchain prototype for EEAP</a></li>
+<li>XBRL repository (18? countries), completeness not guaranteed</li>
+<li>Individual country repos</li>
+<li>How to define coverage!?</li>
+</ul>
+</section>
+<section id="xbrl-filings" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="xbrl-filings"><span class="header-section-number">2.2</span> XBRL Filings</h2>
+<section id="dataset-goals-and-caveats" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="dataset-goals-and-caveats"><span class="header-section-number">2.2.1</span> Dataset Goals and Caveats</h3>
+<ul>
+<li><a href="https://filings.xbrl.org/about.html">“Make it easier to find and access filings prepared under the ESEF mandate;”</a></li>
+<li><a href="https://filings.xbrl.org/about.html">“Promote discussion and feedback on the quality of ESEF reports.”</a></li>
+<li>Completeness not guaranteed</li>
+<li>Only 17 countries available (out of 30 (UK, Norway, Iceland))</li>
+</ul>
+</section>
+<section id="key-links" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="key-links"><span class="header-section-number">2.2.2</span> Key Links</h3>
+<ul>
+<li><a href="https://filings.xbrl.org/index.json">Index (json file)</a></li>
+<li><a href="https://www.xbrl.org/news/xbrl-international-launches-filings-xbrl-org-for-esef-filings/">XBRL ESEF Project Description</a></li>
+</ul>
+</section>
+<section id="country-availability-of-xbrl-filings-index" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="country-availability-of-xbrl-filings-index"><span class="header-section-number">2.2.3</span> <a href="https://filings.xbrl.org/about.html">Country Availability of XBRL Filings Index</a></h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>XBRL Repository</th>
+<th>Mandate Starting Fiscal Year Beginning</th>
+<th>API Access to Reports</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Austria</td>
+<td>✅</td>
+<td>2020</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Belgium</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Bulgaria</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Croatia</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Cyprus</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Czech Republic</td>
+<td>✅</td>
+<td>2020</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Denmark</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Estonia</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Finland</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>France</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Germany</td>
+<td>✅</td>
+<td>2020</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Greece</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Hungary</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Iceland</td>
+<td>❌</td>
+<td><a href="https://parseport.com/esef-postponement-information/">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Ireland</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Italy</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Latvia</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Liechtenstein</td>
+<td>❌</td>
+<td>National XBRL Custom Format, <a href="https://www.fma-li.li/de/aufsicht/bereich-versicherungen-und-vorsorgeeinrichtungen/versicherungsunternehmen/meldewesen-xbrl/nationale-xbrl-taxonomie.html">2020</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Lithuania</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Luxembourg</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Malta</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Netherlands</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Norway</td>
+<td>❌</td>
+<td><a href="https://parseport.com/esef-postponement-information/">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Poland</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Portugal</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Romania</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Slovakia</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Slovenia</td>
+<td>✅</td>
+<td>2020</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Spain</td>
+<td>✅</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Sweden</td>
+<td>❌</td>
+<td><a href="https://ec.europa.eu/info/publications/201211-esef-postponement_en">2021</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>UK</td>
+<td>✅</td>
+<td><a href="https://www.gov.uk/government/publications/european-single-electronic-format-esef-regulation-requirements-the-governments-position/the-uk-governments-position-on-the-effect-of-the-esef-regulation-on-the-directors-sign-off-of-accounts-of-uk-incorporated-users">2020</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="wikidata" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="wikidata"><span class="header-section-number">2.3</span> Wikidata</h2>
+<ul>
+<li><a href="https://dumps.wikimedia.org/wikidatawiki/entities/">Link to full dump</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">ESEF Intro</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./data-coverage.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Coverage</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

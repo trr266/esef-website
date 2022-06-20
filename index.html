@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.598">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jeremiah Lewis">
+<meta name="dcterms.date" content="2022-05-09">
+
+<title>TRR 266: C02 ESEF Project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./data-collection.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">TRR 266: C02 ESEF Project</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">TRR 266: C02 ESEF Project</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">ESEF Intro</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-collection.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Collection</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-coverage.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Coverage</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#esef-data-product" id="toc-esef-data-product" class="nav-link active" data-scroll-target="#esef-data-product"> <span class="header-section-number">1</span> ESEF Data Product</a>
+  <ul class="collapse">
+  <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations"> <span class="header-section-number">1.1</span> Visualizations</a></li>
+  <li><a href="#esef-country-availability-map" id="toc-esef-country-availability-map" class="nav-link" data-scroll-target="#esef-country-availability-map"> <span class="header-section-number">1.2</span> ESEF Country Availability (Map)</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"> <span class="header-section-number">1.3</span> Resources</a></li>
+  <li><a href="#project-modules" id="toc-project-modules" class="nav-link" data-scroll-target="#project-modules"> <span class="header-section-number">1.4</span> Project Modules</a></li>
+  <li><a href="#project-goals" id="toc-project-goals" class="nav-link" data-scroll-target="#project-goals"> <span class="header-section-number">1.5</span> Project Goals</a></li>
+  <li><a href="#technical-approach" id="toc-technical-approach" class="nav-link" data-scroll-target="#technical-approach"> <span class="header-section-number">1.6</span> Technical Approach</a></li>
+  <li><a href="#project-funding" id="toc-project-funding" class="nav-link" data-scroll-target="#project-funding"> <span class="header-section-number">1.7</span> Project Funding</a></li>
+  <li><a href="#datasets-used" id="toc-datasets-used" class="nav-link" data-scroll-target="#datasets-used"> <span class="header-section-number">1.8</span> Datasets Used</a></li>
+  <li><a href="#licensing" id="toc-licensing" class="nav-link" data-scroll-target="#licensing"> <span class="header-section-number">1.9</span> Licensing</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">TRR 266: C02 ESEF Project</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jeremiah Lewis </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 9, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="esef-data-product" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> ESEF Data Product</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://github.com/marketplace/actions/super-linter"><img src="https://github.com/trr266/esef/workflows/Lint%20Code%20Base/badge.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">GitHub Super-Linter</figcaption><p></p>
+</figure>
+</div>
+<p>A project of the <a href="https://www.accounting-for-transparency.de/project/open-science-data-center/">Open Science Data Center</a></p>
+<blockquote class="blockquote">
+<p>Research Data Access for the European Single Electronic Format (ESEF)</p>
+</blockquote>
+<section id="visualizations" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="visualizations"><span class="header-section-number">1.1</span> Visualizations</h2>
+</section>
+<section id="esef-country-availability-map" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="esef-country-availability-map"><span class="header-section-number">1.2</span> ESEF Country Availability (Map)</h2>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">ESEF</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>plots <span class="op">=</span> ESEF.<span class="fu">generate_esef_homepage_viz</span>(; map_output<span class="op">=</span><span class="st">"web"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>Dict{Any, Any} with 9 entries:
+  "esef_error_hist"         =&gt; Scene (601px, 353px):…
+  "esef_country_availabili… =&gt; VegaLite.VLSpec
+  "esef_error_type_freq_ba… =&gt; VegaLite.VLSpec
+  "esef_publication_date_c… =&gt; VegaLite.VLSpec
+  "esef_errors_followers"   =&gt; Scene (575px, 603px):…
+  "esef_mandate_overview"   =&gt; VegaLite.VLSpec
+  "esef_country_availabili… =&gt; VegaLite.VLSpec
+  "esef_country_availabili… =&gt; VegaLite.VLSpec
+  "esef_error_country_heat… =&gt; VegaLite.VLSpec</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plots[<span class="st">"esef_country_availability_map"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div id="fig-esef_country_availability_map" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig-esef_country_availability_map-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.1: ESEF Country Availability (Map)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plots[<span class="st">"esef_country_availability_bar"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div id="fig-esef_country_availability_bar" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig-esef_country_availability_bar-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.2: ESEF Country Availability (Map)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plots[<span class="st">"esef_mandate_overview"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div id="fig-esef_mandate_overview" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig-esef_mandate_overview-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.3: ESEF Mandate Overview</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plots[<span class="st">"esef_publication_date_composite"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div id="fig-esef_publication_date_composite" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig-esef_publication_date_composite-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.4: ESEF Publication Date Composite</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plots[<span class="st">"esef_error_hist"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div id="fig-esef_error_hist" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig-esef_error_hist-output-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.5: ESEF Error Histogram</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plots[<span class="st">"esef_error_country_heatmap"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div id="fig-esef_error_country_heatmap" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig-esef_error_country_heatmap-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.6: ESEF Error Country Heatmap</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plots[<span class="st">"esef_error_type_freq_bar"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div id="fig-esef_error_type_freq_bar" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig-esef_error_type_freq_bar-output-1.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.7: ESEF Error Type Bar Chart</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plots[<span class="st">"esef_errors_followers"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div id="fig-esef_errors_followers" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig-esef_errors_followers-output-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1.8: ESEF Error Count by Twitter Followers</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="resources" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="resources"><span class="header-section-number">1.3</span> Resources</h2>
+<ul>
+<li><a href="data-collection.html#sec-data-availability"><span>Section&nbsp;2.1</span></a></li>
+<li><a href="data-coverage.html#sec-data-coverage"><span>Section&nbsp;3.1</span></a></li>
+<li><a href="docs/contributors.yaml">CRediT Contributor Statement</a></li>
+</ul>
+<p>With the introduction of the European Single Electronic Format (ESEF) for annual financial reports, corporate financial data in the European Union becomes standardized and machine-readable for the first time. Use of the format is binding for financial year 2020 and later and as companies begin to publish using ESEF, there are significant opportunities and challenges ahead for the accounting research community.</p>
+<p>As part of TRR266, funding has been obtained to empower and enable research using these documents. By incubating this project as open source from the outset, we hope to attract contributions from academia and industry and avoid the privatization of this emerging open data resource.</p>
+<p><a href="https://www.esma.europa.eu/policy-activities/corporate-disclosure/european-single-electronic-format">ESEF is a standard based on XBRL</a>, but it is not a document repository. ESEF has been adopted by the 27 nations of the European Union as well as Norway and Iceleand. <a href="https://www.esma.europa.eu/access-regulated-information">Each country is responsible for designating a national database</a>.</p>
+</section>
+<section id="project-modules" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="project-modules"><span class="header-section-number">1.4</span> Project Modules</h2>
+<ol type="1">
+<li>A dashboard which tracks ESEF availability by country and filing quality by country and company</li>
+<li>A dataset which identifies all firms (‘issuer’) subject to ESEF regulation</li>
+<li>An ESEF parser which reads, validates, and normalizes ESEF financial reports</li>
+<li>A repository of raw filings in the ESEF format</li>
+<li>Standardized <a href="https://martinfowler.com/articles/data-mesh-principles.html#DataAsAProduct">‘data products’</a> extracted from ESEF filings</li>
+</ol>
+</section>
+<section id="project-goals" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="project-goals"><span class="header-section-number">1.5</span> Project Goals</h2>
+<ol type="1">
+<li>Enable TRR researchers to do research on the basis of ESEF data</li>
+<li>Gather and focus open source ESEF software efforts</li>
+<li>Publicize and encourage high quality filings and easy data access by national competent authorities</li>
+<li>Establish canonical ‘data product schemas’ for analyzing financial reporting across the European Union</li>
+<li>Promote open science and open data in accounting and offer templates and tools for building on our work</li>
+</ol>
+</section>
+<section id="technical-approach" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="technical-approach"><span class="header-section-number">1.6</span> Technical Approach</h2>
+<ol type="1">
+<li>GitHub Actions CI/CD is used to ensure that code is tested and functional at every commit</li>
+<li>Pull Requests with maintainer reviews ensure code quality</li>
+<li>The project will be developed ‘out in the open’ to avoid the ‘ripping the band-aid off’ experience of having to decide when to open source</li>
+<li>The project will be developed under an OSS-compliant MIT license</li>
+</ol>
+</section>
+<section id="project-funding" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="project-funding"><span class="header-section-number">1.7</span> Project Funding</h2>
+<p>Funded by the <a href="https://www.dfg.de">Deutsche Forschungsgemeinschaft (DFG, German Research Foundation)</a>: <a href="https://www.accounting-for-transparency.de">Project-ID 403041268 – TRR 266 Accounting for Transparency</a>.</p>
+</section>
+<section id="datasets-used" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="datasets-used"><span class="header-section-number">1.8</span> Datasets Used</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Dataset</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://filings.xbrl.org/about.html">filings.xbrl.org</a></td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes">lukes/ISO-3166-Countries-with-Regional-Codes</a></td>
+<td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.npmjs.com/package/world-atlas">World Atlas TopoJSON</a></td>
+<td><a href="https://www.isc.org/licenses/">ISC</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://registers.esma.europa.eu/publication/helpApp">ESMA Public Data (Regulated Markets)</a></td>
+<td><a href="https://registers.esma.europa.eu/publication/legalNoticePage">ESMA T&amp;C</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a></td>
+<td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="licensing" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="licensing"><span class="header-section-number">1.9</span> Licensing</h2>
+<ul>
+<li>For code, see <a href="LICENSE">LICENSE</a></li>
+<li>Graphics are licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./data-collection.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Collection</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
