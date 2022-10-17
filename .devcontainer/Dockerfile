@@ -1,12 +1,15 @@
-FROM jupyter/datascience-notebook:notebook-6.4.12
+FROM jupyter/datascience-notebook:notebook-6.5.1
 
 USER root
 
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && wget --no-verbose -O quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v0.9.598/quarto-0.9.598-linux-amd64.deb \
+RUN QUARTO_VERSION=1.2.190 \
+    && apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && wget -O quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb \
     && dpkg -i quarto.deb \
     && rm quarto.deb \
-    && apt-get install --no-install-recommends -y lmodern rsync
+    && apt-get install -y lmodern \
+    && apt-get install -y rsync \
+    && quarto install tinytex
 
 COPY Project.toml Manifest.toml ./ 
 COPY startup_ijulia.jl .julia/config/
