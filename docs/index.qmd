@@ -22,7 +22,7 @@ A project of the [Open Science Data Center][c02]
 ```{julia}
 using ESEF
 
-plots = ESEF.generate_esef_homepage_viz(; map_output="web")
+plots = ESEF.generate_esef_homepage_viz()
 ```
 
 
