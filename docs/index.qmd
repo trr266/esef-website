@@ -4,6 +4,7 @@ author: "Jeremiah Lewis"
 format:
   html:
     code-fold: false
+    fig-format: svg
 engine: jupyter
 ---
 
