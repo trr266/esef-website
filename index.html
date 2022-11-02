@@ -246,7 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="esef-country-availability-map" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="esef-country-availability-map"><span class="header-section-number">1.2</span> ESEF Country Availability (Map)</h2>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">ESEF</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">ESEF</span>, <span class="bu">CairoMakie</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>plots <span class="op">=</span> ESEF.<span class="fu">generate_esef_homepage_viz</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -266,7 +266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div id="fig-esef_country_availability_map" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/fig-esef_country_availability_map-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/fig-esef_country_availability_map-output-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.1: ESEF Country Availability (Map)</figcaption><p></p>
 </figure>
 </div>
@@ -277,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div id="fig-esef_country_availability_bar" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/fig-esef_country_availability_bar-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/fig-esef_country_availability_bar-output-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.2: ESEF Country Availability (Map)</figcaption><p></p>
 </figure>
 </div>
@@ -288,7 +288,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div id="fig-esef_mandate_overview" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/fig-esef_mandate_overview-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/fig-esef_mandate_overview-output-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.3: ESEF Mandate Overview</figcaption><p></p>
 </figure>
 </div>
@@ -299,7 +299,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div id="fig-esef_publication_date_composite" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/fig-esef_publication_date_composite-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/fig-esef_publication_date_composite-output-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.4: ESEF Publication Date Composite</figcaption><p></p>
 </figure>
 </div>
@@ -310,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div id="fig-esef_error_hist" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/fig-esef_error_hist-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/fig-esef_error_hist-output-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.5: ESEF Error Histogram</figcaption><p></p>
 </figure>
 </div>
@@ -321,7 +321,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div id="fig-esef_error_country_heatmap" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/fig-esef_error_country_heatmap-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/fig-esef_error_country_heatmap-output-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.6: ESEF Error Country Heatmap</figcaption><p></p>
 </figure>
 </div>
@@ -332,7 +332,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div id="fig-esef_error_type_freq_bar" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/fig-esef_error_type_freq_bar-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/fig-esef_error_type_freq_bar-output-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.7: ESEF Error Type Bar Chart</figcaption><p></p>
 </figure>
 </div>
@@ -343,7 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div id="fig-esef_errors_followers" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/fig-esef_errors_followers-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/fig-esef_errors_followers-output-1.svg" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.8: ESEF Error Count by Twitter Followers</figcaption><p></p>
 </figure>
 </div>
