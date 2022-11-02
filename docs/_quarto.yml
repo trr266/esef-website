@@ -15,4 +15,4 @@ book:
 format:
     html:
         theme: cosmo
-        fig-format: svg
+        fig-format: retina
