@@ -28,3 +28,4 @@ data-collection_files/
 data-coverage_files/
 *.html
 *.json
+*.ipynb
