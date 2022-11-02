@@ -27,7 +27,7 @@ jobs:
         env:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}        
         run: |
-          quarto render docs
+          quarto render docs -P fig_format:svg
       - 
         name: Deploy 🚀
         if: github.event_name != 'pull_request'
