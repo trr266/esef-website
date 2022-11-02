@@ -21,7 +21,7 @@ A project of the [Open Science Data Center][c02]
 ## ESEF Country Availability (Map)
 
 ```{julia}
-using ESEF
+using ESEF, CairoMakie
 
 plots = ESEF.generate_esef_homepage_viz()
 ```
