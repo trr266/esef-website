@@ -2,7 +2,7 @@ FROM jupyter/datascience-notebook:notebook-6.5.1
 
 USER root
 
-RUN QUARTO_VERSION=1.2.190 \
+RUN QUARTO_VERSION=1.2.258 \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && wget -O quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb \
     && dpkg -i quarto.deb \
