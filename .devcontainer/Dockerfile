@@ -9,7 +9,6 @@ RUN QUARTO_VERSION=1.2.258 \
     && rm quarto.deb \
     && apt-get install -y lmodern \
     && apt-get install -y rsync \
-    && pip install papermill==2.4.0 \
     && quarto install tinytex
 
 COPY Project.toml Manifest.toml ./ 

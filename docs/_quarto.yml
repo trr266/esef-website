@@ -16,3 +16,4 @@ format:
     html:
         theme: cosmo
         fig-format: retina
+        code-fold: false
