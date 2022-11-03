@@ -1,5 +1,5 @@
 ---
-title: "ESEF Intro"
+title: "An Introduction to ESEF Data"
 author: "Jeremiah Lewis"
 engine: jupyter
 execute:
