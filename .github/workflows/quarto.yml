@@ -3,11 +3,11 @@ on:
   push:
     branches: main
     paths:
-      - docs/
+      - docs/**
   pull_request:
     branches: main
     paths:
-      - docs/
+      - docs/**
   registry_package:
     types: [published, updated]
   workflow_dispatch:
