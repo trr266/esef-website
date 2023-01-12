@@ -103,5 +103,12 @@
     "title": "3  Data Coverage",
     "section": "3.2 Definitions",
     "text": "3.2 Definitions\n\nIssuer: “means a natural person, or a legal entity governed by private or public law, including a State, whose securities are admitted to trading on a regulated market” 5"
+  },
+  {
+    "objectID": "data-preview.html",
+    "href": "data-preview.html",
+    "title": "4  Data Preview",
+    "section": "",
+    "text": "5 Data Preview\n\ndb = DuckDBClient.of({\n  nba: getRemoteFile(\"https://llimllib.github.io/nba_data/players_2023.parquet\")\n})"
   }
 ]
