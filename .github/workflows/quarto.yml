@@ -23,9 +23,7 @@ jobs:
         name: Checkout repository
         uses: actions/checkout@v3
       - 
-        name: Render book to all formats
-        env:
-          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}        
+        name: Render book to all formats  
         run: |
           quarto render docs
       - 
