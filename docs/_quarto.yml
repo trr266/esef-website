@@ -11,6 +11,7 @@ book:
         - index.qmd
         - data-collection.qmd
         - data-coverage.qmd
+        - data-preview.qmd
 
 format:
     html:

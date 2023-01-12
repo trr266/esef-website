@@ -1,0 +1,19 @@
+---
+title: "Data Preview"
+author: "Jeremiah Lewis"
+format:
+  html:
+    code-fold: false
+engine: jupyter
+---
+
+# Data Preview
+
+```{ojs}
+db = DuckDBClient.of({
+  nba: getRemoteFile("https://llimllib.github.io/nba_data/players_2023.parquet")
+})
+```
+
+
+
