@@ -4,6 +4,8 @@ USER root
 
 RUN QUARTO_VERSION=1.3.134 \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    apt-get install -y build-essential git clang && \
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
     && wget -O quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb \
     && dpkg -i quarto.deb \
     && rm quarto.deb \

@@ -4,10 +4,24 @@ author: "Jeremiah Lewis"
 format:
   html:
     code-fold: false
-engine: jupyter
 ---
 
 # Data Preview
+
+```{julia}
+using ESEF
+using CSV
+
+process, port = ESEF.serve_esef_data(test = true, keep_open = true)
+
+df_concept = ESEF.export_concept_count_table(port)
+df_profit = ESEF.export_profit_table(port)
+
+CSV.write("_book/esef_profits_beta.csv")
+CSV.write("_book/esef_concepts_beta.csv")
+
+kill(process)
+```
 
 ```{ojs}
 //| panel: input
@@ -56,7 +70,7 @@ Inputs.table(filtered)
 :::
 
 ```{ojs}
-data = FileAttachment("palmer-penguins.csv").csv({ typed: true })
+data = FileAttachment("esef_profits_beta.csv").csv({ typed: true })
 ```
 
 ```{ojs}
