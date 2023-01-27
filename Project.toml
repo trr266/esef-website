@@ -1,3 +1,4 @@
 [deps]
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 ESEF = "83708ea4-d5e7-11ec-0dd7-1d04f099a81d"
+IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"

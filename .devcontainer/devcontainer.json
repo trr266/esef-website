@@ -13,7 +13,8 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"quarto.quarto"
+		"quarto.quarto",
+		"julialang.language-julia"
 	],
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
