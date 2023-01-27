@@ -20,6 +20,12 @@ A project of the [Open Science Data Center][c02]
 
 ```{julia}
 #| output: false
+using Pkg
+Pkg.activate(".")
+```
+
+```{julia}
+#| output: false
 
 using ESEF, CairoMakie
 
@@ -69,12 +75,6 @@ plots[:esef_error_country_heatmap]
 #| label: fig-esef_error_type_freq_bar
 #| fig-cap: "ESEF Error Type Bar Chart"
 plots[:esef_error_type_freq_bar]
-```
-
-```{julia}
-#| label: fig-esef_errors_followers
-#| fig-cap: "ESEF Error Count by Twitter Followers"
-plots[:esef_errors_followers]
 ```
 
 

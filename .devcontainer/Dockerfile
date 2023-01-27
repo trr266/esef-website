@@ -9,10 +9,13 @@ RUN QUARTO_VERSION=1.2.313 \
     && rm quarto.deb \
     && apt-get install -y lmodern \
     && apt-get install -y rsync \
-    && quarto install tinytex
+    && quarto install tinytex \
+    && python3 -m pip install jupyter-cache
 
 COPY Project.toml Manifest.toml ./ 
 COPY startup_ijulia.jl .julia/config/
+
+ENV QUARTO_PYTHON=/opt/conda/bin/python3
 
 RUN julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate();'
 
