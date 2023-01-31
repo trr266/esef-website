@@ -2,7 +2,7 @@ FROM --platform=linux/amd64 jupyter/datascience-notebook:notebook-6.5.2
 
 USER root
 
-RUN QUARTO_VERSION=1.2.335 \
+RUN QUARTO_VERSION=1.3.146 \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y build-essential git clang \
     && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
