@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to ESEF Data"
 author: "Jeremiah Lewis"
-engine: jupyter
+jupyter: julia-1.8
 execute:
   echo: false
 ---
@@ -21,7 +21,7 @@ A project of the [Open Science Data Center][c02]
 ```{julia}
 #| output: false
 using Pkg
-Pkg.activate("/workspaces/esef")
+Pkg.activate(".")
 ```
 
 ```{julia}
@@ -31,7 +31,6 @@ using ESEF, CairoMakie
 
 plots = ESEF.generate_esef_homepage_viz()
 ```
-
 
 ```{julia}
 #| label: fig-esef_country_availability_map

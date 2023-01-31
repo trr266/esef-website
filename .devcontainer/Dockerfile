@@ -2,7 +2,7 @@ FROM --platform=linux/amd64 jupyter/datascience-notebook:notebook-6.5.2
 
 USER root
 
-RUN QUARTO_VERSION=1.3.134 \
+RUN QUARTO_VERSION=1.2.335 \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y build-essential git clang \
     && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
@@ -19,6 +19,7 @@ COPY startup_ijulia.jl .julia/config/
 
 ENV QUARTO_PYTHON=/opt/conda/bin/python3
 
-RUN julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate();'
+RUN julia -e 'using Pkg; Pkg.add("IJulia"); Pkg.add("Revise");' \
+    julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate();'
 
 CMD ["quarto", "render", "esef"]
