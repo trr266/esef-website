@@ -21,7 +21,7 @@ A project of the [Open Science Data Center][c02]
 ```{julia}
 #| output: false
 using Pkg
-Pkg.activate("/workspaces/esef")
+Pkg.activate(".")
 ```
 
 ```{julia}
