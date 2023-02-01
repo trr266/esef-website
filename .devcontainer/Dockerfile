@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 jupyter/datascience-notebook:notebook-6.5.2
+FROM --platform=linux/amd64 julia:1.8
 
 USER root
 
@@ -11,15 +11,15 @@ RUN QUARTO_VERSION=1.3.146 \
     && rm quarto.deb \
     && apt-get install -y lmodern \
     && apt-get install -y rsync \
-    && quarto install tinytex \
-    && python3 -m pip install jupyter-cache
+    && quarto install tinytex
 
 COPY Project.toml Manifest.toml ./ 
 COPY startup_ijulia.jl .julia/config/
 
-ENV QUARTO_PYTHON=/opt/conda/bin/python3
-
 RUN julia -e 'using Pkg; Pkg.add("IJulia"); Pkg.add("Revise");' \
+    julia -e 'Pkg.add("Conda"); using Conda; Conda.add("jupyter"); Conda.add("jupyter-cache");' \
     julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate();'
 
 CMD ["quarto", "render", "esef"]
+
+
