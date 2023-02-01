@@ -1,5 +1,7 @@
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"
 ESEF = "83708ea4-d5e7-11ec-0dd7-1d04f099a81d"
 IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
