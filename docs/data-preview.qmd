@@ -1,19 +1,31 @@
 ---
 title: "Data Preview"
 author: "Jeremiah Lewis"
+engine: jupyter
 format:
   html:
     code-fold: false
-engine: jupyter
 ---
 
 # Data Preview
 
-```{ojs}
-db = DuckDBClient.of({
-  nba: getRemoteFile("https://llimllib.github.io/nba_data/players_2023.parquet")
-})
+```{julia}
+using Pkg
+# Pkg.activate("esef")
+
+# using ESEF
+# using CSV
+
+# process, port = ESEF.serve_esef_data(test = true, keep_open = true)
+
+# sleep(2)
+
+# df_concept = ESEF.export_concept_count_table(port)
+# df_profit = ESEF.export_profit_table(port)
+
+# CSV.write("esef_concepts_beta.csv", df_concept)
+# CSV.write("esef_profits_beta.csv", df_profit)
+
+
+# kill(process)
 ```
-
-
-

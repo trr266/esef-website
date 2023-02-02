@@ -13,10 +13,12 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"quarto.quarto"
+		"quarto.quarto",
+		"julialang.language-julia",
+		"GitHub.copilot"
 	],
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
+	"onCreateCommand": "julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.precompile();'"
 }

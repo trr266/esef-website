@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to ESEF Data"
 author: "Jeremiah Lewis"
-engine: jupyter
+# jupyter: julia-1.8
 execute:
   echo: false
 ---
@@ -20,12 +20,17 @@ A project of the [Open Science Data Center][c02]
 
 ```{julia}
 #| output: false
+using Pkg
+Pkg.activate(".")
+```
+
+```{julia}
+#| output: false
 
 using ESEF, CairoMakie
 
 plots = ESEF.generate_esef_homepage_viz()
 ```
-
 
 ```{julia}
 #| label: fig-esef_country_availability_map
@@ -69,12 +74,6 @@ plots[:esef_error_country_heatmap]
 #| label: fig-esef_error_type_freq_bar
 #| fig-cap: "ESEF Error Type Bar Chart"
 plots[:esef_error_type_freq_bar]
-```
-
-```{julia}
-#| label: fig-esef_errors_followers
-#| fig-cap: "ESEF Error Count by Twitter Followers"
-plots[:esef_errors_followers]
 ```
 
 
