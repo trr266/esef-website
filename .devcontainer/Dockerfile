@@ -21,5 +21,3 @@ RUN julia -e 'using Pkg; Pkg.instantiate(.);' \
     julia -e 'using Conda; Conda.add("jupyter"); Conda.add("jupyter-cache");'
 
 CMD ["quarto", "render", "esef"]
-
-
