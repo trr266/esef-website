@@ -25,7 +25,7 @@ jobs:
       - 
         name: Render book to all formats  
         run: |
-          quarto render docs
+          quarto render docs --no-execute-daemon
       - 
         name: Deploy 🚀
         if: github.event_name != 'pull_request'
