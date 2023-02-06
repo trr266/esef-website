@@ -12,9 +12,9 @@ book:
     date: "2022-05-09"
     chapters:
         - index.qmd
-        # - data-collection.qmd
-        # - data-coverage.qmd
-        # - data-preview.qmd
+        - data-collection.qmd
+        - data-coverage.qmd
+        - data-preview.qmd
 
 format:
     html:
