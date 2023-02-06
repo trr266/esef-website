@@ -9,6 +9,11 @@ format:
 
 # Data Preview
 
+::: {.callout-important}
+Until this disclaimer is removed, all data displayed here is for
+technical testing purposes and is not suitable for data analysis.
+:::
+
 ```{julia}
 using ESEF
 using CSV
@@ -31,6 +36,13 @@ kill(process)
 concepts_data = FileAttachment("esef_concepts_beta.csv").csv({ typed: true })
 ```
 
+## Concepts Used in ESEF Reports
+
+```{ojs}
+Inputs.table(concepts_data)
+```
+
+## Profit Data from ESEF Reports
 
 ```{ojs}
 Inputs.table(concepts_data)
