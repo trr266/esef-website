@@ -14,7 +14,7 @@ RUN QUARTO_VERSION=1.3.149 \
     && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 
-# COPY Project.toml Manifest.toml ~/.julia/environments/v1.8/
+COPY docs/Project.toml docs/Manifest.toml docs
 COPY startup_ijulia.jl .julia/config/
 COPY setup_julia.jl .
 
