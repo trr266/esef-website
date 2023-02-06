@@ -12,6 +12,8 @@ format:
 ::: {.callout-important}
 Until this disclaimer is removed, all data displayed here is for
 technical testing purposes and is not suitable for data analysis.
+
+Furthermore, at the moment the data is provided without any license terms, so please use at your own risk.
 :::
 
 ```{julia}
