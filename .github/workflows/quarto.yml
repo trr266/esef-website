@@ -25,6 +25,7 @@ jobs:
       - 
         name: Render book to all formats  
         run: |
+          julia --project=docs setup_julia.jl
           quarto render docs --no-execute-daemon
       - 
         name: Deploy 🚀
