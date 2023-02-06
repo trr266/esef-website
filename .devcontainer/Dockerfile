@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 julia:1.9-rc
+FROM julia:1.9-rc
 
 USER root
 
