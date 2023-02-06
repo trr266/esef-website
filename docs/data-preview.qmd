@@ -9,23 +9,53 @@ format:
 
 # Data Preview
 
+::: {.callout-important}
+Until this disclaimer is removed, all data displayed here is for
+technical testing purposes and is not suitable for data analysis.
+
+Furthermore, at the moment the data is provided without any license terms, so please use at your own risk.
+:::
+
 ```{julia}
-using Pkg
-# Pkg.activate("esef")
+#| include: false
+using ESEF
+using CSV
 
-# using ESEF
-# using CSV
+process, port = ESEF.serve_esef_data(test = true, keep_open = true)
 
-# process, port = ESEF.serve_esef_data(test = true, keep_open = true)
+sleep(2)
 
-# sleep(2)
+df_concept = ESEF.export_concept_count_table(port)
+df_profit = ESEF.export_profit_table(port)
 
-# df_concept = ESEF.export_concept_count_table(port)
-# df_profit = ESEF.export_profit_table(port)
+CSV.write("_book/esef_concepts_beta.csv", df_concept)
+CSV.write("_book/esef_profits_beta.csv", df_profit)
 
-# CSV.write("esef_concepts_beta.csv", df_concept)
-# CSV.write("esef_profits_beta.csv", df_profit)
+kill(process)
+```
 
 
-# kill(process)
+
+## Concepts Used in ESEF Reports
+
+Raw (beta) data available for inspection [here](https://trr266.github.io/esef/esef_concepts_beta.csv).
+
+```{ojs}
+concepts_data = FileAttachment("esef_concepts_beta.csv").csv({ typed: true })
+```
+
+```{ojs}
+Inputs.table(concepts_data)
+```
+
+## Profit Data from ESEF Reports
+
+Raw (beta) data available for inspection [here](https://trr266.github.io/esef/esef_profits_beta.csv).
+
+```{ojs}
+profit_data = FileAttachment("esef_profits_beta.csv").csv({ typed: true })
+```
+
+```{ojs}
+Inputs.table(profit_data)
 ```

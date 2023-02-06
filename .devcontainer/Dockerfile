@@ -16,8 +16,8 @@ RUN QUARTO_VERSION=1.3.149 \
 
 # COPY Project.toml Manifest.toml ~/.julia/environments/v1.8/
 COPY startup_ijulia.jl .julia/config/
+COPY setup_julia.jl .
 
-RUN julia -e 'using Pkg; Pkg.instantiate(.);' \
-    julia -e 'using Conda; Conda.add("jupyter"); Conda.add("jupyter-cache");'
+RUN julia -project=docs setup_julia.julia
 
-CMD ["quarto", "render", "esef"]
+CMD ["quarto", "render", "docs", "--no-execute-daemon"]

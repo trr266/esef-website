@@ -1,3 +1,6 @@
+execute:
+  cache: true
+
 project:
     type: book
     output-dir: _book

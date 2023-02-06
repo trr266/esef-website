@@ -20,5 +20,5 @@
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-	"onCreateCommand": "julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.precompile();'"
+	"onCreateCommand": "julia --project=docs startup_julia.jl"
 }
