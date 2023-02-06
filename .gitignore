@@ -30,3 +30,4 @@ data-coverage_files/
 *.json
 *.ipynb
 .cache/
+.jupyter_cache/
