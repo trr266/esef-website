@@ -15,6 +15,7 @@ technical testing purposes and is not suitable for data analysis.
 :::
 
 ```{julia}
+#| include: false
 using ESEF
 using CSV
 
@@ -32,11 +33,14 @@ kill(process)
 ```
 
 
+
+## Concepts Used in ESEF Reports
+
+Raw (beta) data available for inspection [here](https://trr266.github.io/esef/esef_concepts_beta.csv).
+
 ```{ojs}
 concepts_data = FileAttachment("esef_concepts_beta.csv").csv({ typed: true })
 ```
-
-## Concepts Used in ESEF Reports
 
 ```{ojs}
 Inputs.table(concepts_data)
@@ -44,6 +48,12 @@ Inputs.table(concepts_data)
 
 ## Profit Data from ESEF Reports
 
+Raw (beta) data available for inspection [here](https://trr266.github.io/esef/esef_profits_beta.csv).
+
 ```{ojs}
-Inputs.table(concepts_data)
+profit_data = FileAttachment("esef_profits_beta.csv").csv({ typed: true })
+```
+
+```{ojs}
+Inputs.table(profit_data)
 ```
