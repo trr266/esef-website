@@ -20,4 +20,4 @@ COPY startup_ijulia.jl .julia/config/
 RUN julia -e 'using Pkg; Pkg.instantiate(.);' \
     julia -e 'using Conda; Conda.add("jupyter"); Conda.add("jupyter-cache");'
 
-CMD ["quarto", "render", "esef"]
+CMD ["quarto", "render", "docs", "--no-execute-daemon"]
