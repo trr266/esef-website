@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 julia:1.8.5
+FROM --platform=linux/amd64 julia:1.9.0-beta3
 
 USER root
 
@@ -13,7 +13,7 @@ RUN QUARTO_VERSION=1.3.149 \
     && quarto install tinytex \
     && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-
+bi
 COPY docs/Project.toml docs/Manifest.toml docs
 COPY startup_ijulia.jl .julia/config/
 COPY setup_julia.jl .
