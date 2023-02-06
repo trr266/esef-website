@@ -18,6 +18,6 @@ RUN QUARTO_VERSION=1.3.149 \
 COPY startup_ijulia.jl .julia/config/
 COPY setup_julia.jl .
 
-RUN julia -project=docs setup_julia.jl
+RUN julia --project=docs setup_julia.jl
 
 CMD ["quarto", "render", "docs", "--no-execute-daemon"]
