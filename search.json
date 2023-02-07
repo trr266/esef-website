@@ -18,7 +18,7 @@
     "href": "index.html#esef-country-availability-map",
     "title": "TRR 266: C02 ESEF Project",
     "section": "1.2 ESEF Country Availability (Map)",
-    "text": "1.2 ESEF Country Availability (Map)\n\n\n\n\n\nFigure 1.1: ESEF Country Availability (Map)\n\n\n\n\n\n\n\n\n\nFigure 1.2: ESEF Country Availability (Map)\n\n\n\n\n\n\n\n\n\nFigure 1.3: ESEF Mandate Overview\n\n\n\n\n\n\n\n\n\nFigure 1.4: ESEF Publication Date Composite\n\n\n\n\n\n\n\n\n\nFigure 1.5: ESEF Error Histogram\n\n\n\n\n\n\n\n\n\nFigure 1.6: ESEF Error Country Heatmap\n\n\n\n\n\n\n\n\n\nFigure 1.7: ESEF Error Type Bar Chart\n\n\n\n\n\n\n\n\n\nFigure 1.8: ESEF Error Count by Twitter Followers"
+    "text": "1.2 ESEF Country Availability (Map)\n\n\n\n\n\nFigure 1.1: ESEF Country Availability (Map)\n\n\n\n\n\n\n\n\n\nFigure 1.2: ESEF Country Availability (Map)\n\n\n\n\n\n\n\n\n\nFigure 1.3: ESEF Mandate Overview\n\n\n\n\n\n\n\n\n\nFigure 1.4: ESEF Publication Date Composite\n\n\n\n\n\n\n\n\n\nFigure 1.5: ESEF Error Histogram\n\n\n\n\n\n\n\n\n\nFigure 1.6: ESEF Error Country Heatmap\n\n\n\n\n\n\n\n\n\nFigure 1.7: ESEF Error Type Bar Chart"
   },
   {
     "objectID": "index.html#resources",
@@ -109,6 +109,20 @@
     "href": "data-preview.html",
     "title": "4  Data Preview",
     "section": "",
-    "text": "5 Data Preview\n\ndb = DuckDBClient.of({\n  nba: getRemoteFile(\"https://llimllib.github.io/nba_data/players_2023.parquet\")\n})"
+    "text": "5 Data Preview"
+  },
+  {
+    "objectID": "data-preview.html#concepts-used-in-esef-reports",
+    "href": "data-preview.html#concepts-used-in-esef-reports",
+    "title": "4  Data Preview",
+    "section": "5.1 Concepts Used in ESEF Reports",
+    "text": "5.1 Concepts Used in ESEF Reports\nRaw (beta) data available for inspection here.\n\nconcepts_data = FileAttachment(\"esef_concepts_beta.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nInputs.table(concepts_data)"
+  },
+  {
+    "objectID": "data-preview.html#profit-data-from-esef-reports",
+    "href": "data-preview.html#profit-data-from-esef-reports",
+    "title": "4  Data Preview",
+    "section": "5.2 Profit Data from ESEF Reports",
+    "text": "5.2 Profit Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\nprofit_data = FileAttachment(\"esef_profits_beta.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nInputs.table(profit_data)"
   }
 ]
