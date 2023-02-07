@@ -1,10 +1,11 @@
 {
 	"name": "Debian",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"context": "..",
-	},
-
+// 	"build": {
+// 		"dockerfile": "Dockerfile",
+// 		"context": "..",
+// 	},
+// 	use image instead of rebuilding everytime
+	"image": "ghcr.io/trr266/esef:main",
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"terminal.integrated.fontFamily": "monospace",
