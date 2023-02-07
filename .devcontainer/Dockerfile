@@ -18,4 +18,6 @@ COPY setup_julia.jl .
 
 RUN julia --project=docs setup_julia.jl
 
+ENV PATH=/root/.julia/conda/3/bin:$PATH
+
 CMD ["quarto", "render", "docs", "--no-execute-daemon"]
