@@ -10,10 +10,7 @@ RUN QUARTO_VERSION=1.3.149 \
     && rm quarto.deb \
     && apt-get -qq install -y lmodern \
     && apt-get -qq install -y rsync \
-    && quarto install tinytex --quiet \
-    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
-ENV PATH="$PATH:$HOME/.cargo/bin"
+    && quarto install tinytex --quiet
 
 COPY docs/Project.toml docs/Manifest.toml docs/
 COPY startup_ijulia.jl .julia/config/
