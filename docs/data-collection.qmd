@@ -84,5 +84,5 @@ Various projects attempt to provide ESEF data for different purposes. A non-exha
 [esef_postponement_index]: https://ec.europa.eu/info/publications/201211-esef-postponement_en
 [parseport_index]: https://parseport.com/esef-postponement-information/
 [xbrl_liechtenstein]: https://www.fma-li.li/de/aufsicht/bereich-versicherungen-und-vorsorgeeinrichtungen/versicherungsunternehmen/meldewesen-xbrl/nationale-xbrl-taxonomie.html
-[esap]: https://ec.europa.eu/info/consultations/finance-2021-european-single-access-point_en
+[esap]: https://web.archive.org/web/20230208141643/https://www.xbrl.org/news/data-and-information-hub-esma-five-year-strategy-and-workplan/
 [wikidata_complete_json]: https://dumps.wikimedia.org/wikidatawiki/entities/
