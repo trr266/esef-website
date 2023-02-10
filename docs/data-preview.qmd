@@ -38,7 +38,7 @@ kill(process)
 
 ## Concepts Used in ESEF Reports
 
-Raw (beta) data available for inspection [here](https://trr266.github.io/esef/esef_concepts_beta.csv).
+Raw (beta) data available for inspection [here](https://trr266.github.io/esef-website/esef_concepts_beta.csv).
 
 ```{ojs}
 concepts_data = FileAttachment("esef_concepts_beta.csv").csv({ typed: true })
@@ -50,7 +50,7 @@ Inputs.table(concepts_data, {sort: "frequency", reverse: true, width: {concept: 
 
 ## Profit Data from ESEF Reports
 
-Raw (beta) data available for inspection [here](https://trr266.github.io/esef/esef_profits_beta.csv).
+Raw (beta) data available for inspection [here](https://trr266.github.io/esef-website/esef_profits_beta.csv).
 
 ```{ojs}
 profit_data = FileAttachment("esef_profits_beta.csv").csv({ typed: true })

@@ -1,8 +1,8 @@
 # ESEF Data Product
 
-[Website!](https://trr266.github.io/esef/)
+[Website!](https://trr266.github.io/esef-website/)
 
-[![GitHub Super-Linter](https://github.com/trr266/esef/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+[![GitHub Super-Linter](https://github.com/trr266/esef-website/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 A project of the [Open Science Data Center][c02]
 
