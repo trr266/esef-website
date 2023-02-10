@@ -1,7 +1,5 @@
 FROM julia:1.9-rc
 
-USER root
-
 RUN QUARTO_VERSION=1.3.149 \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -qq install -y build-essential git clang wget \
