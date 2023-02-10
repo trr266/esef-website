@@ -45,7 +45,7 @@ concepts_data = FileAttachment("esef_concepts_beta.csv").csv({ typed: true })
 ```
 
 ```{ojs}
-Inputs.table(concepts_data, {sort: "frequency", reverse: true, width: {concept: 140,},}I)
+Inputs.table(concepts_data, {sort: "frequency", reverse: true, width: {concept: 140,},})
 ```
 
 ## Profit Data from ESEF Reports
