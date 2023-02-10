@@ -116,7 +116,7 @@
     "href": "data-preview.html#concepts-used-in-esef-reports",
     "title": "4  Data Preview",
     "section": "5.1 Concepts Used in ESEF Reports",
-    "text": "5.1 Concepts Used in ESEF Reports\nRaw (beta) data available for inspection here.\n\nconcepts_data = FileAttachment(\"esef_concepts_beta.csv\").csv({ typed: true })\n\n\n\n\n\n\n\n```{ojs}\nInputs.table(concepts_data, {sort: \"frequency\", reverse: true, width: {concept: 140,},}I)\n```\n\n\n\n\n\n\n\nOJS Syntax Error (line 48, column 88)Unexpected token"
+    "text": "5.1 Concepts Used in ESEF Reports\nRaw (beta) data available for inspection here.\n\nconcepts_data = FileAttachment(\"esef_concepts_beta.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nInputs.table(concepts_data, {sort: \"frequency\", reverse: true, width: {concept: 140,},})"
   },
   {
     "objectID": "data-preview.html#profit-data-from-esef-reports",
