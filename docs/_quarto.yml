@@ -4,12 +4,13 @@ execute:
 project:
     type: book
     output-dir: _book
-  
+
 book:
     title: "TRR 266: C02 ESEF Project"
     output-file: "esef-project"
     author: "Jeremiah Lewis & Collaborators"
     date: "2022-05-09"
+    repo-url: https://github.com/quarto-dev/quarto-demo    
     repo-actions: [issue, edit]
     chapters:
         - index.qmd
