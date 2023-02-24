@@ -1,6 +1,6 @@
 FROM julia:1.9-rc
 
-RUN QUARTO_VERSION=1.3.149 \
+RUN QUARTO_VERSION=1.3.220 \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -qq install -y build-essential git clang wget \
     && wget -O quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb \
