@@ -11,9 +11,9 @@ on:
     branches: ['main']
     paths:
       - .devcontainer/Dockerfile
-      - Manifest.toml
-      - Project.toml
-      - requirements.txt
+      - .github/workflows/push-container.yml
+      - docs/Manifest.toml
+      - docs/Project.toml
   # to be able to trigger a manual build
   workflow_dispatch:
 
