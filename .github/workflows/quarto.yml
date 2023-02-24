@@ -31,7 +31,7 @@ jobs:
         name: Render book to all formats  
         run: |
           julia --project=docs setup_julia.jl
-          quarto render docs --no-execute-daemon
+          quarto render docs
       - 
         name: Deploy 🚀
         if: github.event_name != 'pull_request'
