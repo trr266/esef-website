@@ -15,8 +15,9 @@ on:
 name: Render and deploy Book
 
 permissions:
-  pages: write
+  contents: write
   packages: read
+  pages: write
 
 jobs:
   docker:
