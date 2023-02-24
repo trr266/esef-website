@@ -16,6 +16,7 @@ name: Render and deploy Book
 
 permissions:
   pages: write
+  packages: read
 
 jobs:
   docker:
