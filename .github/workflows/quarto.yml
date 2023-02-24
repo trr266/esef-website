@@ -21,7 +21,7 @@ permissions:
 jobs:
   docker:
     runs-on: ubuntu-latest
-    container: ghcr.io/trr266/esef:main
+    container: ghcr.io/trr266/esef-website:main
     steps:
       - 
         name: Checkout repository
