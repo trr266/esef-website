@@ -1,5 +1,9 @@
 FROM julia:1.9-rc
 
+ENV JULIA_DEPOT_PATH=/opt/julia
+ENV JULIA_PKGDIR=/opt/julia
+ENV PATH=/root/.julia/conda/3/bin:$PATH
+
 RUN QUARTO_VERSION=1.3.220 \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -qq install -y build-essential git clang wget \
@@ -15,7 +19,5 @@ COPY startup_ijulia.jl .julia/config/
 COPY setup_julia.jl .
 
 RUN julia --project=docs setup_julia.jl
-
-ENV PATH=/root/.julia/conda/3/bin:$PATH
 
 CMD ["quarto", "render", "docs", "--no-execute-daemon"]
