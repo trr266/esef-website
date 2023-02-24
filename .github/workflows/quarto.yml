@@ -31,8 +31,7 @@ jobs:
         name: Render book to all formats  
         run: |
           julia --project=docs setup_julia.jl
-          rm -rf /workspaces/esef-website/.jupyter_cache
-          quarto render docs
+          quarto render docs --no-cache 
       - 
         name: Deploy 🚀
         if: github.event_name != 'pull_request'
