@@ -32,7 +32,7 @@ jobs:
         run: |
           julia --project=docs setup_julia.jl
           rm -rf /workspaces/esef-website/.jupyter_cache
-          quarto render docs --no-execute-daemon
+          quarto render docs
       - 
         name: Deploy 🚀
         if: github.event_name != 'pull_request'
