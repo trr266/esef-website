@@ -2,7 +2,9 @@ FROM julia:1.9-rc
 
 ENV JULIA_DEPOT_PATH=/opt/julia
 ENV JULIA_PKGDIR=/opt/julia
-ENV PATH=/root/.julia/conda/3/bin:$PATH
+ENV CONDA_JL_HOME=/opt/julia/conda
+ENV PATH=/opt/julia/conda/3/bin:$PATH
+ENV CONDA_JL_HOME
 
 RUN QUARTO_VERSION=1.3.220 \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
