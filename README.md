@@ -1,6 +1,7 @@
 # ESEF Data Product
 
-[Website!](https://trr266.github.io/esef-website/)
+- [TRR266 ESEF Website](https://trr266.github.io/esef-website/)
+- [ESEF.jl Package](https://github.com/trr266/ESEF.jl)
 
 [![GitHub Super-Linter](https://github.com/trr266/esef-website/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
