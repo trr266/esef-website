@@ -20,7 +20,7 @@ in the European Union becomes standardized and machine-readable for the first ti
 financial year 2020 and later and as companies begin to publish using ESEF, there are significant opportunities and challenges ahead
 for the accounting research community.
 
-As part of TRR266, funding has been obtained to empower and enable research using these documents.
+As part of [TRR266](https://www.accounting-for-transparency.de), funding has been obtained to empower and enable research using these documents.
 By incubating this project as open source from the outset, we hope to attract contributions from academia and industry
 and avoid the privatization of this emerging open data resource.
 
