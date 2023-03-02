@@ -2,24 +2,24 @@ execute:
   cache: true
 
 project:
-    type: book
-    output-dir: _book
+  type: book
+  output-dir: _book
 
 book:
-    title: "TRR 266: C02 ESEF Project"
-    output-file: "esef-project"
-    author: "Jeremiah Lewis & Collaborators"
-    date: "2023-03-02"
-    repo-url: https://github.com/trr266/esef-website
-    repo-actions: [issue, edit]
-    chapters:
-        - index.qmd
-        - data-collection.qmd
-        - data-coverage.qmd
-        - data-preview.qmd
+  title: "TRR 266: C02 ESEF Project"
+  output-file: "esef-project"
+  author: "Jeremiah Lewis & Collaborators"
+  date: "2023-03-02"
+  repo-url: https://github.com/trr266/esef-website
+  repo-actions: [issue, edit]
+  chapters:
+    - index.qmd
+    - data-collection.qmd
+    - data-coverage.qmd
+    - data-preview.qmd
 
 format:
-    html:
-        theme: cosmo
-        fig-format: retina
-        code-fold: false
+  html:
+    theme: cosmo
+    fig-format: retina
+    code-fold: false
