@@ -109,20 +109,6 @@
     "href": "data-preview.html",
     "title": "4  Data Preview",
     "section": "",
-    "text": "5 Data Preview"
-  },
-  {
-    "objectID": "data-preview.html#concepts-used-in-esef-reports",
-    "href": "data-preview.html#concepts-used-in-esef-reports",
-    "title": "4  Data Preview",
-    "section": "5.1 Concepts Used in ESEF Reports",
-    "text": "5.1 Concepts Used in ESEF Reports\nRaw (beta) data available for inspection here.\n\nconcepts_data = FileAttachment(\"esef_concepts_beta.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nInputs.table(concepts_data, {sort: \"frequency\", reverse: true, width: {concept: 140,},})"
-  },
-  {
-    "objectID": "data-preview.html#profit-data-from-esef-reports",
-    "href": "data-preview.html#profit-data-from-esef-reports",
-    "title": "4  Data Preview",
-    "section": "5.2 Profit Data from ESEF Reports",
-    "text": "5.2 Profit Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\nprofit_data = FileAttachment(\"esef_profits_beta.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nInputs.table(profit_data)"
+    "text": "5 Data Preview\n\n\n\n\n\n\nImportant\n\n\n\nUntil this disclaimer is removed, all data displayed here is for technical testing purposes and is not suitable for data analysis.\nFurthermore, at the moment the data is provided without any license terms, so please use at your own risk.\n\n\n\nConceptsProfitsEquityTotal Assets\n\n\n\n5.0.1 Concepts Used in ESEF Reports\nRaw (beta) data available for inspection here.\n\nconcepts_data = FileAttachment(\"esef_concepts_beta.csv\").csv({ typed: true })\n\nInputs.table(concepts_data, {sort: \"frequency\", reverse: true, width: {concept: 140,},})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5.0.2 Profit Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\nprofit_data = FileAttachment(\"esef_profits_beta.csv\").csv({ typed: true })\n\nInputs.table(profit_data)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5.0.3 Equity Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\nequity_data = FileAttachment(\"esef_equity_beta.csv\").csv({ typed: true })\n\nInputs.table(equity_data)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5.0.4 Total Asset Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\ntotal_assets_data = FileAttachment(\"esef_total_assets_beta.csv\").csv({ typed: true })\n\nInputs.table(total_assets_data)"
   }
 ]

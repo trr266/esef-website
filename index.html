@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.220">
+<meta name="generator" content="quarto-1.3.240">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jeremiah Lewis">
-<meta name="dcterms.date" content="2022-05-09">
+<meta name="dcterms.date" content="2023-03-02">
 
 <title>TRR 266: C02 ESEF Project</title>
 <style>
@@ -19,7 +19,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -91,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">TRR 266: C02 ESEF Project</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/quarto-dev/quarto-demo" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/trr266/esef-website" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -104,22 +104,26 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">An Introduction to ESEF Data</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">An Introduction to ESEF Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-collection.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Collection</span></a>
+  <a href="./data-collection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data Collection</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-coverage.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Coverage</span></a>
+  <a href="./data-coverage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Coverage</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-preview.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Preview</span></a>
+  <a href="./data-preview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Preview</span></span></a>
   </div>
 </li>
     </ul>
@@ -132,20 +136,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#esef-data-product" id="toc-esef-data-product" class="nav-link active" data-scroll-target="#esef-data-product"><span class="toc-section-number">1</span>  ESEF Data Product</a>
+  <li><a href="#esef-data-product" id="toc-esef-data-product" class="nav-link active" data-scroll-target="#esef-data-product"><span class="header-section-number">1</span> ESEF Data Product</a>
   <ul class="collapse">
-  <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations"><span class="toc-section-number">1.1</span>  Visualizations</a></li>
-  <li><a href="#esef-country-availability-map" id="toc-esef-country-availability-map" class="nav-link" data-scroll-target="#esef-country-availability-map"><span class="toc-section-number">1.2</span>  ESEF Country Availability (Map)</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="toc-section-number">1.3</span>  Resources</a></li>
-  <li><a href="#project-modules" id="toc-project-modules" class="nav-link" data-scroll-target="#project-modules"><span class="toc-section-number">1.4</span>  Project Modules</a></li>
-  <li><a href="#project-goals" id="toc-project-goals" class="nav-link" data-scroll-target="#project-goals"><span class="toc-section-number">1.5</span>  Project Goals</a></li>
-  <li><a href="#technical-approach" id="toc-technical-approach" class="nav-link" data-scroll-target="#technical-approach"><span class="toc-section-number">1.6</span>  Technical Approach</a></li>
-  <li><a href="#project-funding" id="toc-project-funding" class="nav-link" data-scroll-target="#project-funding"><span class="toc-section-number">1.7</span>  Project Funding</a></li>
-  <li><a href="#datasets-used" id="toc-datasets-used" class="nav-link" data-scroll-target="#datasets-used"><span class="toc-section-number">1.8</span>  Datasets Used</a></li>
-  <li><a href="#licensing" id="toc-licensing" class="nav-link" data-scroll-target="#licensing"><span class="toc-section-number">1.9</span>  Licensing</a></li>
+  <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations"><span class="header-section-number">1.1</span> Visualizations</a></li>
+  <li><a href="#esef-country-availability-map" id="toc-esef-country-availability-map" class="nav-link" data-scroll-target="#esef-country-availability-map"><span class="header-section-number">1.2</span> ESEF Country Availability (Map)</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">1.3</span> Resources</a></li>
+  <li><a href="#project-modules" id="toc-project-modules" class="nav-link" data-scroll-target="#project-modules"><span class="header-section-number">1.4</span> Project Modules</a></li>
+  <li><a href="#project-goals" id="toc-project-goals" class="nav-link" data-scroll-target="#project-goals"><span class="header-section-number">1.5</span> Project Goals</a></li>
+  <li><a href="#technical-approach" id="toc-technical-approach" class="nav-link" data-scroll-target="#technical-approach"><span class="header-section-number">1.6</span> Technical Approach</a></li>
+  <li><a href="#project-funding" id="toc-project-funding" class="nav-link" data-scroll-target="#project-funding"><span class="header-section-number">1.7</span> Project Funding</a></li>
+  <li><a href="#datasets-used" id="toc-datasets-used" class="nav-link" data-scroll-target="#datasets-used"><span class="header-section-number">1.8</span> Datasets Used</a></li>
+  <li><a href="#licensing" id="toc-licensing" class="nav-link" data-scroll-target="#licensing"><span class="header-section-number">1.9</span> Licensing</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/quarto-dev/quarto-demo/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/quarto-dev/quarto-demo/edit/main/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/trr266/esef-website/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/trr266/esef-website/edit/main/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -169,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 9, 2022</p>
+      <p class="date">March 2, 2023</p>
     </div>
   </div>
   
@@ -383,9 +387,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
