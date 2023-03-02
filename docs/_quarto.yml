@@ -9,8 +9,8 @@ book:
     title: "TRR 266: C02 ESEF Project"
     output-file: "esef-project"
     author: "Jeremiah Lewis & Collaborators"
-    date: "2022-05-09"
-    repo-url: https://github.com/quarto-dev/quarto-demo    
+    date: "2023-03-02"
+    repo-url: https://github.com/trr266/esef-website
     repo-actions: [issue, edit]
     chapters:
         - index.qmd
