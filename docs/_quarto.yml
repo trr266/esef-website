@@ -13,6 +13,7 @@ book:
   date: "2023-03-02"
   repo-url: https://github.com/trr266/esef-website
   repo-actions: [issue, edit]
+  repo-subdir: docs
   chapters:
     - index.qmd
     - data-collection.qmd
