@@ -49,10 +49,9 @@ kill(process)
 Raw (beta) data available for inspection [here](https://trr266.github.io/esef-website/esef_concepts_beta.csv).
 
 ```{ojs}
+#| echo: false
 concepts_data = FileAttachment("esef_concepts_beta.csv").csv({ typed: true })
-```
 
-```{ojs}
 Inputs.table(concepts_data, {sort: "frequency", reverse: true, width: {concept: 140,},})
 ```
 
@@ -63,25 +62,23 @@ Inputs.table(concepts_data, {sort: "frequency", reverse: true, width: {concept: 
 Raw (beta) data available for inspection [here](https://trr266.github.io/esef-website/esef_profits_beta.csv).
 
 ```{ojs}
+#| echo: false
 profit_data = FileAttachment("esef_profits_beta.csv").csv({ typed: true })
-```
 
-```{ojs}
 Inputs.table(profit_data)
 ```
 
 
 ## Equity
 
-## Equity Data from ESEF Reports
+### Equity Data from ESEF Reports
 
 Raw (beta) data available for inspection [here](https://trr266.github.io/esef-website/esef_equity_beta.csv).
 
 ```{ojs}
+#| echo: false
 equity_data = FileAttachment("esef_equity_beta.csv").csv({ typed: true })
-```
 
-```{ojs}
 Inputs.table(equity_data)
 ```
 
@@ -92,10 +89,9 @@ Inputs.table(equity_data)
 Raw (beta) data available for inspection [here](https://trr266.github.io/esef-website/esef_total_assets_beta.csv).
 
 ```{ojs}
+#| echo: false
 total_assets_data = FileAttachment("esef_total_assets_beta.csv").csv({ typed: true })
-```
 
-```{ojs}
 Inputs.table(total_assets_data)
 ```
 
