@@ -31,10 +31,6 @@ jobs:
         name: Render book to all formats  
         run: |
           julia --project=docs setup_julia.jl
-          echo $JULIA_DEPOT_PATH
-          echo $JULIA_PKGDIR
-          echo $CONDA_JL_HOME
-          echo $PATH
           quarto render docs --no-cache 
       - 
         name: Deploy 🚀
