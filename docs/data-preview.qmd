@@ -27,16 +27,24 @@ sleep(2)
 
 df_concept = ESEF.export_concept_count_table(port)
 df_profit = ESEF.export_profit_table(port)
+df_equity = ESEF.export_equity_table(port)
+df_total_assets = ESEF.export_total_assets_table(port)
+
 
 CSV.write("_book/esef_concepts_beta.csv", df_concept)
 CSV.write("_book/esef_profits_beta.csv", df_profit)
+CSV.write("_book/esef_equity_beta.csv", df_equity)
+CSV.write("_book/esef_total_assets_beta.csv", df_total_assets)
 
 kill(process)
 ```
 
 
+::: {.panel-tabset}
 
-## Concepts Used in ESEF Reports
+## Concepts
+
+### Concepts Used in ESEF Reports
 
 Raw (beta) data available for inspection [here](https://trr266.github.io/esef-website/esef_concepts_beta.csv).
 
@@ -48,7 +56,9 @@ concepts_data = FileAttachment("esef_concepts_beta.csv").csv({ typed: true })
 Inputs.table(concepts_data, {sort: "frequency", reverse: true, width: {concept: 140,},})
 ```
 
-## Profit Data from ESEF Reports
+## Profits
+
+### Profit Data from ESEF Reports
 
 Raw (beta) data available for inspection [here](https://trr266.github.io/esef-website/esef_profits_beta.csv).
 
@@ -59,3 +69,34 @@ profit_data = FileAttachment("esef_profits_beta.csv").csv({ typed: true })
 ```{ojs}
 Inputs.table(profit_data)
 ```
+
+
+## Equity
+
+## Equity Data from ESEF Reports
+
+Raw (beta) data available for inspection [here](https://trr266.github.io/esef-website/esef_equity_beta.csv).
+
+```{ojs}
+equity_data = FileAttachment("esef_equity_beta.csv").csv({ typed: true })
+```
+
+```{ojs}
+Inputs.table(equity_data)
+```
+
+## Total Assets
+
+### Total Asset Data from ESEF Reports
+
+Raw (beta) data available for inspection [here](https://trr266.github.io/esef-website/esef_total_assets_beta.csv).
+
+```{ojs}
+total_assets_data = FileAttachment("esef_total_assets_beta.csv").csv({ typed: true })
+```
+
+```{ojs}
+Inputs.table(total_assets_data)
+```
+
+:::
