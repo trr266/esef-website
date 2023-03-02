@@ -32,6 +32,10 @@ jobs:
         run: |
           julia --project=docs setup_julia.jl
           quarto render docs --no-cache 
+        with:
+          JULIA_DEPOT_PATH: /opt/julia
+          JULIA_PKGDIR: /opt/julia
+          CONDA_JL_HOME: /opt/julia/conda
       - 
         name: Deploy 🚀
         if: github.event_name != 'pull_request'
