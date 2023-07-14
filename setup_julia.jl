@@ -5,4 +5,3 @@ using Conda
 
 Conda.add("jupyter")
 Conda.add("jupyter-cache")
-Conda.add("rust")
