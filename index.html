@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.240">
+<meta name="generator" content="quarto-1.4.226">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -49,6 +49,11 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "start",
   "type": "textbox",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,7 +63,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -74,10 +80,10 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">An Introduction to ESEF Data</span></a></li></ol></nav>
-      <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">An Introduction to ESEF Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -91,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">TRR 266: C02 ESEF Project</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/trr266/esef-website/tree/main/docs/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/trr266/esef-website/tree/main/docs/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -149,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#licensing" id="toc-licensing" class="nav-link" data-scroll-target="#licensing"><span class="header-section-number">1.9</span> Licensing</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/trr266/esef-website/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/trr266/esef-website/edit/main/docs/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/trr266/esef-website/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/trr266/esef-website/edit/main/docs/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -188,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="https://github.com/marketplace/actions/super-linter"><img src="https://github.com/trr266/esef-website/workflows/Lint%20Code%20Base/badge.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">GitHub Super-Linter</figcaption><p></p>
+<figcaption class="figure-caption">GitHub Super-Linter</figcaption>
 </figure>
 </div>
 <p>A project of the <a href="https://www.accounting-for-transparency.de/project/open-science-data-center/">Open Science Data Center</a></p>
@@ -200,72 +206,72 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="esef-country-availability-map" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="esef-country-availability-map"><span class="header-section-number">1.2</span> ESEF Country Availability (Map)</h2>
-<div class="cell" data-execution_count="3">
+<div id="cell-fig-esef_country_availability_map" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div id="fig-esef_country_availability_map" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-esef_country_availability_map-output-1.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.1: ESEF Country Availability (Map)</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1.1: ESEF Country Availability (Map)</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="4">
+<div id="cell-fig-esef_country_availability_bar" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div id="fig-esef_country_availability_bar" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-esef_country_availability_bar-output-1.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.2: ESEF Country Availability (Map)</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1.2: ESEF Country Availability (Map)</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
+<div id="cell-fig-esef_mandate_overview" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div id="fig-esef_mandate_overview" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-esef_mandate_overview-output-1.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.3: ESEF Mandate Overview</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1.3: ESEF Mandate Overview</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="6">
+<div id="cell-fig-esef_publication_date_composite" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div id="fig-esef_publication_date_composite" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-esef_publication_date_composite-output-1.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.4: ESEF Publication Date Composite</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1.4: ESEF Publication Date Composite</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div id="cell-fig-esef_error_hist" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div id="fig-esef_error_hist" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-esef_error_hist-output-1.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.5: ESEF Error Histogram</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1.5: ESEF Error Histogram</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
+<div id="cell-fig-esef_error_country_heatmap" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div id="fig-esef_error_country_heatmap" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-esef_error_country_heatmap-output-1.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.6: ESEF Error Country Heatmap</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1.6: ESEF Error Country Heatmap</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="9">
+<div id="cell-fig-esef_error_type_freq_bar" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div id="fig-esef_error_type_freq_bar" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-esef_error_type_freq_bar-output-1.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1.7: ESEF Error Type Bar Chart</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1.7: ESEF Error Type Bar Chart</figcaption>
 </figure>
 </div>
 </div>
@@ -274,8 +280,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="resources" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="resources"><span class="header-section-number">1.3</span> Resources</h2>
 <ul>
-<li><a href="data-collection.html#sec-data-availability"><span>Section&nbsp;2.1</span></a></li>
-<li><a href="data-coverage.html#sec-data-coverage"><span>Section&nbsp;3.1</span></a></li>
+<li><a href="data-collection.html#sec-data-availability" class="quarto-xref"><span>Section&nbsp;2.1</span></a></li>
+<li><a href="data-coverage.html#sec-data-coverage" class="quarto-xref"><span>Section&nbsp;3.1</span></a></li>
 <li><a href="docs/contributors.yaml">CRediT Contributor Statement</a></li>
 </ul>
 <p>With the introduction of the European Single Electronic Format (ESEF) for annual financial reports, corporate financial data in the European Union becomes standardized and machine-readable for the first time. Use of the format is binding for financial year 2020 and later and as companies begin to publish using ESEF, there are significant opportunities and challenges ahead for the accounting research community.</p>
@@ -439,10 +445,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -452,8 +457,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -466,6 +480,60 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      try { hash = new URL(url).hash; } catch {}
+      const id = hash.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note !== null) {
+        try {
+          const html = processXRef(id, note);
+          instance.setContent(html);
+        } finally {
+          instance.enable();
+          instance.show();
+        }
+      } else {
+        // See if we can fetch this
+        fetch(url.split('#')[0])
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.getElementById(id);
+          if (note !== null) {
+            const html = processXRef(id, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -509,6 +577,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -603,6 +672,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
