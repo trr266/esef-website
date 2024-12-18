@@ -33,7 +33,6 @@ jobs:
           cacheFrom: ghcr.io/trr266/esef-website
           push: never
           runCmd: |
-            export HOME=/root
             julia --project=docs setup_julia.jl
             quarto render docs --no-cache 
       - 
