@@ -32,7 +32,7 @@ jobs:
         with:
           cacheFrom: ghcr.io/trr266/esef-website
           push: never
-          skipContainerUserIdUpdate: true
+          skipContainerUserIdUpdate: false
           runCmd: |
             quarto render docs --no-cache 
       - 
