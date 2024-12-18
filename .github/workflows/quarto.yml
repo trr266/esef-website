@@ -32,6 +32,7 @@ jobs:
         with:
           cacheFrom: ghcr.io/trr266/esef-website
           push: never
+          skipContainerUserIdUpdate: true
           runCmd: |
             julia --project=docs setup_julia.jl
             quarto render docs --no-cache 
