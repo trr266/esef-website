@@ -31,16 +31,12 @@ jobs:
         name: Pre-build image and run make ci-build in dev container
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/trr266/esef-website:main
           cacheFrom: ghcr.io/trr266/esef-website:main
-          push: always
-          runCmd: make ci-build        
-      - 
-        name: Render book to all formats  
-        run: |
-          export HOME=/root
-          julia --project=docs setup_julia.jl
-          quarto render docs --no-cache 
+          push: never
+          runCmd: |
+            export HOME=/root
+            julia --project=docs setup_julia.jl
+            quarto render docs --no-cache 
       - 
         name: Deploy 🚀
         if: github.event_name != 'pull_request'
