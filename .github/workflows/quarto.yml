@@ -31,7 +31,7 @@ jobs:
         name: Pre-build image and run make ci-build in dev container
         uses: devcontainers/ci@v0.3
         with:
-          cacheFrom: ghcr.io/trr266/esef-website:main
+          cacheFrom: ghcr.io/trr266/esef-website
           push: never
           runCmd: |
             export HOME=/root
