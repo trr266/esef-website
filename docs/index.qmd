@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to ESEF Data"
 author: "Jeremiah Lewis"
-jupyter: julia-1.10
+jupyter: julia-1.11
 execute:
   echo: false
 ---
