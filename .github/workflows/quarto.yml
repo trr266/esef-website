@@ -20,9 +20,8 @@ permissions:
   pages: write
 
 jobs:
-  docker:
+  create-website:
     runs-on: ubuntu-latest
-    container: ghcr.io/trr266/esef-website:main
     steps:
       - 
         name: Checkout repository
