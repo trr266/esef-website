@@ -1,11 +1,13 @@
 {
-	"name": "Debian",
-// 	"build": {
-// 		"dockerfile": "Dockerfile",
-// 		"context": "..",
-// 	},
-// 	use image instead of rebuilding everytime
-	"image": "ghcr.io/trr266/esef-website:main",
+	"image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04",
+    "features": {
+        "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
+            "version": "release", "installTinyTex": false
+        },
+		"ghcr.io/julialang/devcontainer-features/julia": "1.11",
+		"ghcr.io/prulloac/devcontainer-features/latex:1": {},
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {"packages": "librsvg2-bin,xdg-utils"}
+    },
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"terminal.integrated.fontFamily": "monospace",
@@ -15,11 +17,12 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"quarto.quarto",
-		"julialang.language-julia",
-		"GitHub.copilot"
+		"GitHub.copilot",
+		"ms-azuretools.vscode-docker",
+		"mathematic.vscode-pdf"
 	],
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-	// "onCreateCommand": "julia --project=docs startup_julia.jl"
+	// "onCreateCommand": "git clone https://github.com/jeremiahpslewis/diatypst.git && mkdir -p ~/.local/share/typst/packages/local/diatypst/1.0.0/ && ln -s /workspaces/demand-data-digital/diatypst ~/.local/share/typst/packages/local/diatypst/1.0.0/ && mkdir -p /home/vscode/typst/packages/local/diatypst/1.0.0/ && ln -s /workspaces/demand-data-digital/diatypst /home/vscode/typst/packages/local/diatypst/1.0.0/"
 }
