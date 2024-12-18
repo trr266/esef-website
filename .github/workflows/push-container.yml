@@ -28,7 +28,6 @@ permissions:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
-
     steps:
       - 
         name: Checkout repository
@@ -37,6 +36,6 @@ jobs:
         name: Pre-build dev container image
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/example/example-devcontainer
-          cacheFrom: ghcr.io/example/example-devcontainer
+          imageName: ghcr.io/trr266/esef-website:main
+          cacheFrom: ghcr.io/trr266/esef-website:main
           push: always
