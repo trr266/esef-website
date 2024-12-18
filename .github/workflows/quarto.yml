@@ -34,7 +34,6 @@ jobs:
           push: never
           skipContainerUserIdUpdate: true
           runCmd: |
-            julia --project=docs setup_julia.jl
             quarto render docs --no-cache 
       - 
         name: Deploy 🚀
