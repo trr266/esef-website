@@ -4,111 +4,189 @@
     "href": "index.html",
     "title": "TRR 266: C02 ESEF Project",
     "section": "",
-    "text": "1 ESEF Data Product\nA project of the Open Science Data Center"
+    "text": "1 ESEF Data Product\nA project of the Open Science Data Center",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>An Introduction to ESEF Data</span>"
+    ]
   },
   {
     "objectID": "index.html#visualizations",
     "href": "index.html#visualizations",
     "title": "TRR 266: C02 ESEF Project",
     "section": "1.1 Visualizations",
-    "text": "1.1 Visualizations"
+    "text": "1.1 Visualizations",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>An Introduction to ESEF Data</span>"
+    ]
   },
   {
     "objectID": "index.html#esef-country-availability-map",
     "href": "index.html#esef-country-availability-map",
     "title": "TRR 266: C02 ESEF Project",
     "section": "1.2 ESEF Country Availability (Map)",
-    "text": "1.2 ESEF Country Availability (Map)\n\n\n\n\n\nFigure 1.1: ESEF Country Availability (Map)\n\n\n\n\n\n\n\n\n\nFigure 1.2: ESEF Country Availability (Map)\n\n\n\n\n\n\n\n\n\nFigure 1.3: ESEF Mandate Overview\n\n\n\n\n\n\n\n\n\nFigure 1.4: ESEF Publication Date Composite\n\n\n\n\n\n\n\n\n\nFigure 1.5: ESEF Error Histogram\n\n\n\n\n\n\n\n\n\nFigure 1.6: ESEF Error Country Heatmap\n\n\n\n\n\n\n\n\n\nFigure 1.7: ESEF Error Type Bar Chart"
+    "text": "1.2 ESEF Country Availability (Map)\n\n\n\n\n\n\n\n\nFigure 1.1: ESEF Country Availability (Map)\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.2: ESEF Country Availability (Map)\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.3: ESEF Mandate Overview\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.4: ESEF Publication Date Composite\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.5: ESEF Error Histogram\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.6: ESEF Error Country Heatmap\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.7: ESEF Error Type Bar Chart",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>An Introduction to ESEF Data</span>"
+    ]
   },
   {
     "objectID": "index.html#resources",
     "href": "index.html#resources",
     "title": "TRR 266: C02 ESEF Project",
     "section": "1.3 Resources",
-    "text": "1.3 Resources\n\nSection 2.1\nSection 3.1\nCRediT Contributor Statement\n\nWith the introduction of the European Single Electronic Format (ESEF) for annual financial reports, corporate financial data in the European Union becomes standardized and machine-readable for the first time. Use of the format is binding for financial year 2020 and later and as companies begin to publish using ESEF, there are significant opportunities and challenges ahead for the accounting research community.\nAs part of TRR266, funding has been obtained to empower and enable research using these documents. By incubating this project as open source from the outset, we hope to attract contributions from academia and industry and avoid the privatization of this emerging open data resource.\nESEF is a standard based on XBRL, but it is not a document repository. ESEF has been adopted by the 27 nations of the European Union as well as Norway and Iceleand. Each country is responsible for designating a national database."
+    "text": "1.3 Resources\n\nSection 2.1\nSection 3.1\nCRediT Contributor Statement\n\nWith the introduction of the European Single Electronic Format (ESEF) for annual financial reports, corporate financial data in the European Union becomes standardized and machine-readable for the first time. Use of the format is binding for financial year 2020 and later and as companies begin to publish using ESEF, there are significant opportunities and challenges ahead for the accounting research community.\nAs part of TRR266, funding has been obtained to empower and enable research using these documents. By incubating this project as open source from the outset, we hope to attract contributions from academia and industry and avoid the privatization of this emerging open data resource.\nESEF is a standard based on XBRL, but it is not a document repository. ESEF has been adopted by the 27 nations of the European Union as well as Norway and Iceleand. Each country is responsible for designating a national database.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>An Introduction to ESEF Data</span>"
+    ]
   },
   {
     "objectID": "index.html#project-modules",
     "href": "index.html#project-modules",
     "title": "TRR 266: C02 ESEF Project",
     "section": "1.4 Project Modules",
-    "text": "1.4 Project Modules\n\nA dashboard which tracks ESEF availability by country and filing quality by country and company\nA dataset which identifies all firms (‘issuer’) subject to ESEF regulation\nAn ESEF parser which reads, validates, and normalizes ESEF financial reports\nA repository of raw filings in the ESEF format\nStandardized ‘data products’ extracted from ESEF filings"
+    "text": "1.4 Project Modules\n\nA dashboard which tracks ESEF availability by country and filing quality by country and company\nA dataset which identifies all firms (‘issuer’) subject to ESEF regulation\nAn ESEF parser which reads, validates, and normalizes ESEF financial reports\nA repository of raw filings in the ESEF format\nStandardized ‘data products’ extracted from ESEF filings",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>An Introduction to ESEF Data</span>"
+    ]
   },
   {
     "objectID": "index.html#project-goals",
     "href": "index.html#project-goals",
     "title": "TRR 266: C02 ESEF Project",
     "section": "1.5 Project Goals",
-    "text": "1.5 Project Goals\n\nEnable TRR researchers to do research on the basis of ESEF data\nGather and focus open source ESEF software efforts\nPublicize and encourage high quality filings and easy data access by national competent authorities\nEstablish canonical ‘data product schemas’ for analyzing financial reporting across the European Union\nPromote open science and open data in accounting and offer templates and tools for building on our work"
+    "text": "1.5 Project Goals\n\nEnable TRR researchers to do research on the basis of ESEF data\nGather and focus open source ESEF software efforts\nPublicize and encourage high quality filings and easy data access by national competent authorities\nEstablish canonical ‘data product schemas’ for analyzing financial reporting across the European Union\nPromote open science and open data in accounting and offer templates and tools for building on our work",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>An Introduction to ESEF Data</span>"
+    ]
   },
   {
     "objectID": "index.html#technical-approach",
     "href": "index.html#technical-approach",
     "title": "TRR 266: C02 ESEF Project",
     "section": "1.6 Technical Approach",
-    "text": "1.6 Technical Approach\n\nGitHub Actions CI/CD is used to ensure that code is tested and functional at every commit\nPull Requests with maintainer reviews ensure code quality\nThe project will be developed ‘out in the open’ to avoid the ‘ripping the band-aid off’ experience of having to decide when to open source\nThe project will be developed under an OSS-compliant MIT license"
+    "text": "1.6 Technical Approach\n\nGitHub Actions CI/CD is used to ensure that code is tested and functional at every commit\nPull Requests with maintainer reviews ensure code quality\nThe project will be developed ‘out in the open’ to avoid the ‘ripping the band-aid off’ experience of having to decide when to open source\nThe project will be developed under an OSS-compliant MIT license",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>An Introduction to ESEF Data</span>"
+    ]
   },
   {
     "objectID": "index.html#project-funding",
     "href": "index.html#project-funding",
     "title": "TRR 266: C02 ESEF Project",
     "section": "1.7 Project Funding",
-    "text": "1.7 Project Funding\nFunded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation): Project-ID 403041268 – TRR 266 Accounting for Transparency."
+    "text": "1.7 Project Funding\nFunded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation): Project-ID 403041268 – TRR 266 Accounting for Transparency.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>An Introduction to ESEF Data</span>"
+    ]
   },
   {
     "objectID": "index.html#datasets-used",
     "href": "index.html#datasets-used",
     "title": "TRR 266: C02 ESEF Project",
     "section": "1.8 Datasets Used",
-    "text": "1.8 Datasets Used\n\n\n\nDataset\nLicense\n\n\n\n\nfilings.xbrl.org\nNone\n\n\nlukes/ISO-3166-Countries-with-Regional-Codes\nCC BY-SA 4.0\n\n\nWorld Atlas TopoJSON\nISC\n\n\nESMA Public Data (Regulated Markets)\nESMA T&C\n\n\nWikidata\nCC0"
+    "text": "1.8 Datasets Used\n\n\n\nDataset\nLicense\n\n\n\n\nfilings.xbrl.org\nNone\n\n\nlukes/ISO-3166-Countries-with-Regional-Codes\nCC BY-SA 4.0\n\n\nWorld Atlas TopoJSON\nISC\n\n\nESMA Public Data (Regulated Markets)\nESMA T&C\n\n\nWikidata\nCC0",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>An Introduction to ESEF Data</span>"
+    ]
   },
   {
     "objectID": "index.html#licensing",
     "href": "index.html#licensing",
     "title": "TRR 266: C02 ESEF Project",
     "section": "1.9 Licensing",
-    "text": "1.9 Licensing\n\nFor code, see LICENSE\nGraphics are licensed CC BY-SA 4.0"
+    "text": "1.9 Licensing\n\nFor code, see LICENSE\nGraphics are licensed CC BY-SA 4.0",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>An Introduction to ESEF Data</span>"
+    ]
+  },
+  {
+    "objectID": "data-collection.html",
+    "href": "data-collection.html",
+    "title": "2  Data Collection",
+    "section": "",
+    "text": "2.1 Data Availability\nVarious projects attempt to provide ESEF data for different purposes. A non-exhaustive list follows:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data Collection</span>"
+    ]
   },
   {
     "objectID": "data-collection.html#sec-data-availability",
     "href": "data-collection.html#sec-data-availability",
     "title": "2  Data Collection",
-    "section": "2.1 Data Availability",
-    "text": "2.1 Data Availability\nVarious projects attempt to provide ESEF data for different purposes. A non-exhaustive list follows:\n\nEuropean Single Access Point (ESAP) is current initiative by EU to provide a single source for regulatory reporting documents\nEuropean electronic access point (EEAP) is mandated by 2013 EU Transparency directive, but “has not become operational”\nEuropean financial transparency gateway (ETFG) blockchain prototype for EEAP\nXBRL repository (18? countries), completeness not guaranteed\nIndividual country repos\nHow to define coverage!?"
+    "section": "",
+    "text": "European Single Access Point (ESAP) is current initiative by EU to provide a single source for regulatory reporting documents\nEuropean electronic access point (EEAP) is mandated by 2013 EU Transparency directive, but “has not become operational”\nEuropean financial transparency gateway (ETFG) blockchain prototype for EEAP\nXBRL repository (18? countries), completeness not guaranteed\nIndividual country repos\nHow to define coverage!?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data Collection</span>"
+    ]
   },
   {
     "objectID": "data-collection.html#xbrl-filings",
     "href": "data-collection.html#xbrl-filings",
     "title": "2  Data Collection",
     "section": "2.2 XBRL Filings",
-    "text": "2.2 XBRL Filings\n\n2.2.1 Dataset Goals and Caveats\n\n“Make it easier to find and access filings prepared under the ESEF mandate;”\n“Promote discussion and feedback on the quality of ESEF reports.”\nCompleteness not guaranteed\nOnly 17 countries available (out of 30 (UK, Norway, Iceland))\n\n\n\n2.2.2 Key Links\n\nIndex (json file)\nXBRL ESEF Project Description\n\n\n\n2.2.3 Country Availability of XBRL Filings Index\n\n\n\nCountry\nXBRL Repository\nMandate Starting Fiscal Year Beginning\nAPI Access to Reports\n\n\n\n\nAustria\n✅\n2020\n\n\n\nBelgium\n✅\n2021\n\n\n\nBulgaria\n❌\n2021\n\n\n\nCroatia\n✅\n2021\n\n\n\nCyprus\n❌\n2021\n\n\n\nCzech Republic\n✅\n2020\n\n\n\nDenmark\n✅\n2021\n\n\n\nEstonia\n✅\n2021\n\n\n\nFinland\n✅\n2021\n\n\n\nFrance\n✅\n2021\n\n\n\nGermany\n✅\n2020\n\n\n\nGreece\n❌\n2021\n\n\n\nHungary\n✅\n2021\n\n\n\nIceland\n❌\n2021\n\n\n\nIreland\n❌\n2021\n\n\n\nItaly\n❌\n2021\n\n\n\nLatvia\n✅\n2021\n\n\n\nLiechtenstein\n❌\nNational XBRL Custom Format, 2020\n\n\n\nLithuania\n✅\n2021\n\n\n\nLuxembourg\n❌\n2021\n\n\n\nMalta\n❌\n2021\n\n\n\nNetherlands\n✅\n2021\n\n\n\nNorway\n❌\n2021\n\n\n\nPoland\n❌\n2021\n\n\n\nPortugal\n✅\n2021\n\n\n\nRomania\n❌\n2021\n\n\n\nSlovakia\n❌\n2021\n\n\n\nSlovenia\n✅\n2020\n\n\n\nSpain\n✅\n2021\n\n\n\nSweden\n❌\n2021\n\n\n\nUK\n✅\n2020"
+    "text": "2.2 XBRL Filings\n\n2.2.1 Dataset Goals and Caveats\n\n“Make it easier to find and access filings prepared under the ESEF mandate;”\n“Promote discussion and feedback on the quality of ESEF reports.”\nCompleteness not guaranteed\nOnly 17 countries available (out of 30 (UK, Norway, Iceland))\n\n\n\n2.2.2 Key Links\n\nIndex (json file)\nXBRL ESEF Project Description\n\n\n\n2.2.3 Country Availability of XBRL Filings Index\n\n\n\nCountry\nXBRL Repository\nMandate Starting Fiscal Year Beginning\nAPI Access to Reports\n\n\n\n\nAustria\n✅\n2020\n\n\n\nBelgium\n✅\n2021\n\n\n\nBulgaria\n❌\n2021\n\n\n\nCroatia\n✅\n2021\n\n\n\nCyprus\n❌\n2021\n\n\n\nCzech Republic\n✅\n2020\n\n\n\nDenmark\n✅\n2021\n\n\n\nEstonia\n✅\n2021\n\n\n\nFinland\n✅\n2021\n\n\n\nFrance\n✅\n2021\n\n\n\nGermany\n✅\n2020\n\n\n\nGreece\n❌\n2021\n\n\n\nHungary\n✅\n2021\n\n\n\nIceland\n❌\n2021\n\n\n\nIreland\n❌\n2021\n\n\n\nItaly\n❌\n2021\n\n\n\nLatvia\n✅\n2021\n\n\n\nLiechtenstein\n❌\nNational XBRL Custom Format, 2020\n\n\n\nLithuania\n✅\n2021\n\n\n\nLuxembourg\n❌\n2021\n\n\n\nMalta\n❌\n2021\n\n\n\nNetherlands\n✅\n2021\n\n\n\nNorway\n❌\n2021\n\n\n\nPoland\n❌\n2021\n\n\n\nPortugal\n✅\n2021\n\n\n\nRomania\n❌\n2021\n\n\n\nSlovakia\n❌\n2021\n\n\n\nSlovenia\n✅\n2020\n\n\n\nSpain\n✅\n2021\n\n\n\nSweden\n❌\n2021\n\n\n\nUK\n✅\n2020",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data Collection</span>"
+    ]
   },
   {
     "objectID": "data-collection.html#wikidata",
     "href": "data-collection.html#wikidata",
     "title": "2  Data Collection",
     "section": "2.3 Wikidata",
-    "text": "2.3 Wikidata\n\nLink to full dump"
+    "text": "2.3 Wikidata\n\nLink to full dump",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Data Collection</span>"
+    ]
+  },
+  {
+    "objectID": "data-coverage.html",
+    "href": "data-coverage.html",
+    "title": "3  Data Coverage",
+    "section": "",
+    "text": "3.1 ESEF Mandate Conditions\nAn important topic for evaluating the success of ESEF-based regulatory reporting is establishing the ‘denominator’ on which all counting is based: the set of firms who are subject to the ESEF mandate.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Coverage</span>"
+    ]
   },
   {
     "objectID": "data-coverage.html#sec-data-coverage",
     "href": "data-coverage.html#sec-data-coverage",
     "title": "3  Data Coverage",
-    "section": "3.1 ESEF Mandate Conditions",
-    "text": "3.1 ESEF Mandate Conditions\n\n3.1.1 Who is required to implement ESEF?\n“All issuers subject to the requirements contained in the Transparency Directive to make public AFRs.”1\n\n\n3.1.2 Which country regulates an issuer’s disclosures?\n\nFor EU issuers, country where they are registered 2\nFor non-EU issuers, country “chosen by the issuer from amongst the Member States where its securities are admitted to trading on a regulated market” 3\nOtherwise, based on issue choice amongst registered offices and/or countries where securities trading takes place 4\n\n\n\n3.1.3 CBOE Data\n\nProvide [‘Symbol Reference Data’][cboe_symbol_data] with ISIN for traded shares\n3.7k shares listed (given companies may have multiple share classes, duplication…)\nApproximately 1k shares are also covered in Wikidata\n\n\nTODO: Figure out EU reg, what it covers: TODO: Figure out licensing terms… TODO: Check this out: https://www.esma.europa.eu/sites/default/files/library/esma70-872942901-35_qas_transparency_issues.pdf \n“The LuxSE daily official list fully complies with the provisions of the Grand-Ducal Regulation of 13 July 2007, transposing the EU Directive 2001/34/CE that establishes the existence of official lists.” https://www.bourse.lu/official-list\nSee here: https://www.esma.europa.eu/databases-library/interactive-single-rulebook/clone-mifir/article-3"
+    "section": "",
+    "text": "3.1.1 Who is required to implement ESEF?\n“All issuers subject to the requirements contained in the Transparency Directive to make public AFRs.”1\n\n\n3.1.2 Which country regulates an issuer’s disclosures?\n\nFor EU issuers, country where they are registered 2\nFor non-EU issuers, country “chosen by the issuer from amongst the Member States where its securities are admitted to trading on a regulated market” 3\nOtherwise, based on issue choice amongst registered offices and/or countries where securities trading takes place 4\n\n\n\n3.1.3 CBOE Data\n\nProvide [‘Symbol Reference Data’][cboe_symbol_data] with ISIN for traded shares\n3.7k shares listed (given companies may have multiple share classes, duplication…)\nApproximately 1k shares are also covered in Wikidata\n\n\nTODO: Figure out EU reg, what it covers: TODO: Figure out licensing terms… TODO: Check this out: https://www.esma.europa.eu/sites/default/files/library/esma70-872942901-35_qas_transparency_issues.pdf \n“The LuxSE daily official list fully complies with the provisions of the Grand-Ducal Regulation of 13 July 2007, transposing the EU Directive 2001/34/CE that establishes the existence of official lists.” https://www.bourse.lu/official-list\nSee here: https://www.esma.europa.eu/databases-library/interactive-single-rulebook/clone-mifir/article-3",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Coverage</span>"
+    ]
   },
   {
     "objectID": "data-coverage.html#definitions",
     "href": "data-coverage.html#definitions",
     "title": "3  Data Coverage",
     "section": "3.2 Definitions",
-    "text": "3.2 Definitions\n\nIssuer: “means a natural person, or a legal entity governed by private or public law, including a State, whose securities are admitted to trading on a regulated market” 5"
+    "text": "3.2 Definitions\n\nIssuer: “means a natural person, or a legal entity governed by private or public law, including a State, whose securities are admitted to trading on a regulated market” 5",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Coverage</span>"
+    ]
+  },
+  {
+    "objectID": "data-coverage.html#footnotes",
+    "href": "data-coverage.html#footnotes",
+    "title": "3  Data Coverage",
+    "section": "",
+    "text": "https://www.esma.europa.eu/policy-activities/corporate-disclosure/european-single-electronic-format↩︎\nhttps://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#M2-1↩︎\nhttps://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#M4-2↩︎\nhttps://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#M4-3 [cboe_symbol_data]: https://www.cboe.com/europe/equities/reference_data/↩︎\nhttps://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02004L0109-20210318#tocId5↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data Coverage</span>"
+    ]
   },
   {
     "objectID": "data-preview.html",
     "href": "data-preview.html",
     "title": "4  Data Preview",
     "section": "",
-    "text": "5 Data Preview\n\n\n\n\n\n\nImportant\n\n\n\nUntil this disclaimer is removed, all data displayed here is for technical testing purposes and is not suitable for data analysis.\nFurthermore, at the moment the data is provided without any license terms, so please use at your own risk.\n\n\n\nConceptsProfitsEquityTotal Assets\n\n\n\n5.0.1 Concepts Used in ESEF Reports\nRaw (beta) data available for inspection here.\n\nconcepts_data = FileAttachment(\"esef_concepts_beta.csv\").csv({ typed: true })\n\nInputs.table(concepts_data, {sort: \"frequency\", reverse: true, width: {concept: 140,},})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5.0.2 Profit Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\nprofit_data = FileAttachment(\"esef_profits_beta.csv\").csv({ typed: true })\n\nInputs.table(profit_data)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5.0.3 Equity Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\nequity_data = FileAttachment(\"esef_equity_beta.csv\").csv({ typed: true })\n\nInputs.table(equity_data)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5.0.4 Total Asset Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\ntotal_assets_data = FileAttachment(\"esef_total_assets_beta.csv\").csv({ typed: true })\n\nInputs.table(total_assets_data)"
+    "text": "5 Data Preview\n\n\n\n\n\n\nImportant\n\n\n\nUntil this disclaimer is removed, all data displayed here is for technical testing purposes and is not suitable for data analysis.\nFurthermore, at the moment the data is provided without any license terms, so please use at your own risk.\n\n\n\nConceptsProfitsEquityTotal Assets\n\n\n\n5.0.1 Concepts Used in ESEF Reports\nRaw (beta) data available for inspection here.\n\nconcepts_data = FileAttachment(\"esef_concepts_beta.csv\").csv({ typed: true })\n\nInputs.table(concepts_data, {sort: \"frequency\", reverse: true, width: {concept: 140,},})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5.0.2 Profit Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\nprofit_data = FileAttachment(\"esef_profits_beta.csv\").csv({ typed: true })\n\nInputs.table(profit_data)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5.0.3 Equity Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\nequity_data = FileAttachment(\"esef_equity_beta.csv\").csv({ typed: true })\n\nInputs.table(equity_data)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5.0.4 Total Asset Data from ESEF Reports\nRaw (beta) data available for inspection here.\n\ntotal_assets_data = FileAttachment(\"esef_total_assets_beta.csv\").csv({ typed: true })\n\nInputs.table(total_assets_data)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Preview</span>"
+    ]
   }
 ]
