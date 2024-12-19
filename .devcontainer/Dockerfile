@@ -21,7 +21,8 @@ RUN QUARTO_VERSION=1.7.5 \
     && apt-get -qq install -y lmodern
 
 RUN apt-get install curl && \
-    curl -fsSL https://install.julialang.org | sh -s -- -y --default-channel release
+    curl -fsSL https://install.julialang.org | sh -s -- -y --default-channel release && \
+    julia -e 'using Pkg; Pkg.add("IJulia")'
 
 COPY . /app
 
