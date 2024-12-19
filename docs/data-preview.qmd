@@ -1,7 +1,7 @@
 ---
 title: "Data Preview"
 author: "Jeremiah Lewis"
-jupyter: julia-1.11
+engine: julia
 format:
   html:
     code-fold: false
