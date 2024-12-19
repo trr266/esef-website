@@ -10,7 +10,7 @@ book:
   title: "TRR 266: C02 ESEF Project"
   output-file: "esef-project"
   author: "Jeremiah Lewis & Collaborators"
-  date: "2023-03-02"
+  date: "2024-12-19"
   repo-url: https://github.com/trr266/esef-website
   repo-actions: [issue, edit]
   repo-subdir: docs
