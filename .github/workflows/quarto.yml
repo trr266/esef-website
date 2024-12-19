@@ -20,21 +20,19 @@ permissions:
   pages: write
 
 jobs:
-  create-website:
+  docker:
     runs-on: ubuntu-latest
+    container: ghcr.io/trr266/esef-website:main
     steps:
       - 
         name: Checkout repository
         uses: actions/checkout@v4
       - 
-        name: Pre-build image and run make ci-build in dev container
-        uses: devcontainers/ci@v0.3
-        with:
-          cacheFrom: ghcr.io/trr266/esef-website
-          push: never
-          skipContainerUserIdUpdate: false
-          runCmd: |
-            quarto render docs --no-cache 
+        name: Render book to all formats  
+        run: |
+          export HOME=/root
+          julia --project=docs setup_julia.jl
+          quarto render docs --no-cache 
       - 
         name: Deploy 🚀
         if: github.event_name != 'pull_request'
