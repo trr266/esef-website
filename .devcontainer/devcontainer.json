@@ -1,13 +1,9 @@
 {
-	"image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04",
-    "features": {
-        "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
-            "version": "release", "installTinyTex": false
-        },
-		"ghcr.io/julialang/devcontainer-features/julia": "1.11",
-		"ghcr.io/prulloac/devcontainer-features/latex:1": {},
-		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {"packages": "librsvg2-bin,xdg-utils"}
-    },
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "../",
+		"cacheFrom": "ghcr.io/trr266/esef-website:main"
+	},
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"terminal.integrated.fontFamily": "monospace",
