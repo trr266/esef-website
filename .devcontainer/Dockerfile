@@ -20,8 +20,12 @@ RUN QUARTO_VERSION=1.7.5 \
     && rm quarto.deb \
     && apt-get -qq install -y lmodern
 
+ENV JULIA_DEPOT_PATH=/opt/julia_depot
+ENV JULIAUP_DEPOT_PATH=/opt/juliaup
+
 RUN apt-get install curl && \
-    curl -fsSL https://install.julialang.org | sh -s -- -y --default-channel release
+    curl -fsSL https://install.julialang.org | sh -s -- -y --default-channel release --path /opt/juliaup
+ENV PATH=/opt/juliaup/bin:$PATH
 RUN julia -e 'using Pkg; Pkg.add("IJulia")'
 
 COPY . /app
