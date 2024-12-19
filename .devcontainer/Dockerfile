@@ -7,7 +7,7 @@ ENV JULIA_PKGDIR=/opt/julia
 
 RUN QUARTO_VERSION=1.7.5 \
     && apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -qq install -y build-essential git clang wget \
+    && apt-get -qq install -y build-essential git clang wget rsync \
     && ARCH=$(dpkg --print-architecture) \
     && if [ "$ARCH" = "amd64" ]; then \
         wget -O quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb; \
