@@ -26,7 +26,9 @@ ENV JULIAUP_DEPOT_PATH=/opt/juliaup
 RUN apt-get install curl && \
     curl -fsSL https://install.julialang.org | sh -s -- -y --default-channel release --path /opt/juliaup
 ENV PATH=/opt/juliaup/bin:$PATH
-RUN julia -e 'using Pkg; Pkg.add("IJulia")'
+
+RUN julia -e 'using Pkg; Pkg.add("IJulia");' && \
+    julia --project=docs -e 'using Pkg; Pkg.instantiate();'
 
 COPY . /app
 
